@@ -1,7 +1,7 @@
 import { onBeforeUnmount, onMounted, unref } from 'vue'
 import { onBeforeRouteUpdate, useRouter, type RouteLocationNormalized } from 'vue-router'
 import { ensureNotNil } from 'type-assurer'
-import { createCommunicator as create, type Communicator } from '@passerelle/enclosure-core'
+import { createCommunicator as create, type Communicator } from '@passerelle/enclosure'
 
 import type { IframeRef, IframeBridgeConfig } from '../lib/types'
 import { name } from '../../package.json'
@@ -18,7 +18,7 @@ const logPrefix = `[${name}]`
  * @param config
  * @return
  */
-export function useIframeBridge(iframeRef: IframeRef, config: IframeBridgeConfig) {
+export function useIframeBridge(iframeRef: IframeRef, config: IframeBridgeConfig): void {
   if (isSSR) return
 
   const { toParentPath } = config
