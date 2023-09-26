@@ -79,15 +79,26 @@ export interface Emit {
    *
    */
   <T extends Json>(e: 'data', value: SendData<T>): void
+
+  /**
+   *
+   */
+  (e: 'data', value: SendData<Json>): void
 }
 
 const props = defineProps<Props>()
 
 const emit = defineEmits<Emit>()
 
+defineExpose({
+  sendData,
+  href,
+  navigate
+})
+
 const frame = ref<HTMLIFrameElement>()
 
-useIframeBridge(frame, {
+const communicator = useIframeBridge(frame, {
   toChildPath: (location: RouteLocationNormalized) =>
     props.toChildPath(location),
   toParentPath: (url: NavigateMessage) => props.toParentPath(url),
@@ -109,6 +120,33 @@ useIframeBridge(frame, {
     })
   }
 })
+
+/**
+ * Send data to the insider side.
+ * @param key
+ * @param value
+ */
+function sendData<T extends Json>(key: MessageKey<T>, value: T) {
+  communicator.value?.sendData(key, value)
+}
+
+/**
+ * Navigate to the specified URL on the insider side.
+ * @param href
+ */
+function href(href: string) {
+  communicator.value?.href({ href })
+}
+
+/**
+ * If the insider side is SPA, navigate to the specified path on the insider side.
+ * @param path
+ * @param params
+ */
+function navigate(path: string, params: Record<string, string | string[]>) {
+  communicator.value?.navigate({ path, params })
+}
+
 </script>
 
 <template>

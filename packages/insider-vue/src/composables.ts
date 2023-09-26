@@ -31,6 +31,36 @@ export function onReceivedData<T extends Json>(
   })
 }
 
+/**
+ * Send data to the enclosure side.
+ * @param key
+ * @param value
+ */
+export function sendData<T extends Json>(key: MessageKey<T>, value: T): void {
+  const communicator = useCommunicator()
+
+  communicator.sendData(key, value)
+}
+
+/**
+ * Navigate to the specified URL on the enclosure side.
+ * @param href
+ */
+export function href(href: string): void {
+  const communicator = useCommunicator()
+  communicator.href({ href })
+}
+
+/**
+ * If the enclosure side is a SPA, navigate to the specified path.
+ * @param path
+ * @param params
+ */
+export function navigate(path: string, params?: Record<string, string | string[]>): void {
+  const communicator = useCommunicator()
+  communicator.navigate({ path, params })
+}
+
 export function useCommunicator(): Communicator {
   if (isSSR) throw Error('passerelle communicator can not be used in SSR')
 

@@ -1,4 +1,4 @@
-import { onBeforeUnmount, onMounted, unref } from 'vue'
+import { onBeforeUnmount, onMounted, unref, shallowRef, computed, type Ref } from 'vue'
 import { onBeforeRouteUpdate, useRouter, type RouteLocationNormalized } from 'vue-router'
 import { ensureNotNil } from 'type-assurer'
 import { createCommunicator as create, type Communicator } from '@passerelle/enclosure'
@@ -18,35 +18,40 @@ const logPrefix = `[${name}]`
  * @param config
  * @return
  */
-export function useIframeBridge(iframeRef: IframeRef, config: IframeBridgeConfig): void {
-  if (isSSR) return
+export function useIframeBridge(iframeRef: IframeRef, config: IframeBridgeConfig): Ref<Communicator | undefined> {
+  if (isSSR) {
+    return computed(() => undefined)
+  }
 
   const { toParentPath } = config
 
   const router = useRouter()
 
-  let communicator: Communicator | undefined = undefined
+  const communicator = shallowRef<Communicator>()
 
   onMounted(() => {
-    communicator = create(ensureNotNil(unref(iframeRef)), config)
+    const c = create(ensureNotNil(unref(iframeRef)), config)
+    communicator.value = c
 
-    communicator.logPrefix = logPrefix
+    c.logPrefix = logPrefix
 
-    communicator!.hooks.on('navigate', (value) => {
+    c.hooks.on('navigate', (value) => {
       router.replace(toParentPath(value))
     })
   })
 
   onBeforeRouteUpdate((to, from, next) => {
     if (isSamePathTransition(to, from)) {
-      syncHashParentToChild(to, ensureNotNil(communicator), config)
+      syncHashParentToChild(to, ensureNotNil(unref(communicator)), config)
     }
     return next()
   })
 
   onBeforeUnmount(() => {
-    communicator?.destroy()
+    unref(communicator)?.destroy()
   })
+
+  return communicator
 }
 
 function isSamePathTransition(to: RouteLocationNormalized, from: RouteLocationNormalized): boolean {
