@@ -126,7 +126,7 @@ const communicator = useIframeBridge(frame, {
  * @param key
  * @param value
  */
-export function sendData<T extends Json>(key: MessageKey<T>, value: T) {
+function sendData<T extends Json>(key: MessageKey<T>, value: T) {
   communicator.value?.sendData(key, value)
 }
 
@@ -134,7 +134,7 @@ export function sendData<T extends Json>(key: MessageKey<T>, value: T) {
  * Navigate to the specified URL on the insider side.
  * @param href
  */
-export function href(href: string) {
+function href(href: string) {
   communicator.value?.href({ href })
 }
 
@@ -143,7 +143,7 @@ export function href(href: string) {
  * @param path
  * @param params
  */
-export function navigate(path: string, params: Record<string, string | string[]>) {
+function navigate(path: string, params: Record<string, string | string[]>) {
   communicator.value?.navigate({ path, params })
 }
 
