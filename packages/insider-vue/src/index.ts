@@ -1,5 +1,5 @@
 import type { Plugin, App } from 'vue'
-import type { Communicator } from '@passerelle/insider-core'
+import type { Communicator } from '@passerelle/insider'
 
 import {
   initCommunicator,

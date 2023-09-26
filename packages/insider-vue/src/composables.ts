@@ -1,5 +1,5 @@
 import { inject, onUnmounted } from 'vue'
-import type { Communicator, LayoutMetrix, MessageKey, Json } from '@passerelle/insider-core'
+import type { Communicator, LayoutMetrix, MessageKey, Json } from '@passerelle/insider'
 
 import { COMMUNICATOR_KEY } from './communicator'
 import { isSSR } from './common'
