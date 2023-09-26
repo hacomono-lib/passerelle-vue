@@ -1,6 +1,6 @@
 {
   "name": "@passerelle/insider-vue",
-  "version": "3.0.0",
+  "version": "0.0.1",
   "description": "passerelle insider module for vue3",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@passerelle/insider": "^3.0.0"
+    "@passerelle/insider": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18",
