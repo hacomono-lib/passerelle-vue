@@ -31,6 +31,22 @@ export function onReceivedData<T extends Json>(
   })
 }
 
+export function sendData<T extends Json>(key: MessageKey<T>, value: T): void {
+  const communicator = useCommunicator()
+
+  communicator.sendData(key, value)
+}
+
+export function href(href: string): void {
+  const communicator = useCommunicator()
+  communicator.href({ href })
+}
+
+export function navigate(path: string, params?: Record<string, string | string[]>): void {
+  const communicator = useCommunicator()
+  communicator.navigate({ path, params })
+}
+
 export function useCommunicator(): Communicator {
   if (isSSR) throw Error('passerelle communicator can not be used in SSR')
 

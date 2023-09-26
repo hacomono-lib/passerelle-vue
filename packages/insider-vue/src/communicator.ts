@@ -17,7 +17,7 @@ export interface InsiderVueConfig extends CommunicateConfig {
   communicator?: Communicator
 }
 
-export function initCommunicator(app: App, config: InsiderVueConfig) {
+export function initCommunicator(app: App, config: InsiderVueConfig): void {
   if (isSSR) return
 
   const communicator = config.communicator ?? createCommunicator(config)
@@ -50,7 +50,7 @@ export function createCommunicator(config: Omit<InsiderVueConfig, 'router'>): Co
   return communicator
 }
 
-export function applyMiddleware(router: Router, communicator: Communicator) {
+export function applyMiddleware(router: Router, communicator: Communicator): void {
   router.beforeEach((to, _from, next) => {
     communicator.navigate({ path: to.path, params: to.params })
     return next()
