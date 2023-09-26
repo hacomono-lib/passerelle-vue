@@ -1,6 +1,6 @@
 {
   "name": "@passerelle/insider-vue",
-  "version": "3.0.0-rc.0",
+  "version": "0.0.1",
   "description": "passerelle insider module for vue3",
   "repository": {
     "type": "git",
