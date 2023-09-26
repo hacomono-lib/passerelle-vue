@@ -3,4 +3,4 @@
 "@passerelle/insider-vue": minor
 ---
 
-Feat/add features
+feat: add sendData, navigate, href function as main feature
