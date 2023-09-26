@@ -1,0 +1,47 @@
+{
+  "name": "passerelle",
+  "version": "3.0.0",
+  "description": "passerelle: A universal library enabling seamless navigation between SPAs via an embedded portal. Track and manage URL hash changes across diverse front-end frameworks.",
+  "author": "mew-ton <mxl_usmarc@slmail.mewton.jp>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hacomono-lib/passerelle.git"
+  },
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "./packages/*",
+    "./fixtures/*",
+    "./tests/*"
+  ],
+  "scripts": {
+    "prepare": "turbo run prepare --parallel",
+    "dev": "turbo run dev --parallel",
+    "dev:vue": "turbo run dev --parallel --filter=enclosure-vue --filter=insider-vue",
+    "dev:nuxt": "turbo run dev --parallel --filter=enclosure-nuxt --filter=insider-nuxt",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "publish-packages": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "changesets": "^1.0.2",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-turbo": "^1.10.14",
+    "eslint-plugin-import": "^2.28.1",
+    "prettier": "^2.8.8",
+    "turbo": "^1.10.6"
+  },
+  "volta": {
+    "node": "18.18.0",
+    "yarn": "3.6.1"
+  },
+  "packageManager": "yarn@3.6.3"
+}
