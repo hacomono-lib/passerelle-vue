@@ -1,7 +1,7 @@
 import { ref, type App, type InjectionKey, type Ref } from 'vue'
 import type { Router } from 'vue-router'
-import { createCommunicator as create } from '@passerelle/insider-core'
-import type { Communicator, LayoutMetrix, CommunicateConfig } from '@passerelle/insider-core'
+import { createCommunicator as create } from '@passerelle/insider'
+import type { Communicator, LayoutMetrix, CommunicateConfig } from '@passerelle/insider'
 
 import { isSSR } from './common'
 import { name } from '../package.json'

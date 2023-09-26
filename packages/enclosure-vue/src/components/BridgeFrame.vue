@@ -1,15 +1,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+import type { RouteLocationNormalized } from 'vue-router'
 import type {
   NavigateMessage,
   HrefMessage,
   MessageKey,
   Json
-} from '@passerelle/enclosure-core'
+} from '@passerelle/enclosure'
 
 import type { ChildToParent, ParentToChild } from '../lib/types'
 import { useIframeBridge } from '../composables/useIframeBridge'
-import type { RouteLocationNormalized } from 'vue-router'
 
 export interface Props {
   /**
