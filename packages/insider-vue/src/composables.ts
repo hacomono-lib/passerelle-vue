@@ -2,7 +2,6 @@ import { inject, onUnmounted, getCurrentInstance } from 'vue'
 import type { MessageKey, Json } from '@passerelle/insider'
 
 import { COMMUNICATOR_KEY, type InsideCommunicator } from './communicator'
-import { isSSR } from './common'
 
 export function onReceivedData<T extends Json>(
   key: MessageKey<T>,
@@ -27,7 +26,5 @@ export function onReceivedData<T extends Json>(
 }
 
 export function useCommunicator(): InsideCommunicator {
-  if (isSSR) throw Error('passerelle communicator can not be used in SSR')
-
   return inject(COMMUNICATOR_KEY)!
 }
