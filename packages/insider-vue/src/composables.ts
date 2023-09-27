@@ -1,23 +1,18 @@
-import { inject, onUnmounted } from 'vue'
-import type { Communicator, LayoutMetrix, MessageKey, Json } from '@passerelle/insider'
+import { inject, onUnmounted, getCurrentInstance } from 'vue'
+import type { MessageKey, Json } from '@passerelle/insider'
 
-import { COMMUNICATOR_KEY } from './communicator'
+import { COMMUNICATOR_KEY, type InsideCommunicator } from './communicator'
 import { isSSR } from './common'
-
-export function onUpdateLayout(callback: (value: LayoutMetrix) => void | Promise<void>): void {
-  const communicator = useCommunicator()
-
-  communicator.hooks.on('layout', callback)
-
-  onUnmounted(() => {
-    communicator.hooks.off('layout', callback)
-  })
-}
 
 export function onReceivedData<T extends Json>(
   key: MessageKey<T>,
   callback: (value: T) => void
 ): void {
+  if (!getCurrentInstance()) {
+    console.warn('onUpdateLayout can only be used in setup function')
+    return
+  }
+
   const communicator = useCommunicator()
 
   const callbackWrap = (k: string, v: unknown) => {
@@ -31,37 +26,7 @@ export function onReceivedData<T extends Json>(
   })
 }
 
-/**
- * Send data to the enclosure side.
- * @param key
- * @param value
- */
-export function sendData<T extends Json>(key: MessageKey<T>, value: T): void {
-  const communicator = useCommunicator()
-
-  communicator.sendData(key, value)
-}
-
-/**
- * Navigate to the specified URL on the enclosure side.
- * @param href
- */
-export function href(href: string): void {
-  const communicator = useCommunicator()
-  communicator.href({ href })
-}
-
-/**
- * If the enclosure side is a SPA, navigate to the specified path.
- * @param path
- * @param params
- */
-export function navigate(path: string, params?: Record<string, string | string[]>): void {
-  const communicator = useCommunicator()
-  communicator.navigate({ path, params })
-}
-
-export function useCommunicator(): Communicator {
+export function useCommunicator(): InsideCommunicator {
   if (isSSR) throw Error('passerelle communicator can not be used in SSR')
 
   const communicator = inject(COMMUNICATOR_KEY)

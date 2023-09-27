@@ -1,14 +1,13 @@
-import { ref, type App, type InjectionKey, type Ref } from 'vue'
+import { ref, unref, readonly } from 'vue'
+import type { Ref, InjectionKey, App } from 'vue'
 import type { Router } from 'vue-router'
 import { createCommunicator as create } from '@passerelle/insider'
-import type { Communicator, LayoutMetrix, CommunicateConfig } from '@passerelle/insider'
+import type { Communicator, LayoutMetrix, CommunicateConfig, Json, MessageKey } from '@passerelle/insider'
 
 import { isSSR } from './common'
 import { name } from '../package.json'
 
-export const LAYOUT_KEY = Symbol() as InjectionKey<Ref<LayoutMetrix | undefined>>
-
-export const COMMUNICATOR_KEY = Symbol() as InjectionKey<Communicator>
+export const COMMUNICATOR_KEY = Symbol() as InjectionKey<InsideCommunicator>
 
 const logPrefix = `[${name}]`
 
@@ -17,14 +16,26 @@ export interface InsiderVueConfig extends CommunicateConfig {
   communicator?: Communicator
 }
 
+export interface InsideCommunicator {
+  readonly communicator: Communicator
+
+  readonly hooks: Communicator['hooks']
+
+  readonly layout: Ref<LayoutMetrix | undefined>
+
+  navigate(path: string, params?: Record<string, string>): void
+
+  href(href: string): void
+
+  sendData<T extends Json>(key: MessageKey<T>, value: T | Ref<T>): void
+}
+
 export function initCommunicator(app: App, config: InsiderVueConfig): void {
   if (isSSR) return
 
   const communicator = config.communicator ?? createCommunicator(config)
 
   const layout = ref<LayoutMetrix | undefined>()
-  app.provide(LAYOUT_KEY, layout)
-  app.provide(COMMUNICATOR_KEY, communicator)
 
   communicator.hooks.on('href', (value) => {
     window.location.href = value.href
@@ -39,28 +50,50 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
     config.router.replace({ path, params })
   })
 
-  applyMiddleware(config.router, communicator)
 
-  initDestructor(communicator)
+  config.router.beforeEach((to, _from, next) => {
+    communicator.navigate({ path: to.path, params: to.params })
+    return next()
+  })
+
+
+  const originBeforeUnload = window.onbeforeunload
+  window.onbeforeunload = function (event) {
+    communicator.destroy()
+    originBeforeUnload?.call(window, event)
+  }
+
+  const insideCommunicator = {
+    get communicator() {
+      return communicator
+    },
+
+    get hooks() {
+      return communicator.hooks
+    },
+
+    get layout() {
+      return readonly(layout)
+    },
+
+    navigate(path: string, params?: Record<string, string>) {
+      communicator.navigate({ path, params })
+    },
+
+    href(href: string) {
+      communicator.href({ href })
+    },
+
+    sendData<T extends Json>(key: MessageKey<T>, value: T | Ref<T>) {
+      communicator.sendData(key, unref(value))
+    }
+  } satisfies InsideCommunicator
+
+  app.provide(COMMUNICATOR_KEY, insideCommunicator)
 }
 
 export function createCommunicator(config: Omit<InsiderVueConfig, 'router'>): Communicator {
   const communicator = create(config)
   communicator.logPrefix = logPrefix
   return communicator
-}
-
-export function applyMiddleware(router: Router, communicator: Communicator): void {
-  router.beforeEach((to, _from, next) => {
-    communicator.navigate({ path: to.path, params: to.params })
-    return next()
-  })
-}
-
-function initDestructor(communicator: Communicator) {
-  const originBeforeUnload = window.onbeforeunload
-  window.onbeforeunload = function (event) {
-    communicator.destroy()
-    originBeforeUnload?.call(window, event)
-  }
 }
