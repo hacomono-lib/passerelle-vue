@@ -91,8 +91,7 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
 
   app.provide(COMMUNICATOR_KEY, insideCommunicator)
 
-  // FIXME: あってる？これ
-  app['$passerelle'] = insideCommunicator
+  app.config.globalProperties.$passerelle = insideCommunicator
 }
 
 export function createCommunicator(config: Omit<InsiderVueConfig, 'router'>): Communicator {
