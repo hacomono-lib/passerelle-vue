@@ -9,3 +9,9 @@ export const enclosure = {
     app.component('BridgeFrame', BridgeFrame)
   }
 } satisfies Plugin
+
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    BridgeFrame: typeof BridgeFrame
+  }
+}

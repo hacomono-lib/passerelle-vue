@@ -3,19 +3,28 @@ import type { Communicator } from '@passerelle/insider'
 
 import {
   initCommunicator,
-  LAYOUT_KEY,
   COMMUNICATOR_KEY,
-  type InsiderVueConfig
+  type InsiderVueConfig,
+type InsideCommunicator
 } from './communicator'
 
-export { onUpdateLayout, onReceivedData, useCommunicator } from './composables'
+export { onReceivedData, useCommunicator } from './composables'
 
 export { createCommunicator } from './communicator'
 
-export { type InsiderVueConfig, LAYOUT_KEY, COMMUNICATOR_KEY }
+export { type InsiderVueConfig, COMMUNICATOR_KEY }
 
 export const insider = {
   install(app: App, opt: InsiderVueConfig) {
     initCommunicator(app, opt)
   }
 } satisfies Plugin<InsiderVueConfig | Communicator>
+
+declare module '@vue/runtime-core' {
+  export interface ComponentCustomProperties {
+    /**
+     * @link {InsideCommunicator}
+     */
+    $passerelle: InsideCommunicator
+  }
+}

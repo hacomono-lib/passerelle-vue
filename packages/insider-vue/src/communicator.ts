@@ -90,6 +90,9 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
   } satisfies InsideCommunicator
 
   app.provide(COMMUNICATOR_KEY, insideCommunicator)
+
+  // FIXME: あってる？これ
+  app['$passerelle'] = insideCommunicator
 }
 
 export function createCommunicator(config: Omit<InsiderVueConfig, 'router'>): Communicator {

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import {
-  BridgeFrame,
   type ParentToChild,
   type ChildToParent
 } from '@passerelle/enclosure-vue'
