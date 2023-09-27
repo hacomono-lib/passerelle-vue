@@ -1,4 +1,4 @@
-import { ref, unref, readonly } from 'vue'
+import { shallowRef, unref, readonly } from 'vue'
 import type { Ref, InjectionKey, App } from 'vue'
 import type { Router } from 'vue-router'
 import { createCommunicator as create } from '@passerelle/insider'
@@ -35,7 +35,7 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
 
   const communicator = config.communicator ?? createCommunicator(config)
 
-  const layout = ref<LayoutMetrix | undefined>()
+  const layout = shallowRef<LayoutMetrix | undefined>()
 
   communicator.hooks.on('href', (value) => {
     window.location.href = value.href

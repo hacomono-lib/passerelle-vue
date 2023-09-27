@@ -29,8 +29,5 @@ export function onReceivedData<T extends Json>(
 export function useCommunicator(): InsideCommunicator {
   if (isSSR) throw Error('passerelle communicator can not be used in SSR')
 
-  const communicator = inject(COMMUNICATOR_KEY)
-  if (!communicator) throw new Error('passerelle insider is not installed')
-
-  return communicator
+  return inject(COMMUNICATOR_KEY)!
 }
