@@ -1,4 +1,4 @@
-import { shallowRef, unref, readonly } from 'vue'
+import { shallowRef, unref, readonly, computed } from 'vue'
 import type { Ref, InjectionKey, App } from 'vue'
 import type { Router } from 'vue-router'
 import { createCommunicator as create } from '@passerelle/insider'
@@ -31,8 +31,21 @@ export interface InsideCommunicator {
 }
 
 export function initCommunicator(app: App, config: InsiderVueConfig): void {
-  if (isSSR) return
+  const insideCommunicator = isSSR ? createServerCommunicator() : createClientCommunicator(app, config)
 
+  createClientCommunicator(config)
+
+  app.provide(COMMUNICATOR_KEY, insideCommunicator)
+
+  Object.defineProperty(app.config.globalProperties, '$passerelle', {
+    enumerable: true,
+    get: () => {
+      return insideCommunicator
+    },
+  })
+}
+
+function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator {
   const communicator = config.communicator ?? createCommunicator(config)
 
   const layout = shallowRef<LayoutMetrix | undefined>()
@@ -50,12 +63,10 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
     config.router.replace({ path, params })
   })
 
-
   config.router.beforeEach((to, _from, next) => {
     communicator.navigate({ path: to.path, params: to.params })
     return next()
   })
-
 
   const originBeforeUnload = window.onbeforeunload
   window.onbeforeunload = function (event) {
@@ -88,10 +99,35 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
       communicator.sendData(key, unref(value))
     }
   } satisfies InsideCommunicator
+  return insideCommunicator
+}
 
-  app.provide(COMMUNICATOR_KEY, insideCommunicator)
+function createServerCommunicator(): InsideCommunicator {
+  return {
+    get communicator(): Communicator {
+      throw new Error('communicator is not available in SSR')
+    },
 
-  app.config.globalProperties.$passerelle = insideCommunicator
+    get hooks(): Communicator['hooks'] {
+      throw new Error('communicator is not available in SSR')
+    },
+
+    get layout() {
+      return computed(() => undefined)
+    },
+
+    navigate() {
+      // noop
+    },
+
+    href() {
+      // noop
+    },
+
+    sendData() {
+      // noop
+    },
+  } satisfies InsideCommunicator
 }
 
 export function createCommunicator(config: Omit<InsiderVueConfig, 'router'>): Communicator {
