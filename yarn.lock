@@ -2040,12 +2040,17 @@ __metadata:
     vite-plugin-dts: ^3.2.0
     vitest: ^0.32.2
     vue: ^3.3.4
+    vue-demi: ^0.14.6
     vue-router: ^4.2.2
     vue-tsc: ^1.6.5
     yarn-run-all: latest
   peerDependencies:
-    vue: ^3.0.0
+    "@vue/composition-api": ^1.0.0
+    vue: ^2.6.0 || >=3.0.0
     vue-router: ^4.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -2093,11 +2098,16 @@ __metadata:
     vite: ^4.3.9
     vitest: ^0.32.2
     vue: ^3.3.4
+    vue-demi: ^0.14.6
     vue-router: ^4.2.4
     vue-tsc: ^1.8.4
   peerDependencies:
-    vue: ^3.0.0
+    "@vue/composition-api": ^1.0.0
+    vue: ^2.0.0 || >=3.0.0
     vue-router: ^4.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -11978,6 +11988,22 @@ __metadata:
   dependencies:
     ufo: ^1.2.0
   checksum: c02c673ac4922d361ed9f8cdfb819674ef52d87087d7f76f428dacf45822359dd3c4e7a1384e3c52a9cb8bb264921d001c4ad6ea268cf63493a9b832d7b95f5a
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:^0.14.6":
+  version: 0.14.6
+  resolution: "vue-demi@npm:0.14.6"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 424b1f340d5111fc4d4a0f8042c14ae836ba983bc968773a6d955d6846202d7e6f951993ac1525be8732b0cfe0c81d94ab88f427c97bfa86ead08db06491279b
   languageName: node
   linkType: hard
 

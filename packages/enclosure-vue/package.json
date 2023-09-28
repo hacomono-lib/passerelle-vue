@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@passerelle/enclosure": "^1.0.0",
-    "type-assurer": "^0.1.1"
+    "type-assurer": "^0.1.1",
+    "vue-demi": "^0.14.6"
   },
   "devDependencies": {
     "@types/node": "^18.16.17",
@@ -50,8 +51,14 @@
     "yarn-run-all": "latest"
   },
   "peerDependencies": {
-    "vue": "^3.0.0",
+    "@vue/composition-api": "^1.0.0",
+    "vue": "^2.6.0 || >=3.0.0",
     "vue-router": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"

@@ -31,7 +31,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@passerelle/insider": "^1.0.0"
+    "@passerelle/insider": "^1.0.0",
+    "vue-demi": "^0.14.6"
   },
   "devDependencies": {
     "@types/node": "^18",
@@ -44,8 +45,14 @@
     "vue-tsc": "^1.8.4"
   },
   "peerDependencies": {
-    "vue": "^3.0.0",
+    "@vue/composition-api": "^1.0.0",
+    "vue": "^2.0.0 || >=3.0.0",
     "vue-router": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
