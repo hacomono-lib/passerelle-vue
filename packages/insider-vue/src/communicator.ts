@@ -103,30 +103,26 @@ function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator 
 }
 
 function createServerCommunicator(): InsideCommunicator {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  const noop = (): undefined => {}
+  const errorMessage = 'communicator is not available in SSR'
+
   return {
     get communicator(): Communicator {
-      throw new Error('communicator is not available in SSR')
+      throw new Error(errorMessage)
     },
 
     get hooks(): Communicator['hooks'] {
-      throw new Error('communicator is not available in SSR')
+      throw new Error(errorMessage)
     },
 
     get layout() {
-      return computed(() => undefined)
+      return computed(noop)
     },
 
-    navigate() {
-      // noop
-    },
-
-    href() {
-      // noop
-    },
-
-    sendData() {
-      // noop
-    },
+    navigate: noop,
+    href: noop,
+    sendData: noop
   } satisfies InsideCommunicator
 }
 
