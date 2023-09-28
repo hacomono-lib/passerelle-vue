@@ -29,5 +29,8 @@ export default defineConfig({
   },
   esbuild: {
     pure: devMode ? [] : ['console.log', 'console.info', 'console.debug']
+  },
+  optimizeDeps: {
+    exclude: ['@intlify/vue-router-bridge']
   }
 })

@@ -4,7 +4,7 @@ import {
   type ParentToChild,
   type ChildToParent
 } from '@passerelle/enclosure-vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref } from 'vue-demi'
 
 const route = useRoute()
 

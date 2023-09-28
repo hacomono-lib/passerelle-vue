@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from 'vue-demi'
 import type { RouteLocationNormalized } from 'vue-router'
 import type {
   NavigateMessage,

@@ -25,16 +25,40 @@
       "name": "@passerelle/insider-nuxt"
     },
     {
-      "path": "../fixtures/playground-enclosure",
-      "name": "#fixtures/playground-enclosure"
+      "path": "../playground/enclosure-static",
+      "name": "#playground/enclosure-static"
     },
     {
-      "path": "../fixtures/playground-insider",
-      "name": "#fixtures/playground-insider"
+      "path": "../playground/enclosure-vue",
+      "name": "#playground/enclosure-vue"
     },
     {
-      "path": "../fixtures/playground-vue-components",
-      "name": "#fixtures/playground-vue-components"
+      "path": "../playground/enclosure-nuxt2",
+      "name": "#playground/enclosure-nuxt2"
+    },
+    {
+      "path": "../playground/enclosure-nuxt3",
+      "name": "#playground/enclosure-nuxt3"
+    },
+    {
+      "path": "../playground/insider-static",
+      "name": "#playground/insider-static"
+    },
+    {
+      "path": "../playground/insider-vue",
+      "name": "#playground/insider-vue"
+    },
+    {
+      "path": "../playground/insider-nuxt2",
+      "name": "#playground/insider-nuxt2"
+    },
+    {
+      "path": "../playground/insider-nuxt3",
+      "name": "#playground/insider-nuxt3"
+    },
+    {
+      "path": "../fixtures/vue-components",
+      "name": "#fixtures/vue-components"
     }
   ],
   "settings": {

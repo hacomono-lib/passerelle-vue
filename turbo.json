@@ -31,6 +31,12 @@
     },
     "clean": {
       "cache": false
+    },
+    "switch-2": {
+      "cache": false
+    },
+    "switch-3": {
+      "cache": false
     }
   }
 }

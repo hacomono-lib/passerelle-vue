@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { Ref } from 'vue-demi'
 import type { RouteLocationNormalized, RouteLocationRaw } from 'vue-router'
 import type { CommunicateConfig, NavigateMessage, Communicator } from '@passerelle/enclosure'
 

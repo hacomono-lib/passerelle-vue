@@ -15,7 +15,7 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./src/*": "./src/*"
+    "./*": "./*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -28,11 +28,13 @@
     "dev": "vite ./playground --port 5174",
     "build": "vite build",
     "typecheck": "tsc --noEmit -p tsconfig.json",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "switch-2": "vue-demi-switch 2 && vue-router-switch 3",
+    "switch-3": "vue-demi-switch 3 && vue-router-switch 4"
   },
   "dependencies": {
-    "@passerelle/insider": "^1.0.0",
-    "vue-demi": "^0.14.6"
+    "@intlify/vue-router-bridge": "^1.0.1",
+    "@passerelle/insider": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^18",
@@ -46,11 +48,14 @@
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0",
-    "vue": "^2.0.0 || >=3.0.0",
-    "vue-router": "^4.0.0"
+    "vue": "^2.6.0 || >=3.0.0",
+    "vue-router": "^4.0.0 || ^3.0.0"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
+      "optional": true
+    },
+    "vue-router": {
       "optional": true
     }
   },
