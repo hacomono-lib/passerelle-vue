@@ -9,7 +9,8 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      rollupTypes: true
+      rollupTypes: true,
+      bundledPackages: ['vue-demi', '@intlify/vue-router-bridge']
     })
   ],
   build: {
@@ -29,5 +30,8 @@ export default defineConfig({
   },
   esbuild: {
     pure: devMode ? [] : ['console.log', 'console.info', 'console.debug']
+  },
+  optimizeDeps: {
+    exclude: ['vue-demi', '@intlify/vue-router-bridge']
   }
 })

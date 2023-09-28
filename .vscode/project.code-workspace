@@ -25,35 +25,35 @@
       "name": "@passerelle/insider-nuxt"
     },
     {
-      "path": "../playground/enclosure-static",
+      "path": "../playgrounds/playground-enclosure-static",
       "name": "#playground/enclosure-static"
     },
     {
-      "path": "../playground/enclosure-vue",
+      "path": "../playgrounds/playground-enclosure-vue",
       "name": "#playground/enclosure-vue"
     },
     {
-      "path": "../playground/enclosure-nuxt2",
+      "path": "../playgrounds/playground-enclosure-nuxt2",
       "name": "#playground/enclosure-nuxt2"
     },
     {
-      "path": "../playground/enclosure-nuxt3",
+      "path": "../playgrounds/playground-enclosure-nuxt3",
       "name": "#playground/enclosure-nuxt3"
     },
     {
-      "path": "../playground/insider-static",
+      "path": "../playgrounds/playground-insider-static",
       "name": "#playground/insider-static"
     },
     {
-      "path": "../playground/insider-vue",
+      "path": "../playgrounds/playground-insider-vue",
       "name": "#playground/insider-vue"
     },
     {
-      "path": "../playground/insider-nuxt2",
+      "path": "../playgrounds/playground-insider-nuxt2",
       "name": "#playground/insider-nuxt2"
     },
     {
-      "path": "../playground/insider-nuxt3",
+      "path": "../playgrounds/playground-insider-nuxt3",
       "name": "#playground/insider-nuxt3"
     },
     {

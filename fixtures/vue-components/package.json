@@ -1,10 +1,11 @@
 {
-  "name": "playground-vue-component",
+  "name": "fixture-vue-component",
   "private": true,
   "type": "module",
   "main": "./src/index.ts",
   "devDependencies": {
+    "@intlify/vue-router-bridge": "^1.0.1",
     "@passerelle/core": "^1.0.0",
-    "@intlify/vue-router-bridge": "^1.0.1"
+    "vue-demi": "^0.13.11"
   }
 }

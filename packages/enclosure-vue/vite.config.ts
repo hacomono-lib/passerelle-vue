@@ -31,6 +31,6 @@ export default defineConfig({
     pure: devMode ? [] : ['console.log', 'console.info', 'console.debug']
   },
   optimizeDeps: {
-    exclude: ['@intlify/vue-router-bridge']
+    exclude: ['vue-demi', '@intlify/vue-router-bridge']
   }
 })

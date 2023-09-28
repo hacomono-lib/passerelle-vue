@@ -1,5 +1,5 @@
 import type { Ref } from 'vue-demi'
-import type { RouteLocationNormalized, RouteLocationRaw } from 'vue-router'
+import type { RouteLocationNormalized, RouteLocationRaw } from '@intlify/vue-router-bridge'
 import type { CommunicateConfig, NavigateMessage, Communicator } from '@passerelle/enclosure'
 
 type MaybeRef<T> = Ref<T> | T

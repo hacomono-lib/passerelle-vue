@@ -1,5 +1,5 @@
 import { onBeforeUnmount, onMounted, unref, shallowRef, computed, type Ref } from 'vue-demi'
-import { onBeforeRouteUpdate, useRouter, type RouteLocationNormalized } from 'vue-router'
+import { onBeforeRouteUpdate, useRouter, type RouteLocationNormalized } from '@intlify/vue-router-bridge'
 import { ensureNotNil } from 'type-assurer'
 import { createCommunicator as create, type Communicator } from '@passerelle/enclosure'
 

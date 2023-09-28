@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue-demi'
-import type { RouteLocationNormalized } from 'vue-router'
+import type { RouteLocationNormalized } from '@intlify/vue-router-bridge'
 import type {
   NavigateMessage,
   HrefMessage,

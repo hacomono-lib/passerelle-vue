@@ -1,4 +1,4 @@
-import type { Plugin } from 'vue'
+import type { Plugin } from 'vue-demi'
 import BridgeFrame from './components/BridgeFrame.vue'
 export type { ParentToChild, ChildToParent, IframeBridgeConfig } from './lib/types'
 

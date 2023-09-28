@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { RouterLink } from '@intlify/vue-router-bridge'
 </script>
 
 <template>
@@ -12,14 +12,13 @@ import { RouterLink } from 'vue-router'
       height="125" />
 
     <div class="wrapper">
-      <h1>@passerelle/insider-vue</h1>
-      <p>
-        <slot />
-      </p>
+      <h1>@passerelle/enclosure-vue</h1>
+
       <nav>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/works">Works</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/bridge/about">About</RouterLink>
+        <RouterLink to="/bridge/works">Works</RouterLink>
+        <RouterLink to="/bridge/contact">Contact</RouterLink>
       </nav>
     </div>
   </header>
@@ -31,17 +30,11 @@ import { RouterLink } from 'vue-router'
   margin: 0 auto 2rem;
 }
 
-p {
-  width: 100%;
-}
-
 nav {
   width: 100%;
-  font-size: 1rem;
+  font-size: 12px;
   text-align: center;
-
-  margin-left: -1rem;
-  padding: 1rem 0;
+  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -76,5 +69,14 @@ header .wrapper {
   display: flex;
   place-items: flex-start;
   flex-wrap: wrap;
+}
+
+nav {
+  text-align: left;
+  margin-left: -1rem;
+  font-size: 1rem;
+
+  padding: 1rem 0;
+  margin-top: 1rem;
 }
 </style>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue-demi'
 import Tags from './Tags.vue'
 import TransitionLog from './TransitionLog.vue'
 import LayoutView from './LayoutView.vue'

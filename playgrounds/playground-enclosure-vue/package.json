@@ -1,0 +1,13 @@
+{
+  "name": "playgrounds-enclosure-vue",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite . --port 5173"
+  },
+  "devDependencies": {
+    "@passerelle/enclosure-vue": "^0.0.1",
+    "fixtures-vue-components": "file:../../fixtures/vue-components",
+    "vite": "^4.3.0"
+  }
+}

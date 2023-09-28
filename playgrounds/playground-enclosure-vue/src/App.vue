@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { RouterView } from '@intlify/vue-router-bridge'
 import Header from './components/Header.vue'
-import Playground from 'playground-vue-component'
+import Playground from 'fixture-vue-component'
 </script>
 
 <template>

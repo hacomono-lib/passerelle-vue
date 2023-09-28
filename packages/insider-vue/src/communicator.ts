@@ -1,6 +1,6 @@
-import { shallowRef, unref, readonly, computed } from 'vue'
-import type { Ref, InjectionKey, App } from 'vue'
-import type { Router } from 'vue-router'
+import { shallowRef, unref, readonly, computed } from 'vue-demi'
+import type { Ref, InjectionKey, App } from 'vue-demi'
+import type { Router } from '@intlify/vue-router-bridge'
 import { createCommunicator as create } from '@passerelle/insider'
 import type { Communicator, LayoutMetrix, CommunicateConfig, Json, MessageKey } from '@passerelle/insider'
 
@@ -31,7 +31,7 @@ export interface InsideCommunicator {
 }
 
 export function initCommunicator(app: App, config: InsiderVueConfig): void {
-  const insideCommunicator = isSSR ? createServerCommunicator() : createClientCommunicator(app, config)
+  const insideCommunicator = isSSR ? createServerCommunicator() : createClientCommunicator(config)
 
   createClientCommunicator(config)
 

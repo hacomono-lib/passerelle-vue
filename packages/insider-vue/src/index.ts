@@ -1,4 +1,4 @@
-import type { Plugin, App } from 'vue'
+import type { Plugin, App } from 'vue-demi'
 import type { Communicator } from '@passerelle/insider'
 
 import {

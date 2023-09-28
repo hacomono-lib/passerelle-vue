@@ -1,4 +1,4 @@
-import { inject, onUnmounted, getCurrentInstance } from 'vue'
+import { inject, onUnmounted, getCurrentInstance } from 'vue-demi'
 import type { MessageKey, Json } from '@passerelle/insider'
 
 import { COMMUNICATOR_KEY, type InsideCommunicator } from './communicator'
