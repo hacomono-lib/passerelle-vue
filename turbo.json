@@ -7,7 +7,7 @@
     "dev": {
       "cache": true,
       "persistent": true,
-      "dependsOn": ["^dev"]
+      "dependsOn": ["prepare", "^dev"]
     },
     "test": {
       "cache": false,

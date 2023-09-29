@@ -19,8 +19,8 @@
   "scripts": {
     "prepare": "turbo run prepare --parallel",
     "dev": "turbo run dev --parallel",
-    "dev:vue2": "yarn switch-2 && turbo run dev --parallel --filter=enclosure-vue --filter=insider-vue",
-    "dev:vue3": "yarn switch-3 && turbo run dev --parallel --filter=enclosure-vue --filter=insider-vue",
+    "dev:vue2": "yarn switch-2 && turbo run dev --parallel --filter=...enclosure-vue --filter=...insider-vue",
+    "dev:vue3": "yarn switch-3 && turbo run dev --parallel --filter=...enclosure-vue --filter=...insider-vue",
     "dev:nuxt": "turbo run dev --parallel --filter=enclosure-nuxt --filter=insider-nuxt",
     "build": "turbo run build",
     "typecheck": "turbo run typecheck",
