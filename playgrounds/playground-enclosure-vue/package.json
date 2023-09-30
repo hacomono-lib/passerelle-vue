@@ -1,9 +1,10 @@
 {
-  "name": "playgrounds-enclosure-vue",
+  "name": "playground-enclosure-vue",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite . --port 5173"
+    "dev": "vite . --port 5173",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@passerelle/enclosure-vue": "^0.0.1",
