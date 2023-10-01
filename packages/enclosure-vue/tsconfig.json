@@ -7,6 +7,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["./env.d.ts", "vite/client"]
+    "types": ["./env.d.ts", "vite/client", "./src/shim.d.ts"]
   }
 }

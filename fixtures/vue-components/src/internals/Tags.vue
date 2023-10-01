@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue-demi'
+import { defineComponent } from 'vue'
 import Tag from './Tag.vue'
 
 const labelSet = {

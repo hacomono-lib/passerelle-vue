@@ -4,8 +4,9 @@
   "type": "module",
   "main": "./src/index.ts",
   "devDependencies": {
-    "@intlify/vue-router-bridge": "^1.0.1",
-    "@passerelle/core": "^1.0.0",
-    "vue-demi": "^0.13.11"
+    "@passerelle/core": "^1.0.0"
+  },
+  "optionalDependencies": {
+    "vue": "^2.7.0 || >=3.0.0"
   }
 }

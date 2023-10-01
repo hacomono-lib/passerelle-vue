@@ -1,5 +1,5 @@
 import type { Plugin } from 'vue-demi'
-import BridgeFrame from './components/BridgeFrame.vue'
+import BridgeFrame from './components/BridgeFrame'
 export type { ParentToChild, ChildToParent, IframeBridgeConfig } from './lib/types'
 
 export { BridgeFrame }
@@ -9,9 +9,3 @@ export const enclosure = {
     app.component('BridgeFrame', BridgeFrame)
   }
 } satisfies Plugin
-
-declare module '@vue/runtime-core' {
-  export interface GlobalComponents {
-    BridgeFrame: typeof BridgeFrame
-  }
-}

@@ -19,23 +19,21 @@
   "scripts": {
     "prepare": "turbo run prepare --parallel",
     "dev": "turbo run dev --parallel --filter='./packages/*'",
-    "dev:vue2": "yarn switch-2 && turbo run dev --parallel --filter=...enclosure-vue --filter=...insider-vue",
-    "dev:vue3": "yarn switch-3 && turbo run dev --parallel --filter=...enclosure-vue --filter=...insider-vue",
-    "dev:nuxt3": "turbo run dev --parallel --filter=...enclosure-nuxt --filter=...insider-nuxt",
+    "dev:vue2": "turbo run dev --parallel --filter=...enclosure-vue --filter=...insider-vue",
+    "dev:vue3": "turbo run dev --parallel --filter=...enclosure-vue --filter=...insider-vue",
+    "dev:nuxt2": "yarn switch-2 && turbo run dev --parallel --filter=...enclosure-nuxt --filter=...insider-nuxt",
+    "dev:nuxt3": "yarn switch-3 && turbo run dev --parallel --filter=...enclosure-nuxt --filter=...insider-nuxt",
     "preview": "turbo run dev --parallel --filter='./playgrounds/*'",
     "build": "turbo run build",
     "build:graph": "turbo run build --graph",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "clean": "turbo run clean && turbo daemon clean",
-    "switch-2": "vue-demi-switch 2 && vue-router-switch 3",
-    "switch-3": "vue-demi-switch 3 && vue-router-switch 4",
     "publish-packages": "changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
-    "@intlify/vue-router-bridge": "^1.0.1",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "changesets": "^1.0.2",
@@ -45,7 +43,9 @@
     "eslint-plugin-import": "^2.28.1",
     "prettier": "^2.8.8",
     "turbo": "^1.10.14",
-    "vue-demi": "^0.13.11"
+    "vue": "file:./fixtures/empty",
+    "vue-router": "file:./fixtures/empty",
+    "vue-server-renderer": "file:./fixtures/empty"
   },
   "volta": {
     "node": "18.18.0",
