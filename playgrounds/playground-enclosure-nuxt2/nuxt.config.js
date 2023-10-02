@@ -28,7 +28,6 @@ export default {
 
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/composition-api',
-    '@passerelle/enclosure-nuxt/v2/dist'
+    '@nuxtjs/composition-api'
   ]
 }

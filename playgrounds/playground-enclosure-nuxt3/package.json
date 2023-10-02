@@ -4,15 +4,14 @@
   "type": "module",
   "scripts": {
     "prepare": "nuxt prepare",
-    "dev": "nuxt dev --port 5175",
+    "dev": "nuxt dev --port 5173",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .nuxt"
   },
   "dependencies": {
-    "@passerelle/enclosure-nuxt": "0.0.1",
+    "@passerelle/enclosure-vue": "0.0.1",
     "fixtures-vue-components": "file:../../fixtures/vue-components",
-    "nuxt": "^3.7.4",
-    "vue": "^3.3.4"
+    "nuxt": "^3.7.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest"

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { BridgeFrame as BridgeFrameComponent } from '#components'
-import type { ParentToChild, ChildToParent } from '@passerelle/enclosure-vue'
+import { BridgeFrame, type ParentToChild, type ChildToParent } from '@passerelle/enclosure-vue'
 
 definePageMeta({
   key: 'bridge'
@@ -26,7 +25,7 @@ const childToParent = (({ path, params }) => {
   return { path: `/bridge${path}`, params }
 }) satisfies ChildToParent
 
-const bridge = ref<typeof BridgeFrameComponent>()
+const bridge = ref<typeof BridgeFrame>()
 </script>
 
 <template>

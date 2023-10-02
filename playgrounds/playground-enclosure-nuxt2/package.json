@@ -3,22 +3,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nuxt --port 5176",
+    "dev": "nuxt --port 5173",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .nuxt"
   },
   "devDependencies": {
-    "@intlify/vue-router-bridge": "^1.0.1",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/composition-api": "^0.33.1",
-    "@passerelle/enclosure-nuxt": "0.0.1",
+    "@passerelle/enclosure-vue": "0.0.1",
     "core-js": "^3.25.3",
     "fixtures-vue-components": "file:../../fixtures/vue-components",
     "nuxt": "^2.15.8",
-    "ts-loader": "^8.4.0",
-    "vue": "^2.7.14",
-    "vue-demi": "^0.13.5",
-    "vue-router": "^3.6.5"
+    "ts-loader": "^8.4.0"
   }
 }

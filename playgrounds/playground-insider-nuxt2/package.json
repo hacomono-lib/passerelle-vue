@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "prepare": "nuxt prepare",
-    "dev": "nuxt dev playground --port 5176",
+    "dev": "nuxt dev playground --port 5174",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .nuxt"
   },

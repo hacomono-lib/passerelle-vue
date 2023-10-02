@@ -1,0 +1,20 @@
+{
+  "name": "playground-enclosure-vue2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite . --port 5173",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@intlify/vue-router-bridge": "^1.0.1",
+    "@passerelle/enclosure-vue": "^0.0.1",
+    "@vue/composition-api": "^1.7.2",
+    "fixtures-vue-components": "file:../../fixtures/vue-components",
+    "vite": "^4.3.0",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue": "^2.7.14",
+    "vue-demi": "^0.13.5",
+    "vue-router": "^3.6.5"
+  }
+}

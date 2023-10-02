@@ -34,6 +34,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
+    "@intlify/vue-router-bridge": "file:./fixtures/empty",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "changesets": "^1.0.2",
@@ -44,6 +45,7 @@
     "prettier": "^2.8.8",
     "turbo": "^1.10.14",
     "vue": "file:./fixtures/empty",
+    "vue-demi": "file:./fixtures/empty",
     "vue-router": "file:./fixtures/empty",
     "vue-server-renderer": "file:./fixtures/empty"
   },

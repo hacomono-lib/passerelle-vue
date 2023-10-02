@@ -5,6 +5,10 @@
       "name": "#root"
     },
     {
+      "path": "./_n",
+      "name": "___PACKAGES___"
+    },
+    {
       "path": "../packages/enclosure-vue",
       "name": "@passerelle/enclosure-vue"
     },
@@ -13,24 +17,24 @@
       "name": "@passerelle/insider-vue"
     },
     {
-      "path": "../packages/enclosure-nuxt",
-      "name": "@passerelle/enclosure-nuxt"
-    },
-    {
       "path": "../packages/insider-nuxt",
       "name": "@passerelle/insider-nuxt"
     },
     {
-      "path": "../packages/insider-nuxt",
-      "name": "@passerelle/insider-nuxt"
+      "path": "./_p",
+      "name": "___PLAYGROUNDS___"
     },
     {
       "path": "../playgrounds/playground-enclosure-static",
       "name": "#playground/enclosure-static"
     },
     {
-      "path": "../playgrounds/playground-enclosure-vue",
-      "name": "#playground/enclosure-vue"
+      "path": "../playgrounds/playground-enclosure-vue2",
+      "name": "#playground/enclosure-vue2"
+    },
+    {
+      "path": "../playgrounds/playground-enclosure-vue3",
+      "name": "#playground/enclosure-vue3"
     },
     {
       "path": "../playgrounds/playground-enclosure-nuxt2",
@@ -45,8 +49,12 @@
       "name": "#playground/insider-static"
     },
     {
-      "path": "../playgrounds/playground-insider-vue",
-      "name": "#playground/insider-vue"
+      "path": "../playgrounds/playground-insider-vue2",
+      "name": "#playground/insider-vue2"
+    },
+    {
+      "path": "../playgrounds/playground-insider-vue3",
+      "name": "#playground/insider-vue3"
     },
     {
       "path": "../playgrounds/playground-insider-nuxt2",
@@ -55,6 +63,10 @@
     {
       "path": "../playgrounds/playground-insider-nuxt3",
       "name": "#playground/insider-nuxt3"
+    },
+    {
+      "path": "./_f",
+      "name": "___FIXTURES___"
     },
     {
       "path": "../fixtures/vue-components",
