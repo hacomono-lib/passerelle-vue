@@ -2,8 +2,8 @@ import { defineComponent, ref, h, type PropType } from 'vue-demi'
 import type { RouteLocationNormalized } from '@intlify/vue-router-bridge'
 import type { NavigateMessage, HrefMessage, MessageKey, Json } from '@passerelle/enclosure'
 
-import type { ChildToParent, ParentToChild } from '../lib/types'
-import { useIframeBridge } from '../composables/useIframeBridge'
+import type { ChildToParent, ParentToChild } from './types'
+import { useIframeBridge } from './useIframeBridge'
 
 export interface SendData<T extends Json> {
   key: MessageKey<T>

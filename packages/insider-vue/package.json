@@ -4,7 +4,7 @@
   "description": "passerelle insider module for vue2 or vue3",
   "repository": {
     "type": "git",
-    "url": "git@github.com:hacomono-lib/passerelle.git",
+    "url": "git@github.com:hacomono-lib/passerelle-vue.git",
     "directory": "packages/insider-vue"
   },
   "license": "MIT",
@@ -49,14 +49,10 @@
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0",
-    "vue": "^2.6.0 || >=3.0.0",
-    "vue-router": "^4.0.0 || ^3.0.0"
+    "vue": "^2.6.0 || >=3.0.0"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
-      "optional": true
-    },
-    "vue-router": {
       "optional": true
     }
   },

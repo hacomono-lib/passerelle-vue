@@ -3,8 +3,8 @@ import { onBeforeRouteUpdate, useRouter, type RouteLocationNormalized } from '@i
 import { ensureNotNil } from 'type-assurer'
 import { createCommunicator as create, type Communicator } from '@passerelle/enclosure'
 
-import type { IframeRef, IframeBridgeConfig } from '../lib/types'
-import { name } from '../../package.json'
+import type { IframeRef, IframeBridgeConfig } from './types'
+import { name } from '../package.json'
 
 const isSSR = typeof window === 'undefined'
 
