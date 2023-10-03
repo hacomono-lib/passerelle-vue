@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
-import { RouterView } from '@intlify/vue-router-bridge'
+import { defineComponent } from 'vue'
+import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
 import Playground from 'fixture-vue-component'
 
@@ -8,7 +8,8 @@ export default defineComponent({
   name: 'App',
   components: {
     Header,
-    Playground
+    Playground,
+    RouterView
   }
 })
 </script>

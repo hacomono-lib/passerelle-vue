@@ -7,11 +7,11 @@ export default defineConfig({
   mode: 'development',
   base: '/',
   plugins: [
-    createVuePlugin(),
+    createVuePlugin()
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
 })

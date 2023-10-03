@@ -1,4 +1,6 @@
-<template>transition-log</template>
+<template>
+  <div>transition-log</div>
+</template>
 
 <script>
 import { defineComponent } from 'vue'

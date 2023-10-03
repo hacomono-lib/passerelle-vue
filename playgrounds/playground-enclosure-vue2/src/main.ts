@@ -1,14 +1,17 @@
 import './assets/css/main.css'
 
-import { createApp } from 'vue-demi'
+// import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
 import router from './router'
 
-import { enclosure } from '@passerelle/enclosure-vue'
+Vue.use(VueRouter)
 
-const app = createApp(App)
-
-app.use(router)
-app.use(enclosure)
-
-app.mount('#app')
+new Vue({
+  el: '#app',
+  router,
+  render(h) {
+    return h(App)
+  }
+})

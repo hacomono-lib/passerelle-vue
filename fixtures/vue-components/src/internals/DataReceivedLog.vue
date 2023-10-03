@@ -1,1 +1,3 @@
-<template>data-received-log</template>
+<template>
+  <div>data-received-log</div>
+</template>

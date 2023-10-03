@@ -1,14 +1,12 @@
 <template>
   <nav>
-    <template
+    <Tag
       v-for="t in tags"
-      :key="t">
-      <Tag
-        :tag="t"
-        :label="label(t)"
-        :selected="t === selected"
-        @click="select(t)" />
-    </template>
+      :key="t"
+      :tag="t"
+      :label="label(t)"
+      :selected="t === selected"
+      @click="select(t)" />
   </nav>
 </template>
 

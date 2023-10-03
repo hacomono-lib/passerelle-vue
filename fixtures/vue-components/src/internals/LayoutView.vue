@@ -1,1 +1,3 @@
-<template>layout-view</template>
+<template>
+  <div>layout-view</div>
+</template>

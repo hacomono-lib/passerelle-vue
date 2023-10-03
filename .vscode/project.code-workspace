@@ -89,7 +89,8 @@
       "editor.rulers": [150],
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "liveServer.settings.multiRootWorkspaceName": "#root"
   },
   "extensions": {
     "recommendations": [

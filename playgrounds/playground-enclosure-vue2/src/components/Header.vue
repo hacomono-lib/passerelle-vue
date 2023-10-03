@@ -1,8 +1,9 @@
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
-import { RouterLink } from '@intlify/vue-router-bridge'
+import { defineComponent } from 'vue'
+import { RouterLink } from 'vue-router'
 
 export default defineComponent({
+  name: 'Header',
   components: {
     RouterLink
   }
@@ -19,7 +20,7 @@ export default defineComponent({
       height="125" />
 
     <div class="wrapper">
-      <h1>@passerelle/enclosure-vue</h1>
+      <h1>enclosure vue2</h1>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

@@ -1,1 +1,3 @@
-<template>data-sender</template>
+<template>
+  <div>data-sender</div>
+</template>

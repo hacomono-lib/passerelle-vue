@@ -5757,12 +5757,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/reactivity@file:./fixtures/empty::locator=passerelle%40workspace%3A.":
+  version: 0.0.0
+  resolution: "@vue/reactivity@file:./fixtures/empty#./fixtures/empty::hash=1565a9&locator=passerelle%40workspace%3A."
+  checksum: 5fba28ec416891c8ef40317f6f292c9eadfb9eab99cc0995b3cdf35cafa203cc466f957bf05f22752b1253d809fc9958b5a8b6ec897d114fa5be5e5112630697
+  languageName: node
+  linkType: hard
+
 "@vue/reactivity@npm:3.3.4, @vue/reactivity@npm:^3.3.0":
   version: 3.3.4
   resolution: "@vue/reactivity@npm:3.3.4"
   dependencies:
     "@vue/shared": 3.3.4
   checksum: 81c3d0c587d23656a57a7a31afb51357274f6512b51baffc67cda183b2361a7e65e646029c26a8bc28587f26b65bba808dcd93cdd3bacab48d2b99d11ad0ec97
+  languageName: node
+  linkType: hard
+
+"@vue/runtime-core@file:./fixtures/empty::locator=passerelle%40workspace%3A.":
+  version: 0.0.0
+  resolution: "@vue/runtime-core@file:./fixtures/empty#./fixtures/empty::hash=81b5a8&locator=passerelle%40workspace%3A."
+  checksum: c643405fc6f11ee509b88b90aa6b41a05ac8ff7fe11350ccbc74002075d4321c73a3a88949f9f8462728a3de9e43ae0bb07d6a74aebb3fb3b36bf54c8eea07b3
   languageName: node
   linkType: hard
 
@@ -5773,6 +5787,13 @@ __metadata:
     "@vue/reactivity": 3.3.4
     "@vue/shared": 3.3.4
   checksum: d402da51269658cba5d857d65fbe322121160bcb1a6fcf03601d5183705e92505c6e90418f491a331ca3e27628f457a6ca7158b9add25f5b0cf5cf53664b8011
+  languageName: node
+  linkType: hard
+
+"@vue/runtime-dom@file:./fixtures/empty::locator=passerelle%40workspace%3A.":
+  version: 0.0.0
+  resolution: "@vue/runtime-dom@file:./fixtures/empty#./fixtures/empty::hash=bea716&locator=passerelle%40workspace%3A."
+  checksum: 02180ec06d230db4760e518d15a7c9b2d062b97a0d2ba60246c3ca3c339c4919a914658d0deabe121507be3c2443bcc06d737855527c6342753429326df170cb
   languageName: node
   linkType: hard
 
@@ -5796,6 +5817,13 @@ __metadata:
   peerDependencies:
     vue: 3.3.4
   checksum: e8598ed1a44df70edaea0ad6786aea6443b9b3d9266249eec5690401859d72d45a1e29ba3eef20e37a95f020abd5e763088b79070ee848af436a4390a253a37a
+  languageName: node
+  linkType: hard
+
+"@vue/shared@file:./fixtures/empty::locator=passerelle%40workspace%3A.":
+  version: 0.0.0
+  resolution: "@vue/shared@file:./fixtures/empty#./fixtures/empty::hash=c50ad4&locator=passerelle%40workspace%3A."
+  checksum: 85b3b95516d48429ff3b2212e89ac51a44abe4b56c7dc8de64d4227ffbd946d75c43270158ecc4dbb43fa95429417984871178b473041410dc010fdf819e802e
   languageName: node
   linkType: hard
 
@@ -10186,97 +10214,97 @@ __metadata:
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-enclosure-nuxt2%40workspace%3Aplaygrounds%2Fplayground-enclosure-nuxt2":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-enclosure-nuxt2%40workspace%3Aplaygrounds%2Fplayground-enclosure-nuxt2"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-enclosure-nuxt2%40workspace%3Aplaygrounds%2Fplayground-enclosure-nuxt2"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-enclosure-nuxt3%40workspace%3Aplaygrounds%2Fplayground-enclosure-nuxt3":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-enclosure-nuxt3%40workspace%3Aplaygrounds%2Fplayground-enclosure-nuxt3"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-enclosure-nuxt3%40workspace%3Aplaygrounds%2Fplayground-enclosure-nuxt3"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-enclosure-vue2%40workspace%3Aplaygrounds%2Fplayground-enclosure-vue2":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-enclosure-vue2%40workspace%3Aplaygrounds%2Fplayground-enclosure-vue2"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-enclosure-vue2%40workspace%3Aplaygrounds%2Fplayground-enclosure-vue2"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-enclosure-vue3%40workspace%3Aplaygrounds%2Fplayground-enclosure-vue3":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-enclosure-vue3%40workspace%3Aplaygrounds%2Fplayground-enclosure-vue3"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-enclosure-vue3%40workspace%3Aplaygrounds%2Fplayground-enclosure-vue3"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-insider-nuxt2%40workspace%3Aplaygrounds%2Fplayground-insider-nuxt2":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-insider-nuxt2%40workspace%3Aplaygrounds%2Fplayground-insider-nuxt2"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-insider-nuxt2%40workspace%3Aplaygrounds%2Fplayground-insider-nuxt2"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-insider-nuxt3%40workspace%3Aplaygrounds%2Fplayground-insider-nuxt3":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-insider-nuxt3%40workspace%3Aplaygrounds%2Fplayground-insider-nuxt3"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-insider-nuxt3%40workspace%3Aplaygrounds%2Fplayground-insider-nuxt3"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-insider-vue2%40workspace%3Aplaygrounds%2Fplayground-insider-vue2":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-insider-vue2%40workspace%3Aplaygrounds%2Fplayground-insider-vue2"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-insider-vue2%40workspace%3Aplaygrounds%2Fplayground-insider-vue2"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=playground-insider-vue3%40workspace%3Aplaygrounds%2Fplayground-insider-vue3":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=03f6a6&locator=playground-insider-vue3%40workspace%3Aplaygrounds%2Fplayground-insider-vue3"
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=c49430&locator=playground-insider-vue3%40workspace%3Aplaygrounds%2Fplayground-insider-vue3"
   dependencies:
     vue: ^2.7.0 || >=3.0.0
   dependenciesMeta:
     vue:
       optional: true
-  checksum: 770a599bf393a481e06e18d1b9702387d297cfedde18129876018a126c603b238c4f18fb7f4b360ce5161153e6f002f05465a97ced7f36742cd1784dd17332b2
+  checksum: b2995fef355b9db8fc8888b80270f9a5ec072de6d105110ca5108c2393ed38cfb6f023dd9780cdba3d82560cb9a2d8ce560c6137571d5e1edf2bcfc59f0e9425
   languageName: node
   linkType: hard
 
@@ -14865,6 +14893,10 @@ __metadata:
     "@intlify/vue-router-bridge": "file:./fixtures/empty"
     "@typescript-eslint/eslint-plugin": ^5.60.0
     "@typescript-eslint/parser": ^5.60.0
+    "@vue/reactivity": "file:./fixtures/empty"
+    "@vue/runtime-core": "file:./fixtures/empty"
+    "@vue/runtime-dom": "file:./fixtures/empty"
+    "@vue/shared": "file:./fixtures/empty"
     changesets: ^1.0.2
     eslint: ^8.43.0
     eslint-config-prettier: ^8.8.0
