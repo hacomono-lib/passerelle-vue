@@ -21,16 +21,24 @@
       "name": "___EXAMPLES___"
     },
     {
-      "path": "../examples/enclosure-vue2",
-      "name": "#example/enclosure-vue2"
+      "path": "../examples/enclosure-vue2.7",
+      "name": "#example/enclosure-vue2.7"
+    },
+    {
+      "path": "../examples/enclosure-vue2.6",
+      "name": "#example/enclosure-vue2.6"
     },
     {
       "path": "../examples/enclosure-vue3",
       "name": "#example/enclosure-vue3"
     },
     {
-      "path": "../examples/insider-vue2",
-      "name": "#example/insider-vue2"
+      "path": "../examples/insider-vue2.7",
+      "name": "#example/insider-vue2.7"
+    },
+    {
+      "path": "../examples/insider-vue2.6",
+      "name": "#example/insider-vue2.6"
     },
     {
       "path": "../examples/insider-vue3",

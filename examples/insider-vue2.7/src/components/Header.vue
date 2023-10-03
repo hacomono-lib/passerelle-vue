@@ -1,13 +1,5 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { RouterLink } from 'vue-router'
-
-export default defineComponent({
-  name: 'Header',
-  components: {
-    RouterLink
-  }
-})
+<script setup lang="ts">
+import { RouterLink } from '@intlify/vue-router-bridge'
 </script>
 
 <template>
@@ -20,13 +12,14 @@ export default defineComponent({
       height="125" />
 
     <div class="wrapper">
-      <h1>enclosure vue2</h1>
-
+      <h1>@passerelle/insider-vue</h1>
+      <p>
+        <slot />
+      </p>
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/bridge/about">About</RouterLink>
-        <RouterLink to="/bridge/works">Works</RouterLink>
-        <RouterLink to="/bridge/contact">Contact</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/works">Works</RouterLink>
+        <RouterLink to="/contact">Contact</RouterLink>
       </nav>
     </div>
   </header>
@@ -38,11 +31,17 @@ export default defineComponent({
   margin: 0 auto 2rem;
 }
 
+p {
+  width: 100%;
+}
+
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 2rem;
+
+  margin-left: -1rem;
+  padding: 1rem 0;
 }
 
 nav a.router-link-exact-active {
@@ -77,14 +76,5 @@ header .wrapper {
   display: flex;
   place-items: flex-start;
   flex-wrap: wrap;
-}
-
-nav {
-  text-align: left;
-  margin-left: -1rem;
-  font-size: 1rem;
-
-  padding: 1rem 0;
-  margin-top: 1rem;
 }
 </style>

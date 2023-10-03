@@ -1,5 +1,13 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { RouterLink } from 'vue-router'
+
+export default defineComponent({
+  name: 'Header',
+  components: {
+    RouterLink
+  }
+})
 </script>
 
 <template>
@@ -12,7 +20,7 @@ import { RouterLink } from 'vue-router'
       height="125" />
 
     <div class="wrapper">
-      <h1>enclosure vue 3</h1>
+      <h1>enclosure vue (2.7)</h1>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>

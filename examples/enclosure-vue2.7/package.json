@@ -8,11 +8,11 @@
   },
   "devDependencies": {
     "@passerelle/enclosure-vue": "file:../../packages/enclosure-vue",
-    "@vue/composition-api": "^1.7.2",
     "fixtures-vue-components": "file:../../fixtures/vue-components",
     "vite": "^4.3.0",
     "vite-plugin-vue2": "^2.0.3",
-    "vue": "^2.7.14",
-    "vue-router": "^3.6.5"
+    "vue": "~2.7.0",
+    "vue-router": "^3.6.5",
+    "vue-template-compiler": "~2.7.0"
   }
 }
