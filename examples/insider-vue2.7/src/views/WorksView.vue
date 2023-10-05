@@ -1,3 +1,5 @@
 <template>
-  /works
+  <span>
+    /works
+  </span>
 </template>

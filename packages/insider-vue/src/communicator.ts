@@ -1,4 +1,4 @@
-import { shallowRef, unref, readonly, computed } from 'vue-demi'
+import { shallowRef, unref, readonly, computed, provide, isVue3 } from 'vue-demi'
 import type { Ref, InjectionKey, App } from 'vue-demi'
 import type { Router } from '@intlify/vue-router-bridge'
 import { createCommunicator as create } from '@passerelle/insider'
@@ -35,14 +35,18 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
 
   createClientCommunicator(config)
 
-  app.provide(COMMUNICATOR_KEY, insideCommunicator)
+  provide(COMMUNICATOR_KEY, insideCommunicator)
 
-  Object.defineProperty(app.config.globalProperties, '$passerelle', {
-    enumerable: true,
-    get: () => {
-      return insideCommunicator
-    },
-  })
+  if (isVue3) {
+    Object.defineProperty(app.config.globalProperties, '$passerelle', {
+      enumerable: true,
+      get: () => {
+        return insideCommunicator
+      },
+    })
+  }
+
+  // TODO: Vue2
 }
 
 function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator {

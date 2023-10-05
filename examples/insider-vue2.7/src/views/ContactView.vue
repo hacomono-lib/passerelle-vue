@@ -1,3 +1,5 @@
 <template>
-  /contact
+  <span>
+    /contact
+  </span>
 </template>

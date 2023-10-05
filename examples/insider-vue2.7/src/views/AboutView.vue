@@ -1,3 +1,5 @@
 <template>
-  /about
+  <span>
+    /about
+  </span>
 </template>
