@@ -25,10 +25,6 @@
       "name": "#example/enclosure-vue2.7"
     },
     {
-      "path": "../examples/enclosure-vue2.6",
-      "name": "#example/enclosure-vue2.6"
-    },
-    {
       "path": "../examples/enclosure-vue3",
       "name": "#example/enclosure-vue3"
     },

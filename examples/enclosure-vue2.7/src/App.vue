@@ -30,6 +30,13 @@ export default defineComponent({
 <style scoped>
 section {
   line-height: 1.5;
+}
+
+div {
   height: 95vh;
+  width: inherit;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 2rem;
 }
 </style>

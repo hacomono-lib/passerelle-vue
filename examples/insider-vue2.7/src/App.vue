@@ -1,14 +1,16 @@
-<script setup lang="ts">
-import { onMounted } from 'vue-demi'
-import { RouterView } from '@intlify/vue-router-bridge'
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import { useCommunicator } from '@passerelle/insider-vue'
 import Playground from 'fixtures-vue-components'
 
-onMounted(() => {
-  const communicator = useCommunicator()
-
-  ;(window as any).getCommunicator = () => communicator
+export default defineComponent({
+  name: 'App',
+  components: {
+    Header,
+    RouterView,
+    Playground
+  }
 })
 </script>
 

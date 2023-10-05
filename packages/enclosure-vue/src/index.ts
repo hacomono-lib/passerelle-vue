@@ -1,4 +1,4 @@
-import BridgeFrame from './BridgeFrame'
+import PasserelleFrame from './component'
 export type { ParentToChild, ChildToParent, IframeBridgeConfig } from './types'
 
-export { BridgeFrame }
+export { PasserelleFrame }

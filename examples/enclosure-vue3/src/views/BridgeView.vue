@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import {
+  PasserelleFrame,
   type ParentToChild,
   type ChildToParent
 } from '@passerelle/enclosure-vue'
@@ -35,9 +36,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <BridgeFrame
+  <PasserelleFrame
     class="frame"
     ref="bridge"
+    origin="*"
     communicate-key="passerelle-playground"
     :initial-src="defaultPath"
     :to-child-path="parentToChild"
@@ -48,5 +50,7 @@ onMounted(() => {
 <style scoped>
 .frame {
   border: 1px solid var(--color-border);
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -3,7 +3,7 @@ import type { RouteLocationNormalized } from '@intlify/vue-router-bridge'
 import type { NavigateMessage, HrefMessage, MessageKey, Json } from '@passerelle/enclosure'
 
 import type { ChildToParent, ParentToChild } from './types'
-import { useIframeBridge } from './useIframeBridge'
+import { useIframeBridge } from './composable'
 
 export interface SendData<T extends Json> {
   key: MessageKey<T>
@@ -98,7 +98,7 @@ export default defineComponent({
      * @param value
      */
     function sendData<T extends Json>(key: MessageKey<T>, value: T) {
-      communicator?.sendData(key, value)
+      communicator.value?.sendData(key, value)
     }
 
     /**
@@ -106,7 +106,7 @@ export default defineComponent({
      * @param href
      */
     function href(href: string) {
-      communicator?.href({ href })
+      communicator.value?.href({ href })
     }
 
     /**
@@ -115,7 +115,7 @@ export default defineComponent({
      * @param params
      */
     function navigate(path: string, params: Record<string, string | string[]>) {
-      communicator?.navigate({ path, params })
+      communicator.value?.navigate({ path, params })
     }
 
     expose({

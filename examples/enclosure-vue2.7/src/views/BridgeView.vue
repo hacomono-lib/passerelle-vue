@@ -2,14 +2,14 @@
 import { defineComponent, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router/composables'
 import {
+  PasserelleFrame,
   type ParentToChild,
   type ChildToParent,
-  BridgeFrame
 } from '@passerelle/enclosure-vue'
 
 export default defineComponent({
   components: {
-    BridgeFrame
+    PasserelleFrame
   },
   setup() {
     const route = useRoute()
@@ -49,9 +49,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <BridgeFrame
+  <PasserelleFrame
     class="frame"
     ref="bridge"
+    origin="*"
     communicate-key="passerelle-playground"
     :initial-src="defaultPath"
     :to-child-path="parentToChild"
@@ -62,5 +63,7 @@ export default defineComponent({
 <style scoped>
 .frame {
   border: 1px solid var(--color-border);
+  width: 100%;
+  height: 100%;
 }
 </style>

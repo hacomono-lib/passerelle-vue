@@ -6,12 +6,12 @@
     "dev": "vite . --port 5174"
   },
   "devDependencies": {
-    "@intlify/vue-router-bridge": "^1.0.1",
-    "@passerelle/insider-vue": "^0.0.1",
+    "@passerelle/insider-vue": "file:../../packages/insider-vue",
     "fixtures-vue-components": "file:../../fixtures/vue-components",
     "vite": "^4.3.0",
-    "vue": "^2.7.14",
-    "vue-demi": "^0.13.5",
-    "vue-router": "^3.6.5"
+    "vite-plugin-vue2": "^2.0.3",
+    "vue": "~2.7.0",
+    "vue-router": "~3.6.5",
+    "vue-template-compiler": "~2.7.0"
   }
 }
