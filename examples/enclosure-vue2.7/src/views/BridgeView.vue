@@ -29,6 +29,9 @@ export default defineComponent({
     }
 
     const childToParent: ChildToParent = ({ path, params }) => {
+      if (path === '/') {
+        return { path: '/' }
+      }
       return { path: `/bridge${path}`, params }
     }
 
