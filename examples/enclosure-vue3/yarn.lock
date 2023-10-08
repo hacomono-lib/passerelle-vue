@@ -252,7 +252,7 @@ __metadata:
 
 "@passerelle/enclosure-vue@file:../../packages/enclosure-vue::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=46d5a0&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=44c069&locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure": ^1.0.0
@@ -267,7 +267,7 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: 767a9fcf69abb5a6c4bfcdea307c6d7a297ee8943dd5dd891990999c26552260deaa485f325e001f7783b34780f5482069ef62c93e2a1b3ff6175a4d00c3de71
+  checksum: 7a534dc8cd5592aed6b9641011e87856c586011c91710ffd8c6dba5d2b54efb04c7c2a9067a4f26b09cd33d6aa8c0655a41e0062f016a500702e5a46152d559d
   languageName: node
   linkType: hard
 

@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import { defineComponent, ref, h, type IframeHTMLAttributes, type HTMLAttributes, type PropType } from 'vue-demi'
+import { defineComponent, ref, h, onMounted, type IframeHTMLAttributes, type HTMLAttributes, type PropType } from 'vue-demi'
 import type { RouteLocationNormalized } from '@intlify/vue-router-bridge'
 import type {
   NavigateMessage,
@@ -22,7 +22,7 @@ export interface Props {
    * Name of the PasserelleFrame component. and the iframe's name attribute.
    * Required for use with composable
    */
-  name: string
+  name?: string
 
   /**
    * URL to be specified in the iframe's src attribute.
@@ -32,12 +32,12 @@ export interface Props {
   /**
    * Function to craete a new path on the insider side based on the transition information of the enclosuere side.
    */
-  toChildPath: ParentToChild
+  toChildPath?: ParentToChild
 
   /**
    * Function to craete a new path on the enclosure side based on the transition information of the insider side.
    */
-  toParentPath: ChildToParent
+  toParentPath?: ChildToParent
 
   /**
    * The origin of the insider side.
@@ -95,15 +95,26 @@ export default defineComponent({
   name: 'PasserelleFrame',
 
   props: {
+    name: String,
+    initialSrc: {
+      type: String,
+      required: true
+    },
+    toChildPath: Function as PropType<Props['toChildPath']>,
+    toParentPath: Function as PropType<Props['toParentPath']>,
     origin: {
+      type: String,
       default: defaultProps.origin
     },
     collabRequestTimeout: {
+      type: Number,
       default: defaultProps.collabRequestTimeout
     },
     requiredCollab: {
+      type: Boolean,
       default: defaultProps.requiredCollab
-    }
+    },
+    communicateKey: String
   } as unknown as PropOption,
 
   emits: ['navigate', 'href', 'data'] as unknown as EmitOption,
@@ -112,6 +123,12 @@ export default defineComponent({
 
   setup(props, { emit, expose, attrs }) {
     const frame = ref<HTMLIFrameElement>()
+
+    onMounted(() => {
+      if (!frame.value || frame.value.src === props.initialSrc) return
+
+      frame.value.src = props.initialSrc!
+    })
 
     const communicator = useIframeBridge(frame, {
       toChildPath: (location: RouteLocationNormalized) => props.toChildPath?.(location) ?? location.path,
@@ -161,16 +178,17 @@ export default defineComponent({
       communicator.value?.navigate({ path, params })
     }
 
-    const {
-      'initial-src': _1,
-      'to-child-path': _2,
-      'to-parent-path': _3,
-      origin: _4,
-      'collab-request-timeout': _5,
-      'required-collab': _6,
-      'communicate-key': _7,
-      ...iframeAttrs
-    } = attrs
+    const toSnakeCase = (str: string) => str.replace(/[A-Z]/g, (s) => `_${s.toLowerCase()}`)
+
+    const passKeys = ['name']
+
+    const omitKeys = Object.keys(props).map(toSnakeCase).filter((k) => !passKeys.includes(k))
+
+    const iframeAttrs = {
+      name: props.name,
+      src: props.initialSrc,
+      ...Object.entries(attrs).filter(([k]) => !omitKeys.includes(k)).reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {}),
+    }
 
     expose({
       sendData,
@@ -178,6 +196,6 @@ export default defineComponent({
       navigate
     })
 
-    return () => h('iframe', { ref: frame, src: props.initialSrc, ...iframeAttrs })
+    return () => h('iframe', { ref: frame, ...iframeAttrs })
   }
 })
