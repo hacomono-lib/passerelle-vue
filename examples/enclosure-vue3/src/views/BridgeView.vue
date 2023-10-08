@@ -24,6 +24,9 @@ const parentToChild: ParentToChild = (location) => {
 }
 
 const childToParent: ChildToParent = ({ path, params }) => {
+  if (path === '/') {
+    return { path: '/' }
+  }
   return { path: `/bridge${path}`, params }
 }
 
@@ -38,6 +41,7 @@ onMounted(() => {
 <template>
   <PasserelleFrame
     class="frame"
+    name="passerelle-bridge"
     ref="bridge"
     origin="*"
     communicate-key="passerelle-playground"

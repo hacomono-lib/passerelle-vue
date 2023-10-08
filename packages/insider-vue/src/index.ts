@@ -14,11 +14,11 @@ export { createCommunicator } from './communicator'
 
 export { type InsiderVueConfig, COMMUNICATOR_KEY }
 
-export const insider = {
+export const insider: Plugin<InsiderVueConfig | Communicator> = {
   install(app: App, opt: InsiderVueConfig) {
     initCommunicator(app, opt)
   }
-} satisfies Plugin<InsiderVueConfig | Communicator>
+}
 
 declare module '@vue/runtime-core' {
   export interface ComponentCustomProperties {

@@ -858,10 +858,10 @@ __metadata:
 
 "fixtures-vue-components@file:../../fixtures/vue-components::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.0
-  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=540517&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "fixtures-vue-components@file:../../fixtures/vue-components#../../fixtures/vue-components::hash=cc3805&locator=example-enclosure-vue3%40workspace%3A."
   peerDependencies:
     vue: ^2.6.0 || >=3.0.0
-  checksum: f977aa2cb6439481bdedbf45409a1b8104cbd02f37e19052484ee489ab2a69608798c733fe39cf0f4476f90d4d095250a02c5e662e4c82645176f7f77aac09cf
+  checksum: 038f158ba932893b7b03a0c9fc8a8d4799195d5ce491fba1bf1746319a8bf56217d75a664b2b1fc7d8db97af804bb8bdae31f5891dcfe40b3e4094cf64e5735c
   languageName: node
   linkType: hard
 

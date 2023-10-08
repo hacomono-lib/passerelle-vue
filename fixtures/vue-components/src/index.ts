@@ -1,3 +1,4 @@
-import Playground from './internals/index.vue'
+import EnclosurePlayground from './internals/enclosure/Playground.vue'
+import InsiderPlayground from './internals/insider/Playground.vue'
 
-export default Playground
+export { EnclosurePlayground, InsiderPlayground }

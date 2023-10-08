@@ -2,13 +2,13 @@
 import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import Playground from 'fixture-vue-component'
+import { EnclosurePlayground } from 'fixture-vue-component'
 
 export default defineComponent({
   name: 'App',
   components: {
     Header,
-    Playground,
+    EnclosurePlayground,
     RouterView
   }
 })
@@ -18,7 +18,7 @@ export default defineComponent({
   <div>
     <section>
       <Header />
-      <Playground mode="enclosure" />
+      <EnclosurePlayground />
     </section>
 
     <section>

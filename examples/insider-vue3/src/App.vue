@@ -3,7 +3,7 @@ import { onMounted } from 'vue-demi'
 import { RouterView } from '@intlify/vue-router-bridge'
 import Header from './components/Header.vue'
 import { useCommunicator } from '@passerelle/insider-vue'
-import Playground from 'fixtures-vue-components'
+import { InsiderPlayground } from 'fixtures-vue-components'
 
 onMounted(() => {
   const communicator = useCommunicator()
@@ -17,7 +17,7 @@ onMounted(() => {
     <Header>
       <RouterView />
     </Header>
-    <Playground mode="insider" />
+    <InsiderPlayground api="optional"/>
   </section>
 </template>
 

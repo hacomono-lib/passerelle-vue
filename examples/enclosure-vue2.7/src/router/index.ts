@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import BridgeView from '../views/BridgeView.vue'
 
 const router = new VueRouter({
-  // history: createWebHistory(import.meta.env.BASE_URL),
+  mode: 'history',
   routes: [
     {
       path: "/",

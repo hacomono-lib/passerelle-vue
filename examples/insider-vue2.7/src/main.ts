@@ -1,14 +1,20 @@
 import './assets/css/main.css'
 
-import { createApp } from 'vue-demi'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
 import router from './router'
 
 import { insider } from '@passerelle/insider-vue'
 
-const app = createApp(App)
 
-app.use(router)
-app.use(insider, { router, key: 'passerelle-playground', origin: '*' })
+Vue.use(VueRouter)
+Vue.use(insider, { router, key: 'passerelle-playground', origin: '*' })
 
-app.mount('#app')
+new Vue({
+  el: '#app',
+  router,
+  render(h) {
+    return h(App)
+  }
+})

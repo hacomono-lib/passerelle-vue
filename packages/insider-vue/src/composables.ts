@@ -1,16 +1,12 @@
-import { inject, onUnmounted, getCurrentInstance } from 'vue-demi'
+import { onUnmounted, getCurrentInstance, isVue3, isVue2 } from 'vue-demi'
 import type { MessageKey, Json } from '@passerelle/insider'
 
-import { COMMUNICATOR_KEY, type InsideCommunicator } from './communicator'
+import type {InsideCommunicator } from './communicator'
 
 export function onReceivedData<T extends Json>(
   key: MessageKey<T>,
   callback: (value: T) => void
 ): void {
-  if (!getCurrentInstance()) {
-    console.warn('onUpdateLayout can only be used in setup function')
-    return
-  }
 
   const communicator = useCommunicator()
 
@@ -26,5 +22,19 @@ export function onReceivedData<T extends Json>(
 }
 
 export function useCommunicator(): InsideCommunicator {
-  return inject(COMMUNICATOR_KEY)!
+  const instance = getCurrentInstance()
+  if (!instance) {
+    throw new Error('onUpdateLayout can only be used in setup function')
+  }
+
+  if (isVue3) {
+    return instance.appContext.config.globalProperties.$passerelle
+  }
+
+  if (isVue2) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (instance as any).$passerelle
+  }
+
+  throw new Error('not supported vue version')
 }

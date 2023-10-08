@@ -33,10 +33,6 @@
       "name": "#example/insider-vue2.7"
     },
     {
-      "path": "../examples/insider-vue2.6",
-      "name": "#example/insider-vue2.6"
-    },
-    {
       "path": "../examples/insider-vue3",
       "name": "#example/insider-vue3"
     },

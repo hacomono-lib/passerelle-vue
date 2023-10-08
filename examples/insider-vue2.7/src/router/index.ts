@@ -4,6 +4,7 @@ import ContactView from '../views/ContactView.vue'
 import WorksView from '../views/WorksView.vue'
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/about',

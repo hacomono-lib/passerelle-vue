@@ -12,11 +12,12 @@ import { RouterLink } from '@intlify/vue-router-bridge'
       height="125" />
 
     <div class="wrapper">
-      <h1>@passerelle/insider-vue</h1>
+      <h1>insider vue 3</h1>
       <p>
         <slot />
       </p>
       <nav>
+        <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/works">Works</RouterLink>
         <RouterLink to="/contact">Contact</RouterLink>

@@ -1,6 +1,6 @@
-import { shallowRef, unref, readonly, computed, provide, isVue3 } from 'vue-demi'
+import { shallowRef, unref, readonly, computed, isVue3, isVue2 } from 'vue-demi'
 import type { Ref, InjectionKey, App } from 'vue-demi'
-import type { Router } from '@intlify/vue-router-bridge'
+import type { Router, RouteParams } from '@intlify/vue-router-bridge'
 import { createCommunicator as create } from '@passerelle/insider'
 import type { Communicator, LayoutMetrix, CommunicateConfig, Json, MessageKey } from '@passerelle/insider'
 
@@ -35,8 +35,6 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
 
   createClientCommunicator(config)
 
-  provide(COMMUNICATOR_KEY, insideCommunicator)
-
   if (isVue3) {
     Object.defineProperty(app.config.globalProperties, '$passerelle', {
       enumerable: true,
@@ -46,7 +44,14 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
     })
   }
 
-  // TODO: Vue2
+  if (isVue2) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (app as any).prototype.$passerelle = insideCommunicator
+  }
+}
+
+function isSamePath(from: { path: string, params: RouteParams }, to: { path: string, params: RouteParams }): boolean {
+  return from.path === to.path && JSON.stringify(from.params) === JSON.stringify(to.params)
 }
 
 function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator {
@@ -64,7 +69,10 @@ function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator 
 
   communicator.hooks.on('navigate', (value) => {
     const { path, params = {} } = value
-    config.router.replace({ path, params })
+
+    if (!isSamePath(unref(config.router.currentRoute), { path, params })) {
+      config.router.replace({ path, params })
+    }
   })
 
   config.router.beforeEach((to, _from, next) => {

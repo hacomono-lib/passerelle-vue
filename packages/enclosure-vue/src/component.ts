@@ -1,92 +1,135 @@
-import { defineComponent, ref, h, type PropType } from 'vue-demi'
+/* eslint-disable max-lines-per-function */
+import { defineComponent, ref, h, type IframeHTMLAttributes, type HTMLAttributes, type PropType } from 'vue-demi'
 import type { RouteLocationNormalized } from '@intlify/vue-router-bridge'
-import type { NavigateMessage, HrefMessage, MessageKey, Json } from '@passerelle/enclosure'
+import type {
+  NavigateMessage,
+  HrefMessage,
+  MessageKey,
+  Json,
+  Communicator
+} from '@passerelle/enclosure'
 
-import type { ChildToParent, ParentToChild } from './types'
-import { useIframeBridge } from './composable'
+import type { ChildToParent, ParentToChild, OverloadParameters } from './types'
+import { useIframeBridge, isSSR } from './composables'
 
 export interface SendData<T extends Json> {
   key: MessageKey<T>
   value: T
 }
 
+export interface Props {
+  /**
+   * Name of the PasserelleFrame component. and the iframe's name attribute.
+   * Required for use with composable
+   */
+  name: string
+
+  /**
+   * URL to be specified in the iframe's src attribute.
+   */
+  initialSrc: string
+
+  /**
+   * Function to craete a new path on the insider side based on the transition information of the enclosuere side.
+   */
+  toChildPath: ParentToChild
+
+  /**
+   * Function to craete a new path on the enclosure side based on the transition information of the insider side.
+   */
+  toParentPath: ChildToParent
+
+  /**
+   * The origin of the insider side.
+   * @default location.origin
+   */
+  origin?: string
+
+  /**
+   * Timeout for requesting collaboration.
+   * @default 1000
+   */
+  collabRequestTimeout?: number
+
+  /**
+   * Whether to require collaboration.
+   * @default false
+   */
+  requiredCollab?: boolean
+
+  /**
+   * The key used to communicate with the insider side.
+   */
+  communicateKey?: string
+}
+
+type ExactProps = Props & Omit<IframeHTMLAttributes, keyof HTMLAttributes>
+
+const defaultProps = {
+  origin: () => (isSSR ? '' : location.origin),
+  collabRequestTimeout: 1000,
+  requiredCollab: false
+} satisfies Partial<{
+  [K in keyof ExactProps]: ExactProps[K] | (() => ExactProps[K])
+}>
+
+type PropOption = {
+  [K in keyof (ExactProps & Required<ExactProps>)]: {
+    type: PropType<ExactProps[K]>
+    required: ExactProps[K] extends undefined ? false : true,
+    default: (typeof defaultProps & Record<string , undefined>)[K] extends undefined ? undefined : ExactProps[K]
+  }
+}
+
+export interface Emits {
+  (e: 'navigate', value: NavigateMessage): void
+  (e: 'href', value: HrefMessage): void
+  (e: 'data', value: SendData<Json>): void
+}
+
+type EmitOption = {
+  [K in OverloadParameters<Emits>[0]]: (_value: OverloadParameters<Emits>[1]) => true
+}
+
 export default defineComponent({
+  name: 'PasserelleFrame',
+
   props: {
-    /**
-     * URL to be specified in the iframe's src attribute.
-     */
-    initialSrc: {
-      type: String,
-      required: true
-    },
-    /**
-     * Function to craete a new path on the insider side based on the transition information of the enclosuere side.
-     */
-    toChildPath: {
-      type: Function as PropType<ParentToChild>,
-      required: true
-    },
-    /**
-     * Function to create a new path on the enclosure side based on the transition information of the insider side.
-     */
-    toParentPath: {
-      type: Function as PropType<ChildToParent>,
-      required: true
-    },
-    /**
-     * Specify the origin when sending with iframe's postMessage.
-     */
     origin: {
-      type: String,
-      default: location.origin
+      default: defaultProps.origin
     },
-    /**
-     * Timeout for the collab request
-     */
     collabRequestTimeout: {
-      type: Number,
-      default: 1000
+      default: defaultProps.collabRequestTimeout
     },
-    /**
-     * If set to true, passerelle must exist on both the outside and inside of the iframe, enclosure and insider must have the same key.
-     */
     requiredCollab: {
-      type: Boolean,
-      default: false
-    },
-    /**
-     * Specify the key when sending with iframe's postMessage.
-     */
-    communicateKey: {
-      type: String
+      default: defaultProps.requiredCollab
     }
-  },
-  emits: {
-    navigate: (_value: NavigateMessage) => true,
-    href: (_value: HrefMessage) => true,
-    data: (_value: SendData<Json>) => true
-  },
+  } as unknown as PropOption,
+
+  emits: ['navigate', 'href', 'data'] as unknown as EmitOption,
+
   expose: ['sendData', 'href', 'navigate'],
-  setup(props, { emit, expose }) {
+
+  setup(props, { emit, expose, attrs }) {
     const frame = ref<HTMLIFrameElement>()
 
     const communicator = useIframeBridge(frame, {
-      toChildPath: (location: RouteLocationNormalized) => props.toChildPath(location),
-      toParentPath: (url: NavigateMessage) => props.toParentPath(url),
+      toChildPath: (location: RouteLocationNormalized) => props.toChildPath?.(location) ?? location.path,
+      toParentPath: (url: NavigateMessage) => props.toParentPath?.(url) ?? url.path,
       origin: props.origin,
       key: props.communicateKey,
       requireCollab: props.requiredCollab,
       collabRequestTimeout: props.collabRequestTimeout,
-      onInit() {
-        this.hooks.on('navigate', (value: NavigateMessage) => {
+      onInit(this: Communicator) {
+        this.hooks.on('navigate', (value) => {
           emit('navigate', value)
         })
 
-        this.hooks.on('href', (value: HrefMessage) => {
+        this.hooks.on('href', (value) => {
           emit('href', value)
         })
 
-        this.hooks.on('data', (key: any, value: any) => {
+        this.hooks.on('data', (key, value) => {
           emit('data', { key, value })
         })
       }
@@ -118,12 +161,23 @@ export default defineComponent({
       communicator.value?.navigate({ path, params })
     }
 
+    const {
+      'initial-src': _1,
+      'to-child-path': _2,
+      'to-parent-path': _3,
+      origin: _4,
+      'collab-request-timeout': _5,
+      'required-collab': _6,
+      'communicate-key': _7,
+      ...iframeAttrs
+    } = attrs
+
     expose({
       sendData,
       href,
       navigate
     })
 
-    return () => h('iframe', { ref: frame, src: props.initialSrc })
+    return () => h('iframe', { ref: frame, src: props.initialSrc, ...iframeAttrs })
   }
 })

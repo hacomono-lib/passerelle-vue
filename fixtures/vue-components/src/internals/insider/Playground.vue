@@ -10,37 +10,34 @@
 
 <script>
 import { defineComponent } from 'vue-demi'
-import Tags from './Tags.vue'
-import TransitionLog from './TransitionLog.vue'
-import LayoutView from './LayoutView.vue'
-import DataSender from './DataSender.vue'
-import DataReceivedLog from './DataReceivedLog.vue'
-import { tagSet } from './type'
+import Tags from './optional/Tags.vue'
+import TransitionLog from './optional/TransitionLog.vue'
+import DataSender from './optional/DataSender.vue'
+import DataReceivedLog from './optional/DataReceivedLog.vue'
 
 const importMap = {
   'transition-log': 'TransitionLog',
-  'layout-viewer': 'LayoutView',
   'data-sender': 'DataSender',
   'data-received-log': 'DataReceivedLog'
 }
+
+const tags = ['transition-log', 'layout-viewer', 'data-sender', 'data-received-log']
 
 export default defineComponent({
   name: 'Playground',
   components: {
     Tags,
     TransitionLog,
-    LayoutView,
     DataSender,
     DataReceivedLog
   },
   props: {
-    mode: {
-      /**
-       * @type {import('vue').PropType<import('./type').Mode>}
-       */
+    /**
+     * @type {'enclosure' | 'insider'}
+     */
+    api: {
       type: String,
       required: true,
-      validator: (value) => ['insider', 'enclosure'].includes(value)
     }
   },
   data() {
@@ -56,7 +53,7 @@ export default defineComponent({
      * @returns {readonly import('./type').Tag[]}
      */
     tags() {
-      return tagSet[this.mode]
+      return tags
     },
     /**
      * @returns {string}

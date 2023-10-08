@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import Playground from 'fixture-vue-component'
+import { EnclosurePlayground } from 'fixture-vue-component'
 </script>
 
 <template>
   <section>
     <Header />
-    <Playground mode="enclosure" />
+    <EnclosurePlayground />
   </section>
 
   <section>

@@ -51,6 +51,7 @@ export default defineComponent({
 <template>
   <PasserelleFrame
     class="frame"
+    name="passerelle-bridge"
     ref="bridge"
     origin="*"
     communicate-key="passerelle-playground"
