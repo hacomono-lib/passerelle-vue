@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import { EnclosurePlayground } from 'fixture-vue-component'
+import { Playground } from 'fixture-enclosure'
 </script>
 
 <template>
   <section>
     <Header />
-    <EnclosurePlayground />
+    <Playground name="passerelle-bridge" />
   </section>
 
   <section>

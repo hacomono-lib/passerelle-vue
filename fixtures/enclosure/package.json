@@ -1,0 +1,15 @@
+{
+  "name": "fixture-enclosure",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "json-editor-vue": "^0.10.19",
+    "vanilla-jsoneditor": "^0.18.8"
+  },
+  "devDependencies": {
+    "@intlify/vue-router-bridge": "^1.0.1",
+    "@passerelle/enclosure-vue": "^0.0.1",
+    "vue-demi": "^0.13.11"
+  }
+}

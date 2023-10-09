@@ -3,16 +3,21 @@ import type { Communicator } from '@passerelle/insider'
 
 import {
   initCommunicator,
-  COMMUNICATOR_KEY,
   type InsiderVueConfig,
-type InsideCommunicator
+  type InsideCommunicator
 } from './communicator'
 
-export { onReceivedData, useCommunicator } from './composables'
+export type {
+  HrefMessage,
+  Json,
+  MessageKey,
+  NavigateMessage,
+  SendDataMessage
+} from '@passerelle/core'
 
-export { createCommunicator } from './communicator'
+export { onReceivedData, useCommunicator, sendData } from './composables'
 
-export { type InsiderVueConfig, COMMUNICATOR_KEY }
+export { createCommunicator, type InsiderVueConfig } from './communicator'
 
 export const insider: Plugin<InsiderVueConfig | Communicator> = {
   install(app: App, opt: InsiderVueConfig) {

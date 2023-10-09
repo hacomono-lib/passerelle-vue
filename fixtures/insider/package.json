@@ -1,0 +1,10 @@
+{
+  "name": "fixture-insider",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "devDependencies": {
+    "@passerelle/insider-vue": "^0.0.1",
+    "vue-demi": "^0.13.11"
+  }
+}

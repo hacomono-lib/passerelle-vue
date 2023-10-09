@@ -9,7 +9,7 @@
   "devDependencies": {
     "@passerelle/insider-vue": "file:../../packages/insider-vue",
     "@vitejs/plugin-vue": "^4.4.0",
-    "fixtures-vue-components": "file:../../fixtures/vue-components",
+    "fixtures-insider": "file:../../fixtures/insider",
     "vite": "^4.3.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",

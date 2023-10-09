@@ -41,8 +41,12 @@
       "name": "___FIXTURES___"
     },
     {
-      "path": "../fixtures/vue-components",
-      "name": "#fixtures/vue-components"
+      "path": "../fixtures/enclosure",
+      "name": "#fixtures/enclosure"
+    },
+    {
+      "path": "../fixtures/insider",
+      "name": "#fixtures/insider"
     }
   ],
   "settings": {

@@ -9,7 +9,7 @@
   "devDependencies": {
     "@passerelle/enclosure-vue": "file:../../packages/enclosure-vue",
     "@vitejs/plugin-vue": "^4.4.0",
-    "fixtures-vue-components": "file:../../fixtures/vue-components",
+    "fixtures-enclosure": "file:../../fixtures/enclosure",
     "vite": "^4.3.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5",

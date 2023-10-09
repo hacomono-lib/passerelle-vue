@@ -18,16 +18,11 @@
   "scripts": {
     "prepare": "turbo run prepare --parallel",
     "dev": "turbo run dev --parallel --filter='./packages/*'",
-    "dev:vue2": "yarn switch:vue2 && turbo run dev --parallel --filter=playground-enclosure-vue... --filter=playground-insider-vue...",
-    "dev:vue3": "yarn switch:vue3 && turbo run dev --parallel --filter=playground-enclosure-vue... --filter=playground-insider-vue...",
-    "preview": "turbo run dev --parallel --filter='./playgrounds/*'",
     "build": "turbo run build",
     "build:graph": "turbo run build --graph",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "clean": "turbo run clean && turbo daemon clean",
-    "switch:vue2": "vue-demi switch 2 && @intlify/vue-router-bridge switch 3",
-    "switch:vue3": "vue-demi switch 3 && @intlify/vue-router-bridge switch 4",
     "publish-packages": "changeset publish"
   },
   "devDependencies": {

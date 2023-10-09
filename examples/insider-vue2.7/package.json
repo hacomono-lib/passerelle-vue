@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@passerelle/insider-vue": "file:../../packages/insider-vue",
-    "fixtures-vue-components": "file:../../fixtures/vue-components",
+    "fixtures-insider": "file:../../fixtures/insider",
     "vite": "^4.3.0",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "~2.7.0",

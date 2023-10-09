@@ -1,13 +1,11 @@
 import { shallowRef, unref, readonly, computed, isVue3, isVue2 } from 'vue-demi'
-import type { Ref, InjectionKey, App } from 'vue-demi'
+import type { Ref, App } from 'vue-demi'
 import type { Router, RouteParams } from '@intlify/vue-router-bridge'
 import { createCommunicator as create } from '@passerelle/insider'
 import type { Communicator, LayoutMetrix, CommunicateConfig, Json, MessageKey } from '@passerelle/insider'
 
 import { isSSR } from './common'
 import { name } from '../package.json'
-
-export const COMMUNICATOR_KEY = Symbol() as InjectionKey<InsideCommunicator>
 
 const logPrefix = `[${name}]`
 

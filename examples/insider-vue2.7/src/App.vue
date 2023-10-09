@@ -2,14 +2,14 @@
 import { defineComponent } from 'vue'
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import { InsiderPlayground } from 'fixtures-vue-components'
+import { Playground } from 'fixtures-insider'
 
 export default defineComponent({
   name: 'App',
   components: {
     Header,
     RouterView,
-    InsiderPlayground
+    Playground
   }
 })
 </script>
@@ -19,7 +19,7 @@ export default defineComponent({
     <Header>
       <RouterView />
     </Header>
-    <InsiderPlayground api="optional" />
+    <Playground />
   </section>
 </template>
 

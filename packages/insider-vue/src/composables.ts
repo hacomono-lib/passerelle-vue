@@ -1,13 +1,12 @@
-import { onUnmounted, getCurrentInstance, isVue3, isVue2 } from 'vue-demi'
+import { onUnmounted, getCurrentInstance, isVue3, isVue2, toRaw } from 'vue-demi'
 import type { MessageKey, Json } from '@passerelle/insider'
 
-import type {InsideCommunicator } from './communicator'
+import type { InsideCommunicator } from './communicator'
 
 export function onReceivedData<T extends Json>(
   key: MessageKey<T>,
   callback: (value: T) => void
 ): void {
-
   const communicator = useCommunicator()
 
   const callbackWrap = (k: string, v: unknown) => {
@@ -19,6 +18,11 @@ export function onReceivedData<T extends Json>(
   onUnmounted(() => {
     communicator.hooks.off('data', callbackWrap)
   })
+}
+
+export function sendData<T extends Json>(key: MessageKey<T>, value: T): void {
+  const communicator = useCommunicator()
+  communicator.sendData(key, toRaw(value))
 }
 
 export function useCommunicator(): InsideCommunicator {

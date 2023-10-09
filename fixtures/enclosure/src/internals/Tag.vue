@@ -1,5 +1,7 @@
 <template>
-  <button :class="{ selected }">
+  <button
+    @click="$emit('click')"
+    :class="{ selected }">
     {{ label }}
   </button>
 </template>
@@ -9,6 +11,9 @@ import { defineComponent } from 'vue-demi'
 
 export default defineComponent({
   name: 'Tags',
+  emits: {
+    click: () => true
+  },
   props: {
     label: {
       type: String,

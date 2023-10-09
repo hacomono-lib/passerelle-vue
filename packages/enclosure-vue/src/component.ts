@@ -124,10 +124,12 @@ export default defineComponent({
   setup(props, { emit, expose, attrs }) {
     const frame = ref<HTMLIFrameElement>()
 
+    // vue 2.7 だと、src や name などの iframe 用の props がなぜか反映されない現象があるため、mounted で強制的に設定する
     onMounted(() => {
       if (!frame.value || frame.value.src === props.initialSrc) return
 
       frame.value.src = props.initialSrc!
+      frame.value.name = props.name!
     })
 
     const communicator = useIframeBridge(frame, {

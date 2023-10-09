@@ -1,15 +1,16 @@
-import { onBeforeUnmount, onMounted, unref, shallowRef, computed, type Ref } from 'vue-demi'
+import { onBeforeUnmount, onMounted, unref, shallowRef, computed, toRaw, type Ref } from 'vue-demi'
 import {
   onBeforeRouteUpdate,
   useRouter,
-  type RouteLocationNormalized
+  type RouteLocationNormalized,
+  type RouteLocationRaw,
 } from '@intlify/vue-router-bridge'
 import { ensureNotNil } from 'type-assurer'
 import {
   createCommunicator as create,
   type Communicator,
   type Json,
-  type MessageKey
+  type MessageKey,
 } from '@passerelle/enclosure'
 
 import type { Iframe, IframeRef, IframeBridgeConfig } from './types'
@@ -20,6 +21,22 @@ export const isSSR = typeof window === 'undefined'
 const logPrefix = `[${name}]`
 
 const cachedCommunicator = new WeakMap<Iframe, Communicator>()
+
+function createCommunicator(
+  iframe: HTMLIFrameElement,
+  config: IframeBridgeConfig
+): Communicator {
+  const c = create(iframe, config)
+  c.logPrefix = logPrefix
+
+  const originalSendData = c.sendData
+  c.sendData = function(key, value) {
+    // vue の reactive なオブジェクトを送信するとエラーになるため、 toRaw でプレーンなオブジェクトに変換する
+    originalSendData.call(c, key, toRaw(value))
+  }
+
+  return c
+}
 
 /**
  * 引数に iframe タグを設定することで、以下の機能を提供する
@@ -52,14 +69,16 @@ export function useIframeBridge(
 
   onMounted(() => {
     const iframe = ensureNotNil(unref(iframeRef))
-    const c = create(iframe, config)
-    cachedCommunicator.set(iframe, c)
+    const c = createCommunicator(iframe, config)
     communicator.value = c
 
-    c.logPrefix = logPrefix
-
+    cachedCommunicator.set(iframe, c)
     c.hooks.on('navigate', (value) => {
-      router.replace(toParentPath(value))
+      const parentPath = toParentPath(value)
+
+      if (isSamePathNavigated(parentPath, unref(router.currentRoute))) return
+
+      router.replace(parentPath)
     })
   })
 
@@ -76,6 +95,14 @@ export function useIframeBridge(
   })
 
   return communicator
+}
+
+function isSamePathNavigated(to: RouteLocationRaw, from: RouteLocationRaw): boolean {
+  type Fixed = { path: string, query?: Record<string, string | string[]> }
+  const fixedTo = (typeof to === 'string' ? { path: to } : to) as Fixed
+  const fixedFrom = (typeof from === 'string' ? { path: from } : from) as Fixed
+
+  return fixedTo.path === fixedFrom.path && JSON.stringify(fixedTo.query ?? {}) === JSON.stringify(fixedFrom.query ?? {})
 }
 
 function isSamePathTransition(to: RouteLocationNormalized, from: RouteLocationNormalized): boolean {

@@ -1,0 +1,91 @@
+<script lang="ts">
+import { defineComponent, ref, computed, onUnmounted, watch } from 'vue-demi'
+import {
+  useCommunicator,
+  type NavigateMessage
+} from '@passerelle/insider-vue'
+
+interface Log {
+  timestamp: string
+  path: string
+  params: Record<string, string | string[]>
+}
+
+export default defineComponent({
+  setup() {
+    const initialized = ref(false)
+
+    const communicator = computed(() => {
+      return useCommunicator()
+    })
+
+    if (!!communicator.value) {
+      initHook()
+    }
+
+    watch(
+      () => location.pathname,
+      () => {
+        if (!!communicator.value) {
+          initHook()
+        }
+      }
+    )
+
+    const exists = computed(() => !!communicator.value)
+
+    const logs = ref<Log[]>([])
+
+    function onNavigated({ path, params }: NavigateMessage) {
+      logs.value = [
+        ...logs.value,
+        {
+          timestamp: new Date().toISOString(),
+          path,
+          params
+        }
+      ]
+    }
+
+    function initHook() {
+      if (initialized.value) return
+
+      initialized.value = true
+      communicator.value?.hooks.on('navigate', onNavigated)
+    }
+
+    onUnmounted(() => {
+      communicator.value?.hooks.off('navigate', onNavigated)
+    })
+
+    return {
+      exists,
+      logs
+    }
+  }
+})
+</script>
+
+<template>
+  <section>
+    <template v-if="exists">
+      <h2>Logs for insider</h2>
+      <ul>
+        <li
+          v-for="log in logs"
+          :key="log.timestamp">
+          <strong>{{ log.timestamp }}</strong>
+          - {{ log.path }}
+          <ul>
+            <li
+              v-for="(value, key) in log.params"
+              :key="key">
+              {{ key }}: {{ value }}
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </template>
+    <template v-else>communicator not found</template>
+  </section>
+</template>
