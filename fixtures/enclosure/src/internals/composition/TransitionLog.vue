@@ -52,7 +52,7 @@ export default defineComponent({
         {
           timestamp: new Date().toISOString(),
           path,
-          params
+          params: params ?? {}
         }
       ]
     }

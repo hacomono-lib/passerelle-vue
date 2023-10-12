@@ -304,16 +304,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/core@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/core@npm:1.0.0"
-  checksum: f67793772f93586cd2b29ab9c50c414e84e772302e707267786eb7268910ed51b03d84fba7f3559a2bda269fbce1a7647d7fe867bf09e003448e75c2d34d8180
+"@passerelle/core@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@passerelle/core@npm:1.0.1"
+  checksum: 56c1277e39b546ab1e07ee4ec1c6b81f19038247f7b9eb2c2f4381393e6a6dfddfbed5edd788f4f4800c8ad8e41c41fca4959686a7f74d8def56812210197d0f
   languageName: node
   linkType: hard
 
 "@passerelle/enclosure-vue@file:../../packages/enclosure-vue::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=47f2cb&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=5255d9&locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure": ^1.0.0
@@ -328,17 +328,17 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: 2d895fd546b96eaebdd1e4084f4402445546cc30e4bf7bf6708ab01b0cc5f5b40e07060c04deea624fae22dcf8b63be7f76f00a03fc500c71b59e88cad46a246
+  checksum: 47c1fd213cf71d24629856e7a33fd0f7f917fa32ca04ee6aa50153ca8bc626617f4ab02e292b2768698a22cbda2fc962bc50da794dfe4a8c30ffbd36488b71f4
   languageName: node
   linkType: hard
 
 "@passerelle/enclosure@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/enclosure@npm:1.0.0"
+  version: 1.0.1
+  resolution: "@passerelle/enclosure@npm:1.0.1"
   dependencies:
-    "@passerelle/core": 1.0.0
+    "@passerelle/core": 1.0.1
     type-assurer: 0.1.1
-  checksum: 18b1421f442190abac6f20987e851f4851ccf02d77575b9684832fa7473259d6d9c73cf9c99b1e074166bbf63a73eee6aae8bdc6a5c2ee28281f211f15658822
+  checksum: b483e4df88a320d44dfce900a4d6acc716fe6149a94e6da07298306e6a20f78cc1e6b3bea7d6b50eb7e813b87a3087985939f42bd691ea4fc49e66cc28ebb4b2
   languageName: node
   linkType: hard
 
@@ -1011,11 +1011,11 @@ __metadata:
 
 "fixtures-enclosure@file:../../fixtures/enclosure::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.0
-  resolution: "fixtures-enclosure@file:../../fixtures/enclosure#../../fixtures/enclosure::hash=0f04c3&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "fixtures-enclosure@file:../../fixtures/enclosure#../../fixtures/enclosure::hash=77faae&locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     json-editor-vue: ^0.10.19
     vanilla-jsoneditor: ^0.18.8
-  checksum: 758c88fe9143110501dfd086a2763438615b9c682c4a5b86f778914b07d8cd4beb393e3dd8beb95bcc5198130f2169f22574ecb51e51d454530c4ec6abab2f28
+  checksum: 3b7c6da83123a5839b97d2d1721c00b10b90e96d4334871ea368b3c885afaea3baff36495043e79c51a6f7c52d075b33a2b29164fb8f3cce842729ce8a6030dc
   languageName: node
   linkType: hard
 

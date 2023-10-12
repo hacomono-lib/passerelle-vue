@@ -35,7 +35,8 @@ import Tag from './Tag.vue'
 const labelSet = {
   'transition-log': 'Transition Log',
   'data-sender': 'Data Sender',
-  'data-received-log': 'Data Received Log'
+  'data-received-log': 'Data Received Log',
+  'layout-view': 'Layout View'
 } satisfies Record<TagName, string>
 
 const tags  = Object.keys(labelSet) as TagName[]

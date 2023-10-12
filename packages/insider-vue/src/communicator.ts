@@ -1,4 +1,5 @@
-import { shallowRef, unref, readonly, computed, isVue3, isVue2 } from 'vue-demi'
+/* eslint-disable max-lines-per-function */
+import { shallowRef, unref, isVue3, isVue2, toRaw } from 'vue-demi'
 import type { Ref, App } from 'vue-demi'
 import type { Router, RouteParams } from '@intlify/vue-router-bridge'
 import { createCommunicator as create } from '@passerelle/insider'
@@ -19,7 +20,7 @@ export interface InsideCommunicator {
 
   readonly hooks: Communicator['hooks']
 
-  readonly layout: Ref<LayoutMetrix | undefined>
+  readonly layout: Readonly<LayoutMetrix>
 
   navigate(path: string, params?: Record<string, string>): void
 
@@ -28,10 +29,19 @@ export interface InsideCommunicator {
   sendData<T extends Json>(key: MessageKey<T>, value: T | Ref<T>): void
 }
 
+declare global {
+  interface Window {
+    readonly $passerelle: InsideCommunicator
+  }
+}
+
 export function initCommunicator(app: App, config: InsiderVueConfig): void {
   const insideCommunicator = isSSR ? createServerCommunicator() : createClientCommunicator(config)
 
   createClientCommunicator(config)
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ;(window as any).$passerelle = insideCommunicator
 
   if (isVue3) {
     Object.defineProperty(app.config.globalProperties, '$passerelle', {
@@ -52,10 +62,39 @@ function isSamePath(from: { path: string, params: RouteParams }, to: { path: str
   return from.path === to.path && JSON.stringify(from.params) === JSON.stringify(to.params)
 }
 
+const defaultHeight = isSSR ? 0 : window.parent?.innerHeight ?? window.innerHeight
+const defaultWidth = isSSR ? 0 : window.parent?.innerWidth ?? window.innerWidth
+
+const defaultLayout = {
+  enclosure: {
+    window: {
+      width: defaultWidth,
+      height: defaultHeight
+    },
+  },
+  insider: {
+    window: {
+      width: defaultWidth,
+      height: defaultHeight
+    },
+    offset: {
+      top: 0,
+      left: 0
+    },
+  },
+} satisfies LayoutMetrix
+
+Object.freeze(defaultLayout)
+
 function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator {
   const communicator = config.communicator ?? createCommunicator(config)
 
-  const layout = shallowRef<LayoutMetrix | undefined>()
+  const originSendData = communicator.sendData
+  communicator.sendData = function (key, value) {
+    originSendData.call(communicator, key, toRaw(value))
+  }
+
+  const layout = shallowRef<LayoutMetrix>(defaultLayout)
 
   communicator.hooks.on('href', (value) => {
     window.location.href = value.href
@@ -94,7 +133,7 @@ function createClientCommunicator(config: InsiderVueConfig): InsideCommunicator 
     },
 
     get layout() {
-      return readonly(layout)
+      return unref(layout)
     },
 
     navigate(path: string, params?: Record<string, string>) {
@@ -127,7 +166,7 @@ function createServerCommunicator(): InsideCommunicator {
     },
 
     get layout() {
-      return computed(noop)
+      return defaultLayout
     },
 
     navigate: noop,

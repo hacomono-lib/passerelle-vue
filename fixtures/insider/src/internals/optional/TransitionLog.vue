@@ -1,33 +1,27 @@
 <template>
   <section>
-    <template v-if="exists">
-      <h2>Logs for insider</h2>
-      <ul>
-        <li
-          v-for="log in logs"
-          :key="log.timestamp">
-          <strong>{{ log.timestamp }}</strong>
-          - {{ log.path }}
-          <ul>
-            <li
-              v-for="(value, key) in log.params"
-              :key="key">
-              {{ key }}: {{ value }}
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </template>
-    <template v-else>communicator not found</template>
+    <h2>Logs for insider</h2>
+    <ul>
+      <li
+        v-for="log in logs"
+        :key="log.timestamp">
+        <strong>{{ log.timestamp }}</strong>
+        - {{ log.path }}
+        <ul>
+          <li
+            v-for="(value, key) in log.params"
+            :key="key">
+            {{ key }}: {{ value }}
+          </li>
+        </ul>
+      </li>
+    </ul>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import {
-  useCommunicator,
-  type NavigateMessage
-} from '@passerelle/insider-vue'
+import type { NavigateMessage } from '@passerelle/insider-vue'
 
 interface Log {
   timestamp: string
@@ -44,14 +38,6 @@ export default defineComponent({
   },
 
   computed: {
-    communicator() {
-      return useCommunicator()
-    },
-
-    exists() {
-      return !!this.communicator
-    },
-
     path() {
       return location.pathname
     }
@@ -64,35 +50,18 @@ export default defineComponent({
         {
           timestamp: new Date().toISOString(),
           path,
-          params
+          params: params ?? {}
         }
       ]
-    },
-
-    initHook() {
-      if (this.initialized) return
-
-      this.initialized = true
-      this.communicator?.hooks.on('navigate', this.onNavigated)
-    }
-  },
-
-  watch: {
-    path() {
-      if (!!this.communicator) {
-        this.initHook()
-      }
     }
   },
 
   mounted() {
-    if (!!this.communicator) {
-      this.initHook()
-    }
+    this.$passerelle.hooks.on('navigate', this.onNavigated)
   },
 
   unmounted() {
-    this.communicator?.hooks.off('navigate', this.onNavigated)
+    this.$passerelle.hooks.off('navigate', this.onNavigated)
   }
 })
 </script>

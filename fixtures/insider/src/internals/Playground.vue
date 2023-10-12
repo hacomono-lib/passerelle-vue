@@ -13,6 +13,9 @@
     <template v-else-if="isSelected('optional', 'data-received-log')">
       <OptionalDataReceivedLog />
     </template>
+    <template v-else-if="isSelected('optional', 'layout-view')">
+      <OptionalLayoutView />
+    </template>
     <template v-else-if="isSelected('composition', 'transition-log')">
       <CompositionTransitionLog />
     </template>
@@ -21,6 +24,9 @@
     </template>
     <template v-else-if="isSelected('composition', 'data-received-log')">
       <CompositionDataReceivedLog />
+    </template>
+    <template v-else-if="isSelected('composition', 'layout-view')">
+      <CompositionLayoutView />
     </template>
   </section>
 </template>
@@ -32,9 +38,11 @@ import Tags from './Tags.vue'
 import CompositionTransitionLog from './composition/TransitionLog.vue'
 import CompositionDataSender from './composition/DataSender.vue'
 import CompositionDataReceivedLog from './composition/DataReceivedLog.vue'
+import CompositionLayoutView from './composition/LayoutView.vue'
 import OptionalTransitionLog from './optional/TransitionLog.vue'
 import OptionalDataSender from './optional/DataSender.vue'
 import OptionalDataReceivedLog from './optional/DataReceivedLog.vue'
+import OptionalLayoutView from './optional/LayoutView.vue'
 
 export default defineComponent({
   name: 'Playground',
@@ -43,9 +51,11 @@ export default defineComponent({
     CompositionDataReceivedLog,
     CompositionDataSender,
     CompositionTransitionLog,
+    CompositionLayoutView,
     OptionalDataReceivedLog,
     OptionalDataSender,
-    OptionalTransitionLog
+    OptionalTransitionLog,
+    OptionalLayoutView
   },
   data(): { selectedTag: TagName; selectedApi: ApiType } {
     return {

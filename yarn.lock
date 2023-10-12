@@ -779,10 +779,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/core@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/core@npm:1.0.0"
-  checksum: f67793772f93586cd2b29ab9c50c414e84e772302e707267786eb7268910ed51b03d84fba7f3559a2bda269fbce1a7647d7fe867bf09e003448e75c2d34d8180
+"@passerelle/core@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@passerelle/core@npm:1.0.1"
+  checksum: 56c1277e39b546ab1e07ee4ec1c6b81f19038247f7b9eb2c2f4381393e6a6dfddfbed5edd788f4f4800c8ad8e41c41fca4959686a7f74d8def56812210197d0f
   languageName: node
   linkType: hard
 
@@ -817,12 +817,12 @@ __metadata:
   linkType: soft
 
 "@passerelle/enclosure@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/enclosure@npm:1.0.0"
+  version: 1.0.1
+  resolution: "@passerelle/enclosure@npm:1.0.1"
   dependencies:
-    "@passerelle/core": 1.0.0
+    "@passerelle/core": 1.0.1
     type-assurer: 0.1.1
-  checksum: 18b1421f442190abac6f20987e851f4851ccf02d77575b9684832fa7473259d6d9c73cf9c99b1e074166bbf63a73eee6aae8bdc6a5c2ee28281f211f15658822
+  checksum: b483e4df88a320d44dfce900a4d6acc716fe6149a94e6da07298306e6a20f78cc1e6b3bea7d6b50eb7e813b87a3087985939f42bd691ea4fc49e66cc28ebb4b2
   languageName: node
   linkType: hard
 
@@ -853,12 +853,12 @@ __metadata:
   linkType: soft
 
 "@passerelle/insider@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/insider@npm:1.0.0"
+  version: 1.0.1
+  resolution: "@passerelle/insider@npm:1.0.1"
   dependencies:
-    "@passerelle/core": 1.0.0
+    "@passerelle/core": 1.0.1
     type-assurer: 0.1.1
-  checksum: cfc73c386bc2e7f012cca29ad87be799daff29f7b1045d00b5fddbd09106a3fb6cd9c51b7ffa0422a8a3969c42f55dda6e9f1f6d5ba1a90b13acc8186efa4536
+  checksum: 0f8ec24dd2aaa1c4be0ef9dfb5d989a80057e9759f0ef027425815454f3e1e779a0b4b6eaa5c0ef8b75db12e2cb17b1e0c921d98f82faf015cdcd5ea5233c7f1
   languageName: node
   linkType: hard
 

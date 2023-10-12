@@ -18,3 +18,4 @@ new Vue({
     return h(App)
   }
 })
+

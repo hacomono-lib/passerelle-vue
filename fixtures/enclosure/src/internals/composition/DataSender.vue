@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
-import { useCommunicator, type Json } from '@passerelle/enclosure-vue'
+import { defineComponent, ref } from 'vue'
+import { sendData, type Json } from '@passerelle/enclosure-vue'
 import JsonEditor from 'json-editor-vue'
 
 export default defineComponent({
@@ -14,59 +14,34 @@ export default defineComponent({
     }
   },
   setup({ name }) {
-    const communicator = computed(() => {
-      if (location.pathname.startsWith('/bridge')) {
-        return useCommunicator(name)
-      }
-      return undefined
-    })
-
-    const exists = computed(() => !!communicator.value)
-
-    const data = ref<Json>({})
+    const data = ref<Json>({} satisfies Json)
 
     function send() {
-      if (!communicator.value) return
-
-      communicator.value.sendData('data-sender', data.value)
+      sendData(name, 'data-sender', data.value)
       data.value = {}
     }
 
     return {
-      communicator,
       send,
-      data,
-      exists
+      data
     }
   }
 })
 </script>
 
 <template>
-  <section>
-    <template v-if="exists">
-      <form @submit.prevent="send">
-        <JsonEditor
-          v-model="data"
-          class="editor" />
-        <button type="submit">Send</button>
-      </form>
-    </template>
-    <template v-else>
-      <p>communicator nor found</p>
-    </template>
-  </section>
+  <form @submit.prevent="send">
+    <JsonEditor
+      v-model="data"
+      class="editor" />
+    <button type="submit">Send</button>
+  </form>
 </template>
 
 <style scoped>
-section {
+form {
   height: 80%;
 }
-
-form {
-  height: inherit;
-}
-
 .editor {
   height: 95%;
 }

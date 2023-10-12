@@ -769,16 +769,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/core@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/core@npm:1.0.0"
-  checksum: f67793772f93586cd2b29ab9c50c414e84e772302e707267786eb7268910ed51b03d84fba7f3559a2bda269fbce1a7647d7fe867bf09e003448e75c2d34d8180
+"@passerelle/core@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@passerelle/core@npm:1.0.1"
+  checksum: 56c1277e39b546ab1e07ee4ec1c6b81f19038247f7b9eb2c2f4381393e6a6dfddfbed5edd788f4f4800c8ad8e41c41fca4959686a7f74d8def56812210197d0f
   languageName: node
   linkType: hard
 
 "@passerelle/insider-vue@file:../../packages/insider-vue::locator=example-insider-vue2%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=ab611d&locator=example-insider-vue2%40workspace%3A."
+  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=bcb1ca&locator=example-insider-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/insider": ^1.0.0
@@ -789,17 +789,17 @@ __metadata:
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
-  checksum: 877e11e209a15ff7709bd2509bf1b94bca2fb0b46dd89e8a40aabc1fcb7cadf37080a7bcfddee86cde336a691d41b307dabb1d2607e0d9969a80d7245209b819
+  checksum: 91d7abdc17a192cc3fb609e94cd8e805b958338541edab7c493514b11fd52c9526a44809db5adfa2e7cc3f57053f1cbcae57d4497deb9fb445c1bf6ea9cbdb93
   languageName: node
   linkType: hard
 
 "@passerelle/insider@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@passerelle/insider@npm:1.0.0"
+  version: 1.0.1
+  resolution: "@passerelle/insider@npm:1.0.1"
   dependencies:
-    "@passerelle/core": 1.0.0
+    "@passerelle/core": 1.0.1
     type-assurer: 0.1.1
-  checksum: cfc73c386bc2e7f012cca29ad87be799daff29f7b1045d00b5fddbd09106a3fb6cd9c51b7ffa0422a8a3969c42f55dda6e9f1f6d5ba1a90b13acc8186efa4536
+  checksum: 0f8ec24dd2aaa1c4be0ef9dfb5d989a80057e9759f0ef027425815454f3e1e779a0b4b6eaa5c0ef8b75db12e2cb17b1e0c921d98f82faf015cdcd5ea5233c7f1
   languageName: node
   linkType: hard
 
@@ -1485,8 +1485,8 @@ __metadata:
 
 "fixtures-insider@file:../../fixtures/insider::locator=example-insider-vue2%40workspace%3A.":
   version: 0.0.0
-  resolution: "fixtures-insider@file:../../fixtures/insider#../../fixtures/insider::hash=c4e466&locator=example-insider-vue2%40workspace%3A."
-  checksum: be01d42cecaaa295f63f204b2da0b030de282157254a3f09d008bd47bb361c73c2ef89a4e2a0813dc73c52e17bd8e7df5c1a84cf2b6af25f61b04335977a4335
+  resolution: "fixtures-insider@file:../../fixtures/insider#../../fixtures/insider::hash=3b722d&locator=example-insider-vue2%40workspace%3A."
+  checksum: ae89a386e15994dfa33db6608ce97ff8fcc9f59c988638f0e402827a6be508d6f5134142d890e4a08f26f985657f6ad9f5fbaf560507a90d745c08d4787d6a25
   languageName: node
   linkType: hard
 

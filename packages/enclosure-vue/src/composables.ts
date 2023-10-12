@@ -26,16 +26,16 @@ function createCommunicator(
   iframe: HTMLIFrameElement,
   config: IframeBridgeConfig
 ): Communicator {
-  const c = create(iframe, config)
-  c.logPrefix = logPrefix
+  const communicator = create(iframe, config)
+  communicator.logPrefix = logPrefix
 
-  const originalSendData = c.sendData
-  c.sendData = function(key, value) {
+  const originalSendData = communicator.sendData
+  communicator.sendData = function(key, value) {
     // vue の reactive なオブジェクトを送信するとエラーになるため、 toRaw でプレーンなオブジェクトに変換する
-    originalSendData.call(c, key, toRaw(value))
+    originalSendData.call(communicator, key, toRaw(value))
   }
 
-  return c
+  return communicator
 }
 
 /**
@@ -128,29 +128,21 @@ function syncHashParentToChild(
   })
 }
 
-export function useCommunicator(iframeOrName: string | Iframe | IframeRef): Communicator | undefined {
+type OrRef<T> = T | Ref<T>
+
+export function useCommunicator(iframeOrName: OrRef<string> | OrRef<Iframe>): Communicator | undefined {
   if (isSSR) return
 
-  if (typeof iframeOrName === 'string') {
-    const iframe = document.querySelector<HTMLIFrameElement>(`iframe[name=${iframeOrName}`)
-    if (!iframe) {
-      return undefined
-    }
+  const iframe = (() => {
+    const raw = unref(iframeOrName)
+    return typeof raw === 'string' ? document.querySelector<HTMLIFrameElement>(`iframe[name=${raw}`) : raw
+  })()
 
-    return cachedCommunicator.get(iframe)
-  }
-
-  const iframe = unref(iframeOrName)
-
-  if (!iframe) {
-    return undefined
-  }
-
-  return cachedCommunicator.get(iframe)
+  return iframe ? cachedCommunicator.get(iframe) : undefined
 }
 
 export function sendData<T extends Json>(
-  iframeOrName: string | Iframe | IframeRef,
+  iframeOrName: OrRef<string> | OrRef<Iframe>,
   key: MessageKey<T>,
   json: T
 ): void {
@@ -162,7 +154,7 @@ export function sendData<T extends Json>(
 }
 
 export function onReceivedData<T extends Json>(
-  iframeOrName: string | Iframe | IframeRef,
+  iframeOrName: OrRef<string> | OrRef<Iframe>,
   key: MessageKey<T>,
   callback: (value: T) => void
 ): void {

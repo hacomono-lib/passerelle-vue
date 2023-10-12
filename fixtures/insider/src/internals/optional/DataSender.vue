@@ -1,22 +1,15 @@
 <template>
-  <section>
-    <template v-if="exists">
-      <form @submit.prevent="send">
-        <JsonEditor
-          v-model="data"
-          class="editor" />
-        <button type="submit">Send</button>
-      </form>
-    </template>
-    <template v-else>
-      <p>communicator nor found</p>
-    </template>
-  </section>
+  <form @submit.prevent="send">
+    <JsonEditor
+      v-model="data"
+      class="editor" />
+    <button type="submit">Send</button>
+  </form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useCommunicator, sendData, type Json } from '@passerelle/insider-vue'
+import type { Json } from '@passerelle/insider-vue'
 import JsonEditor from 'json-editor-vue'
 
 export default defineComponent({
@@ -28,19 +21,9 @@ export default defineComponent({
       data: {}
     }
   },
-  computed: {
-    communicator() {
-      return useCommunicator()
-    },
-
-    exists() {
-      return !!this.communicator
-    }
-  },
-
   methods: {
     send() {
-      sendData('data-sender', this.data)
+      this.$passerelle.sendData('data-sender', this.data)
       this.data = {}
     }
   }
@@ -48,12 +31,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-section {
-  height: 80%;
-}
-
 form {
-  height: inherit;
+  height: 80%;
 }
 
 .editor {

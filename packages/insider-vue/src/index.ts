@@ -15,7 +15,7 @@ export type {
   SendDataMessage
 } from '@passerelle/core'
 
-export { onReceivedData, useCommunicator, sendData } from './composables'
+export { onReceivedData, useCommunicator, sendData, useFrameLayout } from './composables'
 
 export { createCommunicator, type InsiderVueConfig } from './communicator'
 

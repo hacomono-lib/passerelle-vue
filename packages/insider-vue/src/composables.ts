@@ -1,7 +1,15 @@
-import { onUnmounted, getCurrentInstance, isVue3, isVue2, toRaw } from 'vue-demi'
-import type { MessageKey, Json } from '@passerelle/insider'
+import { onUnmounted, getCurrentInstance, type ComputedRef } from 'vue-demi'
+import type { MessageKey, Json, LayoutMetrix } from '@passerelle/insider'
 
 import type { InsideCommunicator } from './communicator'
+
+function isInSetup(): boolean {
+  try {
+    return !!getCurrentInstance()
+  } catch (e) {
+    return false
+  }
+}
 
 export function onReceivedData<T extends Json>(
   key: MessageKey<T>,
@@ -15,30 +23,26 @@ export function onReceivedData<T extends Json>(
 
   communicator.hooks.on('data', callbackWrap)
 
-  onUnmounted(() => {
-    communicator.hooks.off('data', callbackWrap)
-  })
+  if (isInSetup()) {
+    onUnmounted(() => {
+      communicator.hooks.off('data', callbackWrap)
+    })
+  }
 }
 
 export function sendData<T extends Json>(key: MessageKey<T>, value: T): void {
   const communicator = useCommunicator()
-  communicator.sendData(key, toRaw(value))
+  communicator.sendData(key, value)
 }
 
 export function useCommunicator(): InsideCommunicator {
-  const instance = getCurrentInstance()
-  if (!instance) {
-    throw new Error('onUpdateLayout can only be used in setup function')
+  if (!window.$passerelle) {
+    throw new Error('not supported vue version')
   }
 
-  if (isVue3) {
-    return instance.appContext.config.globalProperties.$passerelle
-  }
+  return window.$passerelle
+}
 
-  if (isVue2) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (instance as any).$passerelle
-  }
-
-  throw new Error('not supported vue version')
+export function useFrameLayout(): ComputedRef<LayoutMetrix> {
+  return useCommunicator().layout
 }
