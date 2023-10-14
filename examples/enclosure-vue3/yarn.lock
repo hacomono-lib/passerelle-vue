@@ -313,7 +313,7 @@ __metadata:
 
 "@passerelle/enclosure-vue@file:../../packages/enclosure-vue::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=5255d9&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=2cf910&locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure": ^1.0.0
@@ -328,7 +328,7 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: 47c1fd213cf71d24629856e7a33fd0f7f917fa32ca04ee6aa50153ca8bc626617f4ab02e292b2768698a22cbda2fc962bc50da794dfe4a8c30ffbd36488b71f4
+  checksum: a5729b9b9ade32e01ea062009cc6cd080bdc91280afca3f0885e2e05d21eabb71fb2dc5fc4b987542af544d609244313c33e8ebf403fd9579da074291c08972c
   languageName: node
   linkType: hard
 
@@ -1011,11 +1011,11 @@ __metadata:
 
 "fixtures-enclosure@file:../../fixtures/enclosure::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.0
-  resolution: "fixtures-enclosure@file:../../fixtures/enclosure#../../fixtures/enclosure::hash=77faae&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "fixtures-enclosure@file:../../fixtures/enclosure#../../fixtures/enclosure::hash=ea5636&locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     json-editor-vue: ^0.10.19
     vanilla-jsoneditor: ^0.18.8
-  checksum: 3b7c6da83123a5839b97d2d1721c00b10b90e96d4334871ea368b3c885afaea3baff36495043e79c51a6f7c52d075b33a2b29164fb8f3cce842729ce8a6030dc
+  checksum: e76644bdf7e36079c6afc9f4b974e6e4e8f8e3926b0e6356309ae85608791e8da77b2ae99ea7e89a9eb72523a2d12a45f42febbe726f2d54a41d18a9427d695e
   languageName: node
   linkType: hard
 

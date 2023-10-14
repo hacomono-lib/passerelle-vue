@@ -40,8 +40,8 @@ jobs:
       - uses: ./.github/actions/build-and-cache
       - run: yarn test
 
-  test__typecheck:
-    name: 'Test: TypeCheck'
+  test__typecheck__enclosure_vue:
+    name: 'Test: [package/enclosure-vue] TypeCheck'
     runs-on: ubuntu-latest
     needs:
       - build
@@ -50,3 +50,64 @@ jobs:
       - uses: ./.github/actions/init-node
       - uses: ./.github/actions/build-and-cache
       - run: yarn typecheck
+        working-directory: packages/enclosure-vue
+
+  test__typecheck__insider_vue:
+    name: 'Test: [package/insider-vue] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/init-node
+      - uses: ./.github/actions/build-and-cache
+      - run: yarn typecheck
+        working-directory: packages/insider-vue
+
+  test__typecheck__example_enclosure_vue_3:
+    name: 'Test: [example/enclosure-vue3] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/init-node
+      - uses: ./.github/actions/build-and-cache
+      - run: yarn typecheck
+        working-directory: example/enclosure-vue3
+
+  test__typecheck__example_enclosure_vue_2_7:
+    name: 'Test: [example/enclosure-vue2.7] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/init-node
+      - uses: ./.github/actions/build-and-cache
+      - run: yarn typecheck
+        working-directory: example/enclosure-vue2.7
+
+  test__typecheck__example_insider_vue_3:
+    name: 'Test: [example/insider-vue3] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/init-node
+      - uses: ./.github/actions/build-and-cache
+      - run: yarn typecheck
+        working-directory: example/insider-vue3
+
+  test__typecheck__example_insider_vue_2_7:
+    name: 'Test: [example/insider-vue2.7] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/init-node
+      - uses: ./.github/actions/build-and-cache
+      - run: yarn typecheck
+        working-directory: example/insider-vue2.7

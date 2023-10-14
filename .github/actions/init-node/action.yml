@@ -17,12 +17,35 @@ runs:
       with:
         path: |
           ./node_modules
-        key: node-modules-${{ runner.os }}-${{ hashFiles('./yarn.lock') }}
+          ./**/node_modules
+          ./.yarn/cache
+        key: node-modules-${{ runner.os }}-${{ hashFiles('./**/yarn.lock') }}
         restore-keys: |
-          node-modules-${{ runner.os }}-${{ hashFiles('./yarn.lock') }}
+          node-modules-${{ runner.os }}-${{ hashFiles('./**/yarn.lock') }}
           node-modules-${{ runner.os }}-
           node-modules--
 
     - if: steps.cache_node_modules.outputs.cache-hit != 'true'
       run: yarn --immutable
       shell: bash
+
+    - if: steps.cache_node_modules.outputs.cache-hit != 'true'
+      working-directory: ./examples/enclosure-vue3
+      run: yarn --immutable
+      shell: bash
+
+    - if: steps.cache_node_modules.outputs.cache-hit != 'true'
+      working-directory: ./examples/enclosure-vue2.7
+      run: yarn --immutable
+      shell: bash
+
+    - if: steps.cache_node_modules.outputs.cache-hit != 'true'
+      working-directory: ./examples/insider-vue3
+      run: yarn --immutable
+      shell: bash
+
+    - if: steps.cache_node_modules.outputs.cache-hit != 'true'
+      working-directory: ./examples/insider-vue2.7
+      run: yarn --immutable
+      shell: bash
+

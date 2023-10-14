@@ -8,7 +8,7 @@ export default defineComponent({
     JsonEditor
   },
   setup() {
-    const data = ref<Json>({})
+    const data = ref({} satisfies Json)
 
     function send() {
       sendData('data-sender', data.value)

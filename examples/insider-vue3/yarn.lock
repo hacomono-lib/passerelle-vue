@@ -252,7 +252,7 @@ __metadata:
 
 "@passerelle/insider-vue@file:../../packages/insider-vue::locator=example-insider-vue3%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=09b9bd&locator=example-insider-vue3%40workspace%3A."
+  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=e57fa9&locator=example-insider-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/insider": ^1.0.0
@@ -263,7 +263,7 @@ __metadata:
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
-  checksum: a83a34c9fc9c290ef64d63d940eea4165d99a14e15d3a4c9c1160bd718c63f1208ff4ddf522eeaa9bbb5fa36f1bced7e16afaa938d95436b3a6967517be3aa92
+  checksum: 9c854534fd3792be75675f10384700d184b4005d612fe8a5c7ee276644da4fbd6d5a9236edd847fb9156071741cabaed3fbb3f7d470566ebf85d30f97d196d40
   languageName: node
   linkType: hard
 
@@ -854,8 +854,8 @@ __metadata:
 
 "fixtures-insider@file:../../fixtures/insider::locator=example-insider-vue3%40workspace%3A.":
   version: 0.0.0
-  resolution: "fixtures-insider@file:../../fixtures/insider#../../fixtures/insider::hash=3b722d&locator=example-insider-vue3%40workspace%3A."
-  checksum: ae89a386e15994dfa33db6608ce97ff8fcc9f59c988638f0e402827a6be508d6f5134142d890e4a08f26f985657f6ad9f5fbaf560507a90d745c08d4787d6a25
+  resolution: "fixtures-insider@file:../../fixtures/insider#../../fixtures/insider::hash=32f451&locator=example-insider-vue3%40workspace%3A."
+  checksum: c764ec50530cb9c647c8bb606dd29c07fb630ed2a453d9853dd677d2443af1a01ee1f1c78eea3ffa31721d858300c1011887cfa594a18c045b6050269af929dc
   languageName: node
   linkType: hard
 

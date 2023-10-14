@@ -9,8 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      rollupTypes: true,
-      bundledPackages: ['vue-demi', '@intlify/vue-router-bridge']
+      insertTypesEntry: true
     })
   ],
   build: {

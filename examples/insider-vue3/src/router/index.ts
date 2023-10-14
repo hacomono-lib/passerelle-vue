@@ -4,7 +4,8 @@ import ContactView from '../views/ContactView.vue'
 import WorksView from '../views/WorksView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  history: createWebHistory((import.meta as any).env.BASE_URL),
   routes: [
     {
       path: '/about',

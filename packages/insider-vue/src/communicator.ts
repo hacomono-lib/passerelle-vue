@@ -24,8 +24,24 @@ export interface InsideCommunicator {
 
   navigate(path: string, params?: Record<string, string>): void
 
+  /**
+   *
+   * @param href
+   */
   href(href: string): void
 
+  /**
+   *
+   * @param key
+   * @param value
+   */
+  sendData(key: string, value: unknown | Ref<unknown>): void
+
+  /**
+   *
+   * @param key
+   * @param value
+   */
   sendData<T extends Json>(key: MessageKey<T>, value: T | Ref<T>): void
 }
 

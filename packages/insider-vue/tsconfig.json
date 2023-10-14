@@ -10,5 +10,5 @@
     },
     "types": ["./env.d.ts", "vite/client", "./src/shim.d.ts"]
   },
-  "include": ["package.json", "**/*.ts"]
+  "include": ["./src", "./package.json"]
 }

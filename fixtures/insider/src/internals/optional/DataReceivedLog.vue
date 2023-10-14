@@ -6,11 +6,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import type { Json } from '@passerelle/insider-vue'
 
 export default defineComponent({
   methods: {
-    onReceivedData(key: string, data: Json) {
+    onReceivedData(key: string, data: unknown) {
       if (key === 'data-sender') {
         console.log('data received', data);
       }

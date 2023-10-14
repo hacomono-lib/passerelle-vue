@@ -14,7 +14,7 @@ export default defineComponent({
     }
   },
   setup({ name }) {
-    const data = ref<Json>({} satisfies Json)
+    const data = ref({} satisfies Json)
 
     function send() {
       sendData(name, 'data-sender', data.value)

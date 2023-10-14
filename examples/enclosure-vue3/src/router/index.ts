@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import BridgeView from '../views/BridgeView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  history: createWebHistory((import.meta as any).env.BASE_URL),
   routes: [
     {
       path: "/",

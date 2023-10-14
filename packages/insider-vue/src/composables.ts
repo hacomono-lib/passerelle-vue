@@ -1,5 +1,5 @@
-import { onUnmounted, getCurrentInstance, type ComputedRef } from 'vue-demi'
-import type { MessageKey, Json, LayoutMetrix } from '@passerelle/insider'
+import { onUnmounted, getCurrentInstance } from 'vue-demi'
+import type { MessageKey, Json } from '@passerelle/insider'
 
 import type { InsideCommunicator } from './communicator'
 
@@ -43,6 +43,6 @@ export function useCommunicator(): InsideCommunicator {
   return window.$passerelle
 }
 
-export function useFrameLayout(): ComputedRef<LayoutMetrix> {
+export function useFrameLayout(): InsideCommunicator['layout'] {
   return useCommunicator().layout
 }

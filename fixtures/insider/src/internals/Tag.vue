@@ -6,7 +6,7 @@
   </button>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue-demi'
 
 export default defineComponent({
@@ -24,9 +24,6 @@ export default defineComponent({
       required: true
     },
     tag: {
-      /**
-       * @type {import('vue').PropType<import('./type').Tag>}
-       */
       type: String,
       required: true
     }
