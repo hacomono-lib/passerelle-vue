@@ -776,9 +776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/insider-vue@file:../../packages/insider-vue::locator=example-insider-vue2%40workspace%3A.":
-  version: 0.0.1
-  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=2398df&locator=example-insider-vue2%40workspace%3A."
+"@passerelle/insider-vue@portal:../../packages/insider-vue::locator=example-insider-vue2%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@passerelle/insider-vue@portal:../../packages/insider-vue::locator=example-insider-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/insider": ^1.0.0
@@ -789,9 +789,8 @@ __metadata:
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
-  checksum: bccea80f22623093217bb0f484e2124767c8812af4148104f4c2bb859e82f9d467285a501f6087f2457672d4a91a6509220fc1cadde24f6b8e39877ca8068301
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@passerelle/insider@npm:^1.0.0":
   version: 1.0.1
@@ -1562,8 +1561,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example-insider-vue2@workspace:."
   dependencies:
-    "@passerelle/insider-vue": "file:../../packages/insider-vue"
-    fixtures-insider: "file:../../fixtures/insider"
+    "@passerelle/insider-vue": "*"
+    fixtures-insider: "*"
     vite: ^4.3.0
     vite-plugin-vue2: ^2.0.3
     vue: ~2.7.0
@@ -1580,12 +1579,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fixtures-insider@file:../../fixtures/insider::locator=example-insider-vue2%40workspace%3A.":
-  version: 0.0.0
-  resolution: "fixtures-insider@file:../../fixtures/insider#../../fixtures/insider::hash=32f451&locator=example-insider-vue2%40workspace%3A."
-  checksum: c764ec50530cb9c647c8bb606dd29c07fb630ed2a453d9853dd677d2443af1a01ee1f1c78eea3ffa31721d858300c1011887cfa594a18c045b6050269af929dc
+"fixtures-insider@portal:../../fixtures/insider::locator=example-insider-vue2%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "fixtures-insider@portal:../../fixtures/insider::locator=example-insider-vue2%40workspace%3A."
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "foreground-child@npm:^3.1.0":
   version: 3.1.1
