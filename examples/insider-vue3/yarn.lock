@@ -252,7 +252,7 @@ __metadata:
 
 "@passerelle/insider-vue@file:../../packages/insider-vue::locator=example-insider-vue3%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=e57fa9&locator=example-insider-vue3%40workspace%3A."
+  resolution: "@passerelle/insider-vue@file:../../packages/insider-vue#../../packages/insider-vue::hash=2398df&locator=example-insider-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/insider": ^1.0.0
@@ -263,7 +263,7 @@ __metadata:
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
-  checksum: 9c854534fd3792be75675f10384700d184b4005d612fe8a5c7ee276644da4fbd6d5a9236edd847fb9156071741cabaed3fbb3f7d470566ebf85d30f97d196d40
+  checksum: bccea80f22623093217bb0f484e2124767c8812af4148104f4c2bb859e82f9d467285a501f6087f2457672d4a91a6509220fc1cadde24f6b8e39877ca8068301
   languageName: node
   linkType: hard
 
