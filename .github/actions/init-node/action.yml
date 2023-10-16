@@ -38,51 +38,31 @@ runs:
         key: cache-build-results-${{ runner.os }}-${{ github.sha }}
 
     - name: install [root] dependencies
-      if: steps.cache_node_modules.outputs.cache-hit != 'true'
       run: yarn --immutable
       shell: bash
 
     - name: build
-      if: steps.cache_build_results.outputs.cache-hit != 'true'
       run: yarn build
       shell: bash
 
     # The directories under the example directory do not consider the strictness of yarn.lock
-    - name: Link [packages/enclosure-vue]
-      working-directory: ./packages/enclosure-vue
-      run: yarn link
-      shell: bash
-
-    - name: Link [packages/insider-vue]
-      working-directory: ./packages/insider-vue
-      run: yarn link
-      shell: bash
-
     - name: install [examples/enclosure-vue3] dependencies
       working-directory: ./examples/enclosure-vue3
-      run:
-        yarn link @passerelle/enclosure-vue @passerelle/insider-vue
-        yarn
+      run: yarn
       shell: bash
 
     - name: install [examples/enclosure-vue2.7] dependencies
       working-directory: ./examples/enclosure-vue2.7
-      run:
-        yarn link @passerelle/enclosure-vue @passerelle/insider-vue
-        yarn
+      run: yarn
       shell: bash
 
     - name: install [examples/insider-vue3] dependencies
       working-directory: ./examples/insider-vue3
-      run:
-        yarn link @passerelle/enclosure-vue @passerelle/insider-vue
-        yarn
+      run: yarn
       shell: bash
 
     - name: install [examples/insider-vue2.7] dependencies
       working-directory: ./examples/insider-vue2.7
-      run:
-        yarn link @passerelle/enclosure-vue @passerelle/insider-vue
-        yarn
+      run: yarn
       shell: bash
 
