@@ -60,7 +60,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
-        working-directory: example/enclosure-vue3
+        working-directory: ./examples/enclosure-vue3
 
   test__typecheck__example_enclosure_vue_2_7:
     name: 'Test: [example/enclosure-vue2.7] TypeCheck'
@@ -71,7 +71,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
-        working-directory: example/enclosure-vue2.7
+        working-directory: ./examples/enclosure-vue2.7
 
   test__typecheck__example_insider_vue_3:
     name: 'Test: [example/insider-vue3] TypeCheck'
@@ -82,7 +82,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
-        working-directory: example/insider-vue3
+        working-directory: ./examples/insider-vue3
 
   test__typecheck__example_insider_vue_2_7:
     name: 'Test: [example/insider-vue2.7] TypeCheck'
@@ -93,4 +93,4 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
-        working-directory: example/insider-vue2.7
+        working-directory: ./examples/insider-vue2.7
