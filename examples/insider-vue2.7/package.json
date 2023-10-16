@@ -7,13 +7,17 @@
     "typecheck": "vue-tsc --noEmit --composite false"
   },
   "devDependencies": {
-    "@passerelle/insider-vue": "file:../../packages/insider-vue",
-    "fixtures-insider": "file:../../fixtures/insider",
+    "@passerelle/insider-vue": "*",
+    "fixtures-insider": "*",
     "vite": "^4.3.0",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "~2.7.0",
     "vue-router": "~3.6.5",
     "vue-template-compiler": "~2.7.0",
     "vue-tsc": "^1.6.5"
+  },
+  "resolutions": {
+    "@passerelle/insider-vue": "portal:../../packages/insider-vue",
+    "fixtures-insider": "portal:../../fixtures/insider"
   }
 }

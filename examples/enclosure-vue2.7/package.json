@@ -7,13 +7,17 @@
     "typecheck": "vue-tsc --noEmit --composite false"
   },
   "devDependencies": {
-    "@passerelle/enclosure-vue": "file:../../packages/enclosure-vue",
-    "fixtures-enclosure": "file:../../fixtures/enclosure",
+    "@passerelle/enclosure-vue": "*",
+    "fixtures-enclosure": "*",
     "vite": "^4.3.0",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "~2.7.0",
     "vue-router": "~3.6.5",
     "vue-template-compiler": "~2.7.0",
     "vue-tsc": "^1.6.5"
+  },
+  "resolutions": {
+    "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
+    "fixtures-enclosure": "portal:../../fixtures/enclosure"
   }
 }

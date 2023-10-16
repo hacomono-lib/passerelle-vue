@@ -792,9 +792,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/enclosure-vue@file:../../packages/enclosure-vue::locator=example-enclosure-vue2%40workspace%3A.":
-  version: 0.0.1
-  resolution: "@passerelle/enclosure-vue@file:../../packages/enclosure-vue#../../packages/enclosure-vue::hash=470fb0&locator=example-enclosure-vue2%40workspace%3A."
+"@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-vue2%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure": ^1.0.0
@@ -809,9 +809,8 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: f5ddc69de8fa7b71bddfc297b13995f3efd9d62801b3f548b25873f7da33282c4208c4d3b8f238a963fecdbbcbdff31f13d61307dfe46c7e6c9cf2c1f005f44a
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@passerelle/enclosure@npm:^1.0.0":
   version: 1.0.1
@@ -1667,8 +1666,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example-enclosure-vue2@workspace:."
   dependencies:
-    "@passerelle/enclosure-vue": "file:../../packages/enclosure-vue"
-    fixtures-enclosure: "file:../../fixtures/enclosure"
+    "@passerelle/enclosure-vue": "*"
+    fixtures-enclosure: "*"
     vite: ^4.3.0
     vite-plugin-vue2: ^2.0.3
     vue: ~2.7.0
@@ -1692,15 +1691,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fixtures-enclosure@file:../../fixtures/enclosure::locator=example-enclosure-vue2%40workspace%3A.":
-  version: 0.0.0
-  resolution: "fixtures-enclosure@file:../../fixtures/enclosure#../../fixtures/enclosure::hash=ea5636&locator=example-enclosure-vue2%40workspace%3A."
+"fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-vue2%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-vue2%40workspace%3A."
   dependencies:
     json-editor-vue: ^0.10.19
     vanilla-jsoneditor: ^0.18.8
-  checksum: e76644bdf7e36079c6afc9f4b974e6e4e8f8e3926b0e6356309ae85608791e8da77b2ae99ea7e89a9eb72523a2d12a45f42febbe726f2d54a41d18a9427d695e
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "foreground-child@npm:^3.1.0":
   version: 3.1.1

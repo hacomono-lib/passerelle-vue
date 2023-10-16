@@ -48,21 +48,21 @@ runs:
     # The directories under the example directory do not consider the strictness of yarn.lock
     - name: install [examples/enclosure-vue3] dependencies
       working-directory: ./examples/enclosure-vue3
-      run: yarn
+      run: yarn --immutable
       shell: bash
 
     - name: install [examples/enclosure-vue2.7] dependencies
       working-directory: ./examples/enclosure-vue2.7
-      run: yarn
+      run: yarn --immutable
       shell: bash
 
     - name: install [examples/insider-vue3] dependencies
       working-directory: ./examples/insider-vue3
-      run: yarn
+      run: yarn --immutable
       shell: bash
 
     - name: install [examples/insider-vue2.7] dependencies
       working-directory: ./examples/insider-vue2.7
-      run: yarn
+      run: yarn --immutable
       shell: bash
 
