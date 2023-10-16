@@ -47,27 +47,29 @@ runs:
       run: yarn build
       shell: bash
 
+    # The directories under the example directory do not consider the strictness of yarn.lock
+
     - name: install [examples/enclosure-vue3] dependencies
       if: steps.cache_node_modules.outputs.cache-hit != 'true'
       working-directory: ./examples/enclosure-vue3
-      run: yarn --immutable
+      run: yarn
       shell: bash
 
     - name: install [examples/enclosure-vue2.7] dependencies
       if: steps.cache_node_modules.outputs.cache-hit != 'true'
       working-directory: ./examples/enclosure-vue2.7
-      run: yarn --immutable
+      run: yarn
       shell: bash
 
     - name: install [examples/insider-vue3] dependencies
       if: steps.cache_node_modules.outputs.cache-hit != 'true'
       working-directory: ./examples/insider-vue3
-      run: yarn --immutable
+      run: yarn
       shell: bash
 
     - name: install [examples/insider-vue2.7] dependencies
       if: steps.cache_node_modules.outputs.cache-hit != 'true'
       working-directory: ./examples/insider-vue2.7
-      run: yarn --immutable
+      run: yarn
       shell: bash
 
