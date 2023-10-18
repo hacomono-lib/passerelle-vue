@@ -1,7 +1,5 @@
 /// </// <reference path="./modules.d.ts" />
-import type { Plugin, App } from 'vue-demi'
-import type { Communicator } from '@passerelle/insider'
-
+import type { App } from 'vue-demi'
 import { initCommunicator, type InsiderVueConfig, type InsideCommunicator } from './communicator'
 
 export type {
@@ -16,7 +14,12 @@ export { onReceivedData, useCommunicator, sendData, useFrameLayout } from './com
 
 export { createCommunicator, type InsiderVueConfig } from './communicator'
 
-export const insider: Plugin<InsiderVueConfig | Communicator> = {
+type FixedPlugin = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  install(app: any, opt: InsiderVueConfig): void
+}
+
+export const insider: FixedPlugin = {
   install(app: App, opt: InsiderVueConfig) {
     initCommunicator(app, opt)
   }

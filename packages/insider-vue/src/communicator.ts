@@ -1,6 +1,8 @@
 /* eslint-disable max-lines-per-function */
 import { shallowRef, unref, isVue3, isVue2, toRaw } from 'vue-demi'
 import type { Ref, App } from 'vue-demi'
+import type Vue from 'vue-demi'
+
 import type { Router, RouteParams } from '@intlify/vue-router-bridge'
 import { createCommunicator as create } from '@passerelle/insider'
 import type { Communicator, LayoutMetrix, CommunicateConfig, Json, MessageKey } from '@passerelle/insider'
@@ -51,7 +53,7 @@ declare global {
   }
 }
 
-export function initCommunicator(app: App, config: InsiderVueConfig): void {
+export function initCommunicator(app: App | typeof Vue, config: InsiderVueConfig): void {
   const insideCommunicator = isSSR ? createServerCommunicator() : createClientCommunicator(config)
 
   createClientCommunicator(config)
@@ -60,7 +62,7 @@ export function initCommunicator(app: App, config: InsiderVueConfig): void {
   ;(window as any).$passerelle = insideCommunicator
 
   if (isVue3) {
-    Object.defineProperty(app.config.globalProperties, '$passerelle', {
+    Object.defineProperty((app as App).config.globalProperties, '$passerelle', {
       enumerable: true,
       get: () => {
         return insideCommunicator
