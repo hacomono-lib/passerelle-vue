@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@passerelle/enclosure-vue": "*",
+    "@vue/tsconfig": "^0.4.0",
     "fixtures-enclosure": "*",
     "vite": "^4.3.0",
     "vite-plugin-vue2": "^2.0.3",

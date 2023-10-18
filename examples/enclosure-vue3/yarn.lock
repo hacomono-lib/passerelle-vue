@@ -539,6 +539,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/tsconfig@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@vue/tsconfig@npm:0.4.0"
+  checksum: 1acdd0c5702e163c071fec7ba4ad7eede0a37aaf473e4afc015dad2dd200f85c638831394ca9b9c058cf9d133f4cf92f8d1c99a401f173d5bf1e40700fdcd678
+  languageName: node
+  linkType: hard
+
 "@vue/typescript@npm:1.8.15":
   version: 1.8.15
   resolution: "@vue/typescript@npm:1.8.15"
@@ -986,6 +993,7 @@ __metadata:
   dependencies:
     "@passerelle/enclosure-vue": "*"
     "@vitejs/plugin-vue": ^4.4.0
+    "@vue/tsconfig": ^0.4.0
     fixtures-enclosure: "*"
     vite: ^4.3.0
     vue: ^3.3.4

@@ -3,22 +3,22 @@ import { defineComponent } from 'vue-demi'
 
 export default defineComponent({
   computed: {
-    windowHeight() {
+    windowHeight(): number {
       return this.$passerelle.layout.enclosure.window.height
     },
-    windowWidth() {
+    windowWidth(): number {
       return this.$passerelle.layout.enclosure.window.width
     },
-    iframeHeight() {
+    iframeHeight(): number {
       return this.$passerelle.layout.insider.window.height
     },
-    iframeWidth() {
+    iframeWidth(): number {
       return this.$passerelle.layout.insider.window.width
     },
-    iframeTop() {
+    iframeTop(): number {
       return this.$passerelle.layout.insider.offset.top
     },
-    iframeLeft() {
+    iframeLeft(): number {
       return this.$passerelle.layout.insider.offset.left
     }
   }

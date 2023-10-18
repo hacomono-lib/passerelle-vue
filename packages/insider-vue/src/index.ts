@@ -1,6 +1,6 @@
-/// </// <reference path="./modules.d.ts" />
 import type { App } from 'vue-demi'
-import { initCommunicator, type InsiderVueConfig, type InsideCommunicator } from './communicator'
+import { initCommunicator, createCommunicator, type InsiderVueConfig, type InsideCommunicator as Communicator } from './communicator'
+import { onReceivedData, useCommunicator, sendData, useFrameLayout } from './composables'
 
 export type {
   HrefMessage,
@@ -9,10 +9,6 @@ export type {
   NavigateMessage,
   SendDataMessage
 } from '@passerelle/core'
-
-export { onReceivedData, useCommunicator, sendData, useFrameLayout } from './composables'
-
-export { createCommunicator, type InsiderVueConfig } from './communicator'
 
 type FixedPlugin = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,20 +21,4 @@ export const insider: FixedPlugin = {
   }
 }
 
-declare module '@vue/runtime-core' {
-  export interface ComponentCustomProperties {
-    /**
-     * @link {InsideCommunicator}
-     */
-    $passerelle: InsideCommunicator
-  }
-}
-
-// for vue2
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-declare module 'vue/types/vue' {
-  interface Vue {
-    readonly $passerelle: InsideCommunicator
-  }
-}
+export { initCommunicator, createCommunicator, type Communicator, onReceivedData, useCommunicator, sendData, useFrameLayout }

@@ -826,7 +826,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/insider-vue@^0.0.1, @passerelle/insider-vue@workspace:packages/insider-vue":
+"@passerelle/insider-vue@*, @passerelle/insider-vue@workspace:packages/insider-vue":
   version: 0.0.0-use.local
   resolution: "@passerelle/insider-vue@workspace:packages/insider-vue"
   dependencies:
@@ -2835,6 +2835,7 @@ __metadata:
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure-vue": ^0.0.1
+    "@vue/tsconfig": ^0.4.0
     json-editor-vue: ^0.10.19
     vanilla-jsoneditor: ^0.18.8
     vue-demi: ^0.13.11
@@ -2846,7 +2847,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fixture-insider@workspace:fixtures/insider"
   dependencies:
-    "@passerelle/insider-vue": ^0.0.1
+    "@passerelle/insider-vue": "*"
+    "@vue/tsconfig": ^0.4.0
+    json-editor-vue: ^0.10.19
+    vanilla-jsoneditor: ^0.18.8
     vue-demi: ^0.13.11
     vue-tsc: ^1.6.5
   languageName: unknown

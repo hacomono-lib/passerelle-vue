@@ -7,12 +7,12 @@ export default defineComponent({
     const layout = useFrameLayout()
 
     return {
-      windowHeight: computed(() => layout.enclosure.window.height),
-      windowWidth: computed(() => layout.enclosure.window.width),
-      iframeHeight: computed(() => layout.insider.window.height),
-      iframeWidth: computed(() => layout.insider.window.width),
-      iframeTop: computed(() => layout.insider.offset.top),
-      iframeLeft: computed(() => layout.insider.offset.left)
+      windowHeight: computed<number>(() => layout.enclosure.window.height),
+      windowWidth: computed<number>(() => layout.enclosure.window.width),
+      iframeHeight: computed<number>(() => layout.insider.window.height),
+      iframeWidth: computed<number>(() => layout.insider.window.width),
+      iframeTop: computed<number>(() => layout.insider.offset.top),
+      iframeLeft: computed<number>(() => layout.insider.offset.left)
     }
   }
 })
