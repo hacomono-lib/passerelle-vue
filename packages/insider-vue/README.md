@@ -134,3 +134,21 @@ import { useFrameLayout } from '@passerelle/insider-vue'
 
 const layout = useFrameLayout()
 ```
+
+### Context: `$passerelle`
+
+`$passerelle` is added to the Vue context, and you can access the Communicator from here.
+
+```vue
+<script>
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  computed: {
+    top(): number {
+      this.$passerelle.layout.insider.offset.top
+    }
+  }
+})
+</script>
+```
