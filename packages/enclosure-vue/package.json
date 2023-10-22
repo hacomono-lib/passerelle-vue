@@ -1,6 +1,6 @@
 {
   "name": "@passerelle/enclosure-vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "passerelle enclosure module for vue2 or vue3",
   "author": "mew-ton <mxl_usmarc@slmail.mewton.jp>",
   "license": "MIT",
