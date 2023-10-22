@@ -2,10 +2,9 @@
 import { useRoute } from 'vue-router'
 import {
   PasserelleFrame,
-  type ParentToChild,
-  type ChildToParent
+  type ConvertEnclosurePathToInsiderPath,
+  type ConvertInsiderPathToEnclosurePath,
 } from '@passerelle/enclosure-vue'
-import { onMounted, ref } from 'vue'
 
 const route = useRoute()
 
@@ -19,35 +18,27 @@ function extractChildPath(path: string): string {
   return matchedPath
 }
 
-const parentToChild: ParentToChild = (location) => {
+const parentToChild: ConvertEnclosurePathToInsiderPath = (location) => {
   return extractChildPath(location.path)
 }
 
-const childToParent: ChildToParent = ({ path, params }) => {
+const childToParent: ConvertInsiderPathToEnclosurePath = ({ path, params }) => {
   if (path === '/') {
     return { path: '/' }
   }
   return { path: `/bridge${path}`, params }
 }
-
-const bridge = ref()
-
-onMounted(() => {
-  // デバッグのためにわざと window を介してルートに communicator を公開している
-  ;(window as any).getCommunicator = () => bridge.value.getCommunicator()
-})
 </script>
 
 <template>
   <PasserelleFrame
     class="frame"
     name="passerelle-bridge"
-    ref="bridge"
     origin="*"
     communicate-key="passerelle-playground"
     :initial-src="defaultPath"
-    :to-child-path="parentToChild"
-    :to-parent-path="childToParent"
+    :to-insider-path="parentToChild"
+    :to-enclosure-path="childToParent"
     required-collab />
 </template>
 

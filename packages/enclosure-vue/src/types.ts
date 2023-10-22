@@ -8,22 +8,22 @@ export type Iframe = HTMLIFrameElement
 
 export type IframeRef = MaybeRef<Iframe | null | undefined>
 
-export type ParentToChild = (parentLocation: RouteLocationNormalized) => string
+export type ConvertEnclosurePathToInsiderPath = (parentLocation: RouteLocationNormalized) => string
 
-export type ChildToParent = (navigationMessage: NavigateMessage) => RouteLocationRaw
+export type ConvertInsiderPathToEnclosurePath = (navigationMessage: NavigateMessage) => RouteLocationRaw
 
 export type UseCommunicator = Partial<Omit<Communicator, 'destroy' | 'navigate'>>
 
-export interface IframeBridgeConfig extends CommunicateConfig {
+export interface PasserelleFrameConfig extends CommunicateConfig {
   /**
    *
    */
-  toChildPath: ParentToChild
+  toInsiderPath: ConvertEnclosurePathToInsiderPath
 
   /**
    *
    */
-  toParentPath: ChildToParent
+  toEnclosurePath: ConvertInsiderPathToEnclosurePath
 }
 
 // https://github.com/microsoft/TypeScript/issues/32164 より拝借

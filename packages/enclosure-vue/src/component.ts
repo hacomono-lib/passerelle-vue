@@ -9,8 +9,8 @@ import type {
   Communicator
 } from '@passerelle/enclosure'
 
-import type { ChildToParent, ParentToChild, OverloadParameters } from './types'
-import { useIframeBridge, isSSR } from './composables'
+import type { ConvertInsiderPathToEnclosurePath, ConvertEnclosurePathToInsiderPath, OverloadParameters } from './types'
+import { usePasserelle, isSSR } from './composables'
 
 export interface SendData<T extends Json> {
   key: MessageKey<T>
@@ -32,12 +32,12 @@ export interface Props {
   /**
    * Function to craete a new path on the insider side based on the transition information of the enclosuere side.
    */
-  toChildPath?: ParentToChild
+  toInsiderPath?: ConvertEnclosurePathToInsiderPath
 
   /**
    * Function to craete a new path on the enclosure side based on the transition information of the insider side.
    */
-  toParentPath?: ChildToParent
+  toEnclosurePath?: ConvertInsiderPathToEnclosurePath
 
   /**
    * The origin of the insider side.
@@ -100,8 +100,8 @@ export default defineComponent({
       type: String,
       required: true
     },
-    toChildPath: Function as PropType<Props['toChildPath']>,
-    toParentPath: Function as PropType<Props['toParentPath']>,
+    toInsiderPath: Function as PropType<Props['toInsiderPath']>,
+    toEnclosurePath: Function as PropType<Props['toEnclosurePath']>,
     origin: {
       type: String,
       default: defaultProps.origin
@@ -132,9 +132,9 @@ export default defineComponent({
       frame.value.name = props.name!
     })
 
-    const communicator = useIframeBridge(frame, {
-      toChildPath: (location: RouteLocationNormalized) => props.toChildPath?.(location) ?? location.path,
-      toParentPath: (url: NavigateMessage) => props.toParentPath?.(url) ?? url.path,
+    const communicator = usePasserelle(frame, {
+      toInsiderPath: (location: RouteLocationNormalized) => props.toInsiderPath?.(location) ?? location.path,
+      toEnclosurePath: (url: NavigateMessage) => props.toEnclosurePath?.(url) ?? url.path,
       origin: props.origin,
       key: props.communicateKey,
       requireCollab: props.requiredCollab,

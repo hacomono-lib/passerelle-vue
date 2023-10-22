@@ -16,10 +16,12 @@ export default defineComponent({
     }
   },
   mounted() {
-    this.$passerelle.hooks.on('data', this.onReceivedData)
+    // FIXME: #9 cannot access  type safety
+    (this.$passerelle as any).hooks.on('data', this.onReceivedData)
   },
   unmounted() {
-    this.$passerelle.hooks.off('data', this.onReceivedData)
+    // FIXME: #9 cannot access  type safety
+    (this.$passerelle as any).hooks.off('data', this.onReceivedData)
   }
 })
 </script>

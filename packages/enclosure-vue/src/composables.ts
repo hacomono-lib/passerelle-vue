@@ -13,7 +13,7 @@ import {
   type MessageKey,
 } from '@passerelle/enclosure'
 
-import type { Iframe, IframeRef, IframeBridgeConfig } from './types'
+import type { Iframe, IframeRef, PasserelleFrameConfig } from './types'
 import { name } from '../package.json'
 
 export const isSSR = typeof window === 'undefined'
@@ -24,7 +24,7 @@ const cachedCommunicator = new WeakMap<Iframe, Communicator>()
 
 function createCommunicator(
   iframe: HTMLIFrameElement,
-  config: IframeBridgeConfig
+  config: PasserelleFrameConfig
 ): Communicator {
   const communicator = create(iframe, config)
   communicator.logPrefix = logPrefix
@@ -46,15 +46,15 @@ function createCommunicator(
  * @param config
  * @return
  */
-export function useIframeBridge(
+export function usePasserelle(
   iframeRef: IframeRef,
-  config: IframeBridgeConfig
+  config: PasserelleFrameConfig
 ): Ref<Communicator | undefined> {
   if (isSSR) {
     return computed(() => undefined)
   }
 
-  const { toParentPath } = config
+  const { toEnclosurePath } = config
 
   const router = useRouter()
 
@@ -74,7 +74,7 @@ export function useIframeBridge(
 
     cachedCommunicator.set(iframe, c)
     c.hooks.on('navigate', (value) => {
-      const parentPath = toParentPath(value)
+      const parentPath = toEnclosurePath(value)
 
       if (isSamePathNavigated(parentPath, unref(router.currentRoute))) return
 
@@ -112,10 +112,10 @@ function isSamePathTransition(to: RouteLocationNormalized, from: RouteLocationNo
 function syncHashParentToChild(
   location: RouteLocationNormalized,
   communicator: Communicator,
-  opt: IframeBridgeConfig
+  opt: PasserelleFrameConfig
 ) {
   const logScope = 'observer (parent) : sync parent -> child :'
-  const path = opt.toChildPath(location)
+  const path = opt.toInsiderPath(location)
 
   if (!path) {
     console.warn(logPrefix, logScope, `path is not found. (inputs: ${path})`)

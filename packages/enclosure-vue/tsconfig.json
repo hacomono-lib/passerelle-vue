@@ -7,7 +7,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["./env.d.ts", "vite/client", "./src/shim.d.ts"]
+    "types": ["./env.d.ts", "vite/client"]
   },
   "include": ["./src", "./package.json"]
 }

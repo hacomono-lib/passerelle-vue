@@ -1,10 +1,10 @@
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent } from 'vue'
 import { useRoute } from 'vue-router/composables'
 import {
   PasserelleFrame,
-  type ParentToChild,
-  type ChildToParent,
+  type ConvertEnclosurePathToInsiderPath,
+  type ConvertInsiderPathToEnclosurePath,
 } from '@passerelle/enclosure-vue'
 
 export default defineComponent({
@@ -24,28 +24,20 @@ export default defineComponent({
       return matchedPath
     }
 
-    const parentToChild: ParentToChild = (location) => {
+    const toInsider: ConvertEnclosurePathToInsiderPath = (location) => {
       return extractChildPath(location.path)
     }
 
-    const childToParent: ChildToParent = ({ path, params }) => {
+    const toEnclosure: ConvertInsiderPathToEnclosurePath = ({ path, params }) => {
       if (path === '/') {
         return { path: '/' }
       }
       return { path: `/bridge${path}`, params }
     }
-
-    const bridge = ref()
-
-    onMounted(() => {
-      // デバッグのためにわざと window を介してルートに communicator を公開している
-      ;(window as any).getCommunicator = () => bridge.value.getCommunicator()
-    })
     return {
       defaultPath,
-      parentToChild,
-      childToParent,
-      bridge
+      toInsider,
+      toEnclosure,
     }
   }
 })
@@ -55,12 +47,11 @@ export default defineComponent({
   <PasserelleFrame
     class="frame"
     name="passerelle-bridge"
-    ref="bridge"
     origin="*"
     communicate-key="passerelle-playground"
     :initial-src="defaultPath"
-    :to-child-path="parentToChild"
-    :to-parent-path="childToParent"
+    :to-insider-path="toInsider"
+    :to-enclosure-path="toEnclosure"
     required-collab />
 </template>
 

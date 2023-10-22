@@ -1,30 +1,3 @@
-<script lang="ts">
-import { defineComponent } from 'vue-demi'
-
-export default defineComponent({
-  computed: {
-    windowHeight(): number {
-      return this.$passerelle.layout.enclosure.window.height
-    },
-    windowWidth(): number {
-      return this.$passerelle.layout.enclosure.window.width
-    },
-    iframeHeight(): number {
-      return this.$passerelle.layout.insider.window.height
-    },
-    iframeWidth(): number {
-      return this.$passerelle.layout.insider.window.width
-    },
-    iframeTop(): number {
-      return this.$passerelle.layout.insider.offset.top
-    },
-    iframeLeft(): number {
-      return this.$passerelle.layout.insider.offset.left
-    }
-  }
-})
-</script>
-
 <template>
   <section>
     <h2>parent window</h2>
@@ -47,6 +20,40 @@ export default defineComponent({
     </dl>
   </section>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue-demi'
+
+export default defineComponent({
+  computed: {
+    windowHeight(): number {
+      // FIXME: #9 cannot access  type safety
+      return (this.$passerelle as any).layout.enclosure.window.height
+    },
+    windowWidth(): number {
+      // FIXME: #9 cannot access  type safety
+      return (this.$passerelle as any).layout.enclosure.window.width
+    },
+    iframeHeight(): number {
+      // FIXME: #9 cannot access  type safety
+      return (this.$passerelle as any).layout.insider.window.height
+    },
+    iframeWidth(): number {
+      // FIXME: #9 cannot access  type safety
+      return (this.$passerelle as any).layout.insider.window.width
+    },
+    iframeTop(): number {
+      // FIXME: #9 cannot access  type safety
+      return (this.$passerelle as any).layout.insider.offset.top
+    },
+    iframeLeft(): number {
+      // FIXME: #9 cannot access  type safety
+      return (this.$passerelle as any).layout.insider.offset.left
+    }
+  }
+})
+</script>
+
 
 <style scoped>
 dl {
