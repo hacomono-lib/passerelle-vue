@@ -3,4 +3,4 @@
 "@passerelle/insider-vue": minor
 ---
 
-feat: main feature for vue3, nuxt3
+feat: support-vue2.7+, fix main feature interfaces.
