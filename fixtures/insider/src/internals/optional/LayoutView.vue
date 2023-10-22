@@ -28,27 +28,27 @@ export default defineComponent({
   computed: {
     windowHeight(): number {
       // FIXME: #9 cannot access  type safety
-      return (this.$passerelle as any).layout.enclosure.window.height
+      return (this as any).$passerelle.layout.enclosure.window.height
     },
     windowWidth(): number {
       // FIXME: #9 cannot access  type safety
-      return (this.$passerelle as any).layout.enclosure.window.width
+      return (this as any).$passerelle.layout.enclosure.window.width
     },
     iframeHeight(): number {
       // FIXME: #9 cannot access  type safety
-      return (this.$passerelle as any).layout.insider.window.height
+      return (this as any).$passerelle.layout.insider.window.height
     },
     iframeWidth(): number {
       // FIXME: #9 cannot access  type safety
-      return (this.$passerelle as any).layout.insider.window.width
+      return (this as any).$passerelle.layout.insider.window.width
     },
     iframeTop(): number {
       // FIXME: #9 cannot access  type safety
-      return (this.$passerelle as any).layout.insider.offset.top
+      return (this as any).$passerelle.layout.insider.offset.top
     },
     iframeLeft(): number {
       // FIXME: #9 cannot access  type safety
-      return (this.$passerelle as any).layout.insider.offset.left
+      return (this as any).$passerelle.layout.insider.offset.left
     }
   }
 })

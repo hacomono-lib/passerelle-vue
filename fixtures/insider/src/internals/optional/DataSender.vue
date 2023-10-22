@@ -24,7 +24,7 @@ export default defineComponent({
   methods: {
     send() {
       // FIXME: #9 cannot access  type safety
-      (this.$passerelle as any).sendData('data-sender', this.data)
+      (this as any).$passerelle.sendData('data-sender', this.data)
       this.data = {}
     }
   }
