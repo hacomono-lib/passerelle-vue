@@ -7,7 +7,7 @@
     "dev": {
       "cache": true,
       "persistent": true,
-      "dependsOn": ["^dev"]
+      "dependsOn": ["prepare", "^dev"]
     },
     "test": {
       "cache": false,
@@ -30,6 +30,12 @@
       "outputs": ["dist/**"]
     },
     "clean": {
+      "cache": false
+    },
+    "switch-2": {
+      "cache": false
+    },
+    "switch-3": {
       "cache": false
     }
   }

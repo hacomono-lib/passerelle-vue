@@ -17,13 +17,12 @@
   ],
   "scripts": {
     "prepare": "turbo run prepare --parallel",
-    "dev": "turbo run dev --parallel",
-    "dev:vue": "turbo run dev --parallel --filter=enclosure-vue --filter=insider-vue",
-    "dev:nuxt": "turbo run dev --parallel --filter=enclosure-nuxt --filter=insider-nuxt",
+    "dev": "turbo run dev --parallel --filter='./packages/*'",
     "build": "turbo run build",
+    "build:graph": "turbo run build --graph",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
-    "clean": "turbo run clean",
+    "clean": "turbo run clean && turbo daemon clean",
     "publish-packages": "changeset publish"
   },
   "devDependencies": {
@@ -37,7 +36,7 @@
     "eslint-config-turbo": "^1.10.14",
     "eslint-plugin-import": "^2.28.1",
     "prettier": "^2.8.8",
-    "turbo": "^1.10.6"
+    "turbo": "^1.10.14"
   },
   "volta": {
     "node": "18.18.0",

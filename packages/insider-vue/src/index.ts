@@ -1,21 +1,24 @@
-import type { Plugin, App } from 'vue'
-import type { Communicator } from '@passerelle/insider'
+import type { App } from 'vue-demi'
+import { initCommunicator, createCommunicator, type InsiderVueConfig, type InsideCommunicator as Communicator } from './communicator'
+import { onReceivedData, useCommunicator, sendData, useFrameLayout } from './composables'
 
-import {
-  initCommunicator,
-  LAYOUT_KEY,
-  COMMUNICATOR_KEY,
-  type InsiderVueConfig
-} from './communicator'
+export type {
+  HrefMessage,
+  Json,
+  MessageKey,
+  NavigateMessage,
+  SendDataMessage
+} from '@passerelle/core'
 
-export { onUpdateLayout, onReceivedData, useCommunicator } from './composables'
+type FixedPlugin = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  install(app: any, opt: InsiderVueConfig): void
+}
 
-export { createCommunicator } from './communicator'
-
-export { type InsiderVueConfig, LAYOUT_KEY, COMMUNICATOR_KEY }
-
-export const insider = {
+export const insider: FixedPlugin = {
   install(app: App, opt: InsiderVueConfig) {
     initCommunicator(app, opt)
   }
-} satisfies Plugin<InsiderVueConfig | Communicator>
+}
+
+export { initCommunicator, createCommunicator, type Communicator, onReceivedData, useCommunicator, sendData, useFrameLayout }

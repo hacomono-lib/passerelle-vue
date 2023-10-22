@@ -1,0 +1,22 @@
+{
+  "name": "fixture-insider",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "typecheck": "vue-tsc --noEmit --composite false"
+  },
+  "dependencies": {
+    "json-editor-vue": "^0.10.19",
+    "vanilla-jsoneditor": "^0.18.8"
+  },
+  "devDependencies": {
+    "@passerelle/insider-vue": "*",
+    "@vue/tsconfig": "^0.4.0",
+    "vue-demi": "^0.13.11",
+    "vue-tsc": "^1.6.5"
+  },
+  "resolutions": {
+    "@passerelle/insider-vue": "portal:../../packages/insider-vue"
+  }
+}

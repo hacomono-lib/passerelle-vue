@@ -1,6 +1,6 @@
 ---
-name: Install Dependencies and Cache
-description: This composite action installs dependencies and restores from cache if available.
+name: Install Dependencies and Build
+description: Install dependencies and build
 
 runs:
   using: 'composite'
@@ -17,12 +17,52 @@ runs:
       with:
         path: |
           ./node_modules
-        key: node-modules-${{ runner.os }}-${{ hashFiles('./yarn.lock') }}
+          ./**/node_modules
+          ./.yarn/cache
+          !./node_modules/.cache
+          !./**/node_modules/.cache
+        key: node-modules-${{ runner.os }}-${{ hashFiles('./**/yarn.lock') }}
         restore-keys: |
-          node-modules-${{ runner.os }}-${{ hashFiles('./yarn.lock') }}
+          node-modules-${{ runner.os }}-${{ hashFiles('./**/yarn.lock') }}
           node-modules-${{ runner.os }}-
           node-modules--
 
-    - if: steps.cache_node_modules.outputs.cache-hit != 'true'
+    - name: cache and restore "build result"
+      id: cache_build_results
+      uses: actions/cache@v3
+      with:
+        path: |
+          ./**/dist
+          ./**/.nuxt
+          ./**/node_modules/.cache/turbo
+        key: cache-build-results-${{ runner.os }}-${{ github.sha }}
+
+    - name: install [root] dependencies
       run: yarn --immutable
       shell: bash
+
+    - name: build
+      run: yarn build
+      shell: bash
+
+    # The directories under the example directory do not consider the strictness of yarn.lock
+    - name: install [examples/enclosure-vue3] dependencies
+      working-directory: ./examples/enclosure-vue3
+      run: yarn --immutable
+      shell: bash
+
+    - name: install [examples/enclosure-vue2.7] dependencies
+      working-directory: ./examples/enclosure-vue2.7
+      run: yarn --immutable
+      shell: bash
+
+    - name: install [examples/insider-vue3] dependencies
+      working-directory: ./examples/insider-vue3
+      run: yarn --immutable
+      shell: bash
+
+    - name: install [examples/insider-vue2.7] dependencies
+      working-directory: ./examples/insider-vue2.7
+      run: yarn --immutable
+      shell: bash
+

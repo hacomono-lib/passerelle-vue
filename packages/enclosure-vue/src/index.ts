@@ -1,11 +1,9 @@
-import type { Plugin } from 'vue'
-import BridgeFrame from './components/BridgeFrame.vue'
-export type { ParentToChild, ChildToParent, IframeBridgeConfig } from './lib/types'
+import PasserelleFrame from './component'
 
-export { BridgeFrame }
+export { useCommunicator, sendData, onReceivedData } from './composables'
+export type { ConvertEnclosurePathToInsiderPath, ConvertInsiderPathToEnclosurePath, PasserelleFrameConfig } from './types'
 
-export const enclosure = {
-  install(app) {
-    app.component('BridgeFrame', BridgeFrame)
-  }
-} satisfies Plugin
+export type { Communicator } from '@passerelle/enclosure'
+export type { HrefMessage, Json, MessageKey, NavigateMessage, SendDataMessage } from '@passerelle/core';
+
+export { PasserelleFrame }

@@ -8,5 +8,6 @@
       "@/*": ["./src/*"]
     },
     "types": ["./env.d.ts", "vite/client"]
-  }
+  },
+  "include": ["./src", "./package.json"]
 }

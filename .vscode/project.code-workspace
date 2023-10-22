@@ -5,8 +5,8 @@
       "name": "#root"
     },
     {
-      "path": "../docs",
-      "name": "#documentation"
+      "path": "./_n",
+      "name": "___PACKAGES___"
     },
     {
       "path": "../packages/enclosure-vue",
@@ -17,28 +17,36 @@
       "name": "@passerelle/insider-vue"
     },
     {
-      "path": "../packages/enclosure-nuxt",
-      "name": "@passerelle/enclosure-nuxt"
+      "path": "./_e",
+      "name": "___EXAMPLES___"
     },
     {
-      "path": "../packages/insider-nuxt",
-      "name": "@passerelle/insider-nuxt"
+      "path": "../examples/enclosure-vue2.7",
+      "name": "#example/enclosure-vue2.7"
     },
     {
-      "path": "../packages/insider-nuxt",
-      "name": "@passerelle/insider-nuxt"
+      "path": "../examples/enclosure-vue3",
+      "name": "#example/enclosure-vue3"
     },
     {
-      "path": "../fixtures/playground-enclosure",
-      "name": "#fixtures/playground-enclosure"
+      "path": "../examples/insider-vue2.7",
+      "name": "#example/insider-vue2.7"
     },
     {
-      "path": "../fixtures/playground-insider",
-      "name": "#fixtures/playground-insider"
+      "path": "../examples/insider-vue3",
+      "name": "#example/insider-vue3"
     },
     {
-      "path": "../fixtures/playground-vue-components",
-      "name": "#fixtures/playground-vue-components"
+      "path": "./_f",
+      "name": "___FIXTURES___"
+    },
+    {
+      "path": "../fixtures/enclosure",
+      "name": "#fixtures/enclosure"
+    },
+    {
+      "path": "../fixtures/insider",
+      "name": "#fixtures/insider"
     }
   ],
   "settings": {
@@ -57,7 +65,8 @@
       "editor.rulers": [150],
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "liveServer.settings.multiRootWorkspaceName": "#root"
   },
   "extensions": {
     "recommendations": [

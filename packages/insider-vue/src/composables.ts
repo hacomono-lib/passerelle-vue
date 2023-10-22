@@ -1,17 +1,14 @@
-import { inject, onUnmounted } from 'vue'
-import type { Communicator, LayoutMetrix, MessageKey, Json } from '@passerelle/insider'
+import { onUnmounted, getCurrentInstance } from 'vue-demi'
+import type { MessageKey, Json } from '@passerelle/insider'
 
-import { COMMUNICATOR_KEY } from './communicator'
-import { isSSR } from './common'
+import type { InsideCommunicator } from './communicator'
 
-export function onUpdateLayout(callback: (value: LayoutMetrix) => void | Promise<void>): void {
-  const communicator = useCommunicator()
-
-  communicator.hooks.on('layout', callback)
-
-  onUnmounted(() => {
-    communicator.hooks.off('layout', callback)
-  })
+function isInSetup(): boolean {
+  try {
+    return !!getCurrentInstance()
+  } catch (e) {
+    return false
+  }
 }
 
 export function onReceivedData<T extends Json>(
@@ -26,46 +23,26 @@ export function onReceivedData<T extends Json>(
 
   communicator.hooks.on('data', callbackWrap)
 
-  onUnmounted(() => {
-    communicator.hooks.off('data', callbackWrap)
-  })
+  if (isInSetup()) {
+    onUnmounted(() => {
+      communicator.hooks.off('data', callbackWrap)
+    })
+  }
 }
 
-/**
- * Send data to the enclosure side.
- * @param key
- * @param value
- */
 export function sendData<T extends Json>(key: MessageKey<T>, value: T): void {
   const communicator = useCommunicator()
-
   communicator.sendData(key, value)
 }
 
-/**
- * Navigate to the specified URL on the enclosure side.
- * @param href
- */
-export function href(href: string): void {
-  const communicator = useCommunicator()
-  communicator.href({ href })
+export function useCommunicator(): InsideCommunicator {
+  if (!window.$passerelle) {
+    throw new Error('not supported vue version')
+  }
+
+  return window.$passerelle
 }
 
-/**
- * If the enclosure side is a SPA, navigate to the specified path.
- * @param path
- * @param params
- */
-export function navigate(path: string, params?: Record<string, string | string[]>): void {
-  const communicator = useCommunicator()
-  communicator.navigate({ path, params })
-}
-
-export function useCommunicator(): Communicator {
-  if (isSSR) throw Error('passerelle communicator can not be used in SSR')
-
-  const communicator = inject(COMMUNICATOR_KEY)
-  if (!communicator) throw new Error('passerelle insider is not installed')
-
-  return communicator
+export function useFrameLayout(): InsideCommunicator['layout'] {
+  return useCommunicator().layout
 }
