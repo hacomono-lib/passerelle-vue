@@ -63,7 +63,7 @@ export default defineComponent({
 
   unmounted() {
     // FIXME: #9 cannot access  type safety
-    (this. as any)$passerelle.hooks.off('navigate', this.onNavigated)
+    (this as any).$passerelle.hooks.off('navigate', this.onNavigated)
   }
 })
 </script>
