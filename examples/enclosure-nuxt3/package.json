@@ -1,0 +1,21 @@
+{
+  "name": "example-enclosure-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "nuxt prepare",
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 5173"
+  },
+  "devDependencies": {
+    "@passerelle/enclosure-vue": "*",
+    "fixtures-enclosure": "*",
+    "nuxt": "^3.8.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "resolutions": {
+    "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
+    "fixtures-enclosure": "portal:../../fixtures/enclosure"
+  }
+}

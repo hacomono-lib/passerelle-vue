@@ -35,6 +35,8 @@ interface Log {
   params: Record<string, string | string[]>
 }
 
+const isSSR = typeof window === 'undefined'
+
 export default defineComponent({
   props: {
     name: {
@@ -52,7 +54,7 @@ export default defineComponent({
 
   computed: {
     communicator() {
-      if (location.pathname.startsWith('/bridge')) {
+      if (!isSSR && location.pathname.startsWith('/bridge')) {
         return useCommunicator(this.name)
       }
 
@@ -64,7 +66,7 @@ export default defineComponent({
     },
 
     path() {
-      return location.pathname
+      return isSSR ? '' : location.pathname
     }
   },
 

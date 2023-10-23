@@ -785,10 +785,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/core@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@passerelle/core@npm:1.0.1"
-  checksum: 56c1277e39b546ab1e07ee4ec1c6b81f19038247f7b9eb2c2f4381393e6a6dfddfbed5edd788f4f4800c8ad8e41c41fca4959686a7f74d8def56812210197d0f
+"@passerelle/core@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@passerelle/core@npm:1.0.2"
+  checksum: d51094fa1862a01722ff69d5a77d0e06ce49bb2377d3ff150595728d820ffc1245a220b0d8a98f3f988dd61b83ffea8a1d2bb125bed15f41b52518afd829a9ca
   languageName: node
   linkType: hard
 
@@ -797,7 +797,7 @@ __metadata:
   resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
-    "@passerelle/enclosure": ^1.0.0
+    "@passerelle/enclosure": ^1.0.2
     type-assurer: ^0.1.1
     vue-demi: ^0.13.5
   peerDependencies:
@@ -812,13 +812,13 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@passerelle/enclosure@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "@passerelle/enclosure@npm:1.0.1"
+"@passerelle/enclosure@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@passerelle/enclosure@npm:1.0.2"
   dependencies:
-    "@passerelle/core": 1.0.1
-    type-assurer: 0.1.1
-  checksum: b483e4df88a320d44dfce900a4d6acc716fe6149a94e6da07298306e6a20f78cc1e6b3bea7d6b50eb7e813b87a3087985939f42bd691ea4fc49e66cc28ebb4b2
+    "@passerelle/core": 1.0.2
+    type-assurer: 0.1.2
+  checksum: e955bf5d1b6b1f67e87c9a320b70265f39e3c54cfbd51efa5cf34e025b7e951509173267ffa767bd8fee6656d7b67dd188a1a45c2ff72bf6ee5f04cff8f8eb37
   languageName: node
   linkType: hard
 
@@ -2849,19 +2849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-assurer@npm:0.1.1":
-  version: 0.1.1
-  resolution: "type-assurer@npm:0.1.1"
-  peerDependencies:
-    typescript: ">= 4.0.0"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: d1a5662bac3860dc42ed571eeb131b359dd81f535c067279bde4192a808006bc538ffce328c2be1ca929045914435f084dbe06561809659b74d35a03a91a8614
-  languageName: node
-  linkType: hard
-
-"type-assurer@npm:^0.1.1":
+"type-assurer@npm:0.1.2, type-assurer@npm:^0.1.1":
   version: 0.1.2
   resolution: "type-assurer@npm:0.1.2"
   peerDependencies:

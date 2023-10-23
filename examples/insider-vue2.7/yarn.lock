@@ -795,10 +795,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/core@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@passerelle/core@npm:1.0.1"
-  checksum: 56c1277e39b546ab1e07ee4ec1c6b81f19038247f7b9eb2c2f4381393e6a6dfddfbed5edd788f4f4800c8ad8e41c41fca4959686a7f74d8def56812210197d0f
+"@passerelle/core@npm:1.0.2":
+  version: 1.0.2
+  resolution: "@passerelle/core@npm:1.0.2"
+  checksum: d51094fa1862a01722ff69d5a77d0e06ce49bb2377d3ff150595728d820ffc1245a220b0d8a98f3f988dd61b83ffea8a1d2bb125bed15f41b52518afd829a9ca
   languageName: node
   linkType: hard
 
@@ -807,7 +807,7 @@ __metadata:
   resolution: "@passerelle/insider-vue@portal:../../packages/insider-vue::locator=example-insider-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
-    "@passerelle/insider": ^1.0.0
+    "@passerelle/insider": ^1.0.2
     vue-demi: ^0.13.11
   peerDependencies:
     "@vue/composition-api": ^1.0.0
@@ -818,13 +818,13 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@passerelle/insider@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "@passerelle/insider@npm:1.0.1"
+"@passerelle/insider@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@passerelle/insider@npm:1.0.2"
   dependencies:
-    "@passerelle/core": 1.0.1
-    type-assurer: 0.1.1
-  checksum: 0f8ec24dd2aaa1c4be0ef9dfb5d989a80057e9759f0ef027425815454f3e1e779a0b4b6eaa5c0ef8b75db12e2cb17b1e0c921d98f82faf015cdcd5ea5233c7f1
+    "@passerelle/core": 1.0.2
+    type-assurer: 0.1.2
+  checksum: 64a36b6a52c4fb800c097d642dcf7d3bfd51f7aad0c1b8956af9427fae2e94bc187bef364708b3f22b96cc66cfc037a08e5586832dbc8d776a145f89dc499f81
   languageName: node
   linkType: hard
 
@@ -2855,15 +2855,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-assurer@npm:0.1.1":
-  version: 0.1.1
-  resolution: "type-assurer@npm:0.1.1"
+"type-assurer@npm:0.1.2":
+  version: 0.1.2
+  resolution: "type-assurer@npm:0.1.2"
   peerDependencies:
     typescript: ">= 4.0.0"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: d1a5662bac3860dc42ed571eeb131b359dd81f535c067279bde4192a808006bc538ffce328c2be1ca929045914435f084dbe06561809659b74d35a03a91a8614
+  checksum: f782b37acb40e6e2ae98d2eb593cddfee7d0fb5f3a287ba9d49c19f1e028dcd2d92d9a3b19700dd7518b320bc742f2800afe3c54587fa3e625f486676d2fd469
   languageName: node
   linkType: hard
 

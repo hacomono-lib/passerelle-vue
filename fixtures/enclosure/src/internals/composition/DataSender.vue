@@ -1,11 +1,10 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { sendData, type Json } from '@passerelle/enclosure-vue'
-import JsonEditor from 'json-editor-vue'
 
 export default defineComponent({
   components: {
-    JsonEditor
+    JsonEditor: () => import('json-editor-vue')
   },
   props: {
     name: {
