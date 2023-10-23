@@ -955,7 +955,7 @@ __metadata:
     vite-plugin-dts: "npm:^3.6.0"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.6"
-    vue-demi: "npm:^0.13.5"
+    vue-demi: "npm:^0.13.11"
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.19"
   peerDependencies:
