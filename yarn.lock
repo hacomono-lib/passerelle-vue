@@ -798,7 +798,7 @@ __metadata:
     type-assurer: ^0.1.1
     typescript: ^5.2.2
     vite: ^4.5.0
-    vite-plugin-dts: ^3.2.0
+    vite-plugin-dts: ^3.6.0
     vitest: ^0.32.4
     vue: ^3.3.4
     vue-demi: ^0.13.5
@@ -837,7 +837,7 @@ __metadata:
     "@vue/tsconfig": ^0.4.0
     typescript: ^5.2.2
     vite: ^4.5.0
-    vite-plugin-dts: ^3.2.0
+    vite-plugin-dts: ^3.6.0
     vitest: ^0.32.4
     vue: ^3.3.4
     vue-demi: ^0.13.11
@@ -5804,7 +5804,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^3.2.0":
+"vite-plugin-dts@npm:^3.6.0":
   version: 3.6.0
   resolution: "vite-plugin-dts@npm:3.6.0"
   dependencies:
