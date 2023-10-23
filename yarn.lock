@@ -799,7 +799,7 @@ __metadata:
     typescript: ^5.2.2
     vite: ^4.5.0
     vite-plugin-dts: ^3.2.0
-    vitest: ^0.32.2
+    vitest: ^0.32.4
     vue: ^3.3.4
     vue-demi: ^0.13.5
     vue-router: ^4.2.5
@@ -838,7 +838,7 @@ __metadata:
     typescript: ^5.2.2
     vite: ^4.5.0
     vite-plugin-dts: ^3.2.0
-    vitest: ^0.32.2
+    vitest: ^0.32.4
     vue: ^3.3.4
     vue-demi: ^0.13.11
     vue-router: ^4.2.5
@@ -5904,7 +5904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^0.32.2":
+"vitest@npm:^0.32.4":
   version: 0.32.4
   resolution: "vitest@npm:0.32.4"
   dependencies:
