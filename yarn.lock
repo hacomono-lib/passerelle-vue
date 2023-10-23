@@ -796,7 +796,7 @@ __metadata:
     "@vitejs/plugin-vue": ^4.2.3
     "@vue/tsconfig": ^0.4.0
     type-assurer: ^0.1.1
-    typescript: ^5.1.6
+    typescript: ^5.2.2
     vite: ^4.5.0
     vite-plugin-dts: ^3.2.0
     vitest: ^0.32.2
@@ -835,7 +835,7 @@ __metadata:
     "@types/node": ^18
     "@vitejs/plugin-vue": ^4.2.3
     "@vue/tsconfig": ^0.4.0
-    typescript: ^5.1.6
+    typescript: ^5.2.2
     vite: ^4.5.0
     vite-plugin-dts: ^3.2.0
     vitest: ^0.32.2
@@ -5659,7 +5659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.1.6":
+"typescript@npm:^5.2.2":
   version: 5.2.2
   resolution: "typescript@npm:5.2.2"
   bin:
@@ -5679,7 +5679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
+"typescript@patch:typescript@^5.2.2#~builtin<compat/typescript>":
   version: 5.2.2
   resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"
   bin:
