@@ -25,6 +25,10 @@
       "name": "#example/enclosure-nuxt3"
     },
     {
+      "path": "../examples/enclosure-nuxt2",
+      "name": "#example/enclosure-nuxt2"
+    },
+    {
       "path": "../examples/enclosure-vue2.7",
       "name": "#example/enclosure-vue2.7"
     },

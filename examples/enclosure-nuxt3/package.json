@@ -1,11 +1,12 @@
 {
-  "name": "example-enclosure-nuxt",
+  "name": "example-enclosure-nuxt3",
   "private": true,
   "type": "module",
   "scripts": {
     "postinstall": "nuxt prepare",
     "build": "nuxt build",
-    "dev": "nuxt dev --port 5173"
+    "dev": "nuxt dev --port 5173",
+    "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
     "@passerelle/enclosure-vue": "*",
