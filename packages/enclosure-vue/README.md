@@ -88,7 +88,6 @@ const childToParent: ConvertInsiderPathToEnclosurePath = ({ path, params }) => {
 
 <template>
   <PasserelleFrame
-    class="frame"
     name="passerelle-bridge"
     origin="*"
     communicate-key="passerelle-example"
@@ -97,14 +96,17 @@ const childToParent: ConvertInsiderPathToEnclosurePath = ({ path, params }) => {
     :to-enclosure-path="childToParent"
     required-collab />
 </template>
+```
 
-<style scoped>
-.frame {
-  border: 1px solid var(--color-border);
-  width: 100%;
-  height: 100%;
-}
-</style>
+e.g. If you are using Nuxt3 with the composition API:
+
+Add `definePageMeta` to `./pages/bridge/[...paths].vue` as follows
+
+```ts
+definePageMeta({
+  // Prevent setup from being re-executed when paths change
+  key: 'passerelle-bridge'
+})
 ```
 
 ### 4. **Import**: Import the **insider** plugin in your another application
