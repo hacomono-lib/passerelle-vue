@@ -15,7 +15,7 @@ export default {
     ]
   },
 
-  rootDir: './src',
+  srcDir: './src',
 
   css: [
     '~/assets/css/main.css'

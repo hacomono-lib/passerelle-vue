@@ -1382,12 +1382,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt%40workspace%3A.":
+"@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt3%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt%40workspace%3A."
+  resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
-    "@passerelle/enclosure": ^1.0.0
+    "@passerelle/enclosure": ^1.0.2
     type-assurer: ^0.1.1
     vue-demi: ^0.13.5
   peerDependencies:
@@ -1402,7 +1402,7 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@passerelle/enclosure@npm:^1.0.0":
+"@passerelle/enclosure@npm:^1.0.2":
   version: 1.0.2
   resolution: "@passerelle/enclosure@npm:1.0.2"
   dependencies:
@@ -3426,13 +3426,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"example-enclosure-nuxt@workspace:.":
+"example-enclosure-nuxt3@workspace:.":
   version: 0.0.0-use.local
-  resolution: "example-enclosure-nuxt@workspace:."
+  resolution: "example-enclosure-nuxt3@workspace:."
   dependencies:
     "@passerelle/enclosure-vue": "*"
     fixtures-enclosure: "*"
     nuxt: ^3.8.0
+    typescript: ^5.1.6
     vue: ^3.3.4
     vue-router: ^4.2.5
   languageName: unknown
@@ -3560,9 +3561,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt%40workspace%3A.":
+"fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt3%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt%40workspace%3A."
+  resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt3%40workspace%3A."
   dependencies:
     json-editor-vue: ^0.10.19
     vanilla-jsoneditor: ^0.18.8
@@ -7126,6 +7127,26 @@ __metadata:
   version: 3.13.1
   resolution: "type-fest@npm:3.13.1"
   checksum: c06b0901d54391dc46de3802375f5579868949d71f93b425ce564e19a428a0d411ae8d8cb0e300d330071d86152c3ea86e744c3f2860a42a79585b6ec2fdae8e
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.1.6":
+  version: 5.2.2
+  resolution: "typescript@npm:5.2.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 7912821dac4d962d315c36800fe387cdc0a6298dba7ec171b350b4a6e988b51d7b8f051317786db1094bd7431d526b648aba7da8236607febb26cf5b871d2d3c
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
+  version: 5.2.2
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 0f4da2f15e6f1245e49db15801dbee52f2bbfb267e1c39225afdab5afee1a72839cd86000e65ee9d7e4dfaff12239d28beaf5ee431357fcced15fb08583d72ca
   languageName: node
   linkType: hard
 

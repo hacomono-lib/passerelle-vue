@@ -12,6 +12,7 @@
     "@passerelle/enclosure-vue": "*",
     "fixtures-enclosure": "*",
     "nuxt": "^3.8.0",
+    "typescript": "^5.1.6",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
