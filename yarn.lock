@@ -793,7 +793,7 @@ __metadata:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure": ^1.0.0
     "@types/node": ^18
-    "@vitejs/plugin-vue": ^4.2.3
+    "@vitejs/plugin-vue": ^4.4.0
     "@vue/tsconfig": ^0.4.0
     type-assurer: ^0.1.1
     typescript: ^5.1.6
@@ -833,7 +833,7 @@ __metadata:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/insider": ^1.0.0
     "@types/node": ^18
-    "@vitejs/plugin-vue": ^4.2.3
+    "@vitejs/plugin-vue": ^4.4.0
     "@vue/tsconfig": ^0.4.0
     typescript: ^5.1.6
     vite: ^4.5.0
@@ -1158,7 +1158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitejs/plugin-vue@npm:^4.2.3":
+"@vitejs/plugin-vue@npm:^4.4.0":
   version: 4.4.0
   resolution: "@vitejs/plugin-vue@npm:4.4.0"
   peerDependencies:
