@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Playground } from 'fixture-enclosure'
+import { Playground } from '../../node_modules/fixtures-enclosure'
 
 export default defineComponent({
   name: 'App',
@@ -11,7 +11,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
+  <div id="layout-root">
     <section>
       <Header />
       <Playground name="passerelle-bridge" />

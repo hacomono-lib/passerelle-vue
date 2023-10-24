@@ -38,12 +38,6 @@ export default {
         // root の node_modules を参照させない
         resolve(__dirname, 'node_modules'),
       ]
-
-      config.resolve!.alias = {
-        ...config.resolve!.alias,
-        // symlink を参照させる
-        'fixture-enclosure': resolve(__dirname, '../../fixtures/enclosure')
-      }
     },
 
     babel: {
