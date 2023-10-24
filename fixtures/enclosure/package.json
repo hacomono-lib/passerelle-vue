@@ -6,10 +6,6 @@
   "scripts": {
     "typecheck": "vue-tsc --noEmit --composite false"
   },
-  "dependencies": {
-    "json-editor-vue": "^0.10.19",
-    "vanilla-jsoneditor": "^0.18.8"
-  },
   "devDependencies": {
     "@intlify/vue-router-bridge": "^1.0.1",
     "@passerelle/enclosure-vue": "^0.1.0",

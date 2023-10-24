@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     dts({
-      rollupTypes: true
+      rollupTypes: true,
     })
   ],
   build: {
@@ -24,7 +24,7 @@ export default defineConfig({
       fileName: 'index'
     },
     rollupOptions: {
-      external: [...Object.keys(packages.dependencies), ...Object.keys(packages.peerDependencies)]
+      external: ['vue-demi', '@intlify/vue-router-bridge', ...Object.keys(packages.peerDependencies)]
     }
   },
   esbuild: {
