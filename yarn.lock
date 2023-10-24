@@ -795,6 +795,7 @@ __metadata:
     "@types/node": ^18
     "@vitejs/plugin-vue": ^4.2.3
     "@vue/tsconfig": ^0.4.0
+    defu: ^6.1.2
     type-assurer: ^0.1.1
     typescript: ^5.1.6
     vite: ^4.3.9
@@ -2172,6 +2173,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"defu@npm:^6.1.2":
+  version: 6.1.2
+  resolution: "defu@npm:6.1.2"
+  checksum: 2ec0ff8414d5a1ab2b8c7e9a79bbad6d97d23ea7ebf5dcf80c3c7ffd9715c30f84a3cc47b917379ea756b3db0dc4701ce6400e493a1ae1688dffcd0f884233b2
+  languageName: node
+  linkType: hard
+
 "delegates@npm:^1.0.0":
   version: 1.0.0
   resolution: "delegates@npm:1.0.0"
@@ -2836,8 +2844,6 @@ __metadata:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure-vue": ^0.1.0
     "@vue/tsconfig": ^0.4.0
-    json-editor-vue: ^0.10.19
-    vanilla-jsoneditor: ^0.18.8
     vue-demi: ^0.13.11
     vue-tsc: ^1.8.4
   languageName: unknown

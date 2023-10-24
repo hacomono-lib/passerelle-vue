@@ -8,7 +8,7 @@
       height="125" />
 
     <div class="wrapper">
-      <h1>enclosure vue 3</h1>
+      <h1>enclosure nuxt 3</h1>
 
       <nav>
         <NuxtLink to="/">Home</NuxtLink>

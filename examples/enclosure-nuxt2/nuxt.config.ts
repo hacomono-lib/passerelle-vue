@@ -36,8 +36,18 @@ export default {
 
       config.resolve!.modules = [
         // root の node_modules を参照させない
-        resolve(__dirname, 'node_modules'),
+        resolve(__dirname, 'node_modules')
       ]
+
+      config.resolve!.alias = {
+        ...config.resolve!.alias,
+
+        // node_modules 配下が symlink であるため、相対パス指定にしないと webpack が解決できない
+        '@passerelle/enclosure-vue': resolve(
+          __dirname,
+          './node_modules/@passerelle/enclosure-vue/dist/index.es2015.js'
+        )
+      }
     },
 
     babel: {
@@ -45,7 +55,7 @@ export default {
         // FOR json-editor-vue
         ['@babel/plugin-proposal-nullish-coalescing-operator', { loose: true }],
         // FOR @intlify/vue-router-bridge
-        ['@babel/plugin-proposal-class-static-block', { loose: true }],
+        ['@babel/plugin-proposal-class-static-block', { loose: true }]
       ]
     }
   },
