@@ -991,6 +991,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^4.4.0"
     "@vue/tsconfig": "npm:^0.4.0"
     fixtures-insider: "npm:*"
+    typescript: "npm:^5.2.2"
     vite: "npm:^4.3.0"
     vue: "npm:^3.3.4"
     vue-router: "npm:^4.2.5"
@@ -1016,8 +1017,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fixtures-insider@portal:../../fixtures/insider::locator=example-insider-vue3%40workspace%3A."
   dependencies:
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@passerelle/insider-vue": "npm:*"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
+    vue-demi: "npm:^0.13.11"
   languageName: node
   linkType: soft
 
@@ -1905,6 +1909,26 @@ __metadata:
     typescript:
       optional: true
   checksum: 2db98a4980c590969c61c34c290ca393eefac4b1006fc78d5294ed5767a9f55b7fc720d96d716c07b47c3d6dc1a133d0237b465a08a8d5dd7e24cafdc25f959c
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "typescript@npm:5.2.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: d65e50eb849bd21ff8677e5b9447f9c6e74777e346afd67754934264dcbf4bd59e7d2473f6062d9a015d66bd573311166357e3eb07fea0b52859cf9bb2b58555
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
+  version: 5.2.2
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: f79cc2ba802c94c2b78dbb00d767a10adb67368ae764709737dc277273ec148aa4558033a03ce901406b35fddf4eac46dabc94a1e1d12d2587e2b9cfe5707b4a
   languageName: node
   linkType: hard
 

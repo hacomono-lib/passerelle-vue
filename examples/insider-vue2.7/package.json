@@ -10,6 +10,7 @@
     "@passerelle/insider-vue": "*",
     "@vue/tsconfig": "^0.4.0",
     "fixtures-insider": "*",
+    "typescript": "^5.2.2",
     "vite": "^4.3.0",
     "vite-plugin-vue2": "^2.0.3",
     "vue": "~2.7.0",
