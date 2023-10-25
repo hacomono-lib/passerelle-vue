@@ -960,8 +960,8 @@ __metadata:
     vue-tsc: "npm:^1.8.19"
   peerDependencies:
     "@vue/composition-api": ^1.0.0
-    vue: ^2.7.0 || ^3.0.0
-    vue-router: ^3.6.0 || ^4.0.0
+    vue: ^2.5.0 || ^3.0.0
+    vue-router: ^3.5.0 || ^4.0.0
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
