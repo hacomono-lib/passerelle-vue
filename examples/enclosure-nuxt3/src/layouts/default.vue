@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Playground } from 'fixture-enclosure'
+import { Playground } from 'fixtures-enclosure'
 </script>
 
 <template>
