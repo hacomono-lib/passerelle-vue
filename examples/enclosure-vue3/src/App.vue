@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import Header from './components/Header.vue'
-import { Playground } from 'fixture-enclosure'
+import { Playground } from 'fixtures-enclosure'
 </script>
 
 <template>

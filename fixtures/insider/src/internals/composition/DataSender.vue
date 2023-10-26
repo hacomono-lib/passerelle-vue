@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from 'vue-demi'
 import { sendData, type Json } from '@passerelle/insider-vue'
 import JsonEditor from 'json-editor-vue'
 

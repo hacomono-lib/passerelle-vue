@@ -17,16 +17,24 @@
       "name": "@passerelle/insider-vue"
     },
     {
+      "path": "../packages/fallback-vue-router-composables",
+      "name": "@passerelle/fallback-vue-router-composables"
+    },
+    {
       "path": "./_e",
       "name": "___EXAMPLES___"
+    },
+    {
+      "path": "../examples/enclosure-nuxt2",
+      "name": "#example/enclosure-nuxt2"
     },
     {
       "path": "../examples/enclosure-nuxt3",
       "name": "#example/enclosure-nuxt3"
     },
     {
-      "path": "../examples/enclosure-nuxt2",
-      "name": "#example/enclosure-nuxt2"
+      "path": "../examples/enclosure-vue2",
+      "name": "#example/enclosure-vue2"
     },
     {
       "path": "../examples/enclosure-vue2.7",
@@ -35,6 +43,10 @@
     {
       "path": "../examples/enclosure-vue3",
       "name": "#example/enclosure-vue3"
+    },
+    {
+      "path": "../examples/insider-vue2",
+      "name": "#example/insider-vue2"
     },
     {
       "path": "../examples/insider-vue2.7",

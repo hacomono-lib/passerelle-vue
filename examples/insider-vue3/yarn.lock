@@ -991,7 +991,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^4.4.0"
     "@vue/tsconfig": "npm:^0.4.0"
     fixtures-insider: "npm:*"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
     vite: "npm:^4.3.0"
     vue: "npm:^3.3.4"
     vue-router: "npm:^4.2.5"
@@ -1017,8 +1017,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fixtures-insider@portal:../../fixtures/insider::locator=example-insider-vue3%40workspace%3A."
   dependencies:
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@passerelle/insider-vue": "npm:*"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
+    vue-demi: "npm:^0.13.11"
   languageName: node
   linkType: soft
 
@@ -1909,7 +1912,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.1.6":
+"typescript@npm:^5.2.2":
   version: 5.2.2
   resolution: "typescript@npm:5.2.2"
   bin:
@@ -1919,7 +1922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.1.6#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
   version: 5.2.2
   resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
   bin:

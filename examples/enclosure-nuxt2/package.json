@@ -17,7 +17,7 @@
     "core-js": "^3.25.3",
     "fixtures-enclosure": "*",
     "nuxt": "~2.15.0",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "vue": "~2.7.10",
     "vue-router": "~3.6.5",
     "vue-server-renderer": "~2.7.10",
@@ -26,6 +26,7 @@
   },
   "resolutions": {
     "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
+    "@passerelle/fallback-vue-router-composables": "file:../../packages/fallback-vue-router-composables",
     "fixtures-enclosure": "portal:../../fixtures/enclosure",
     "typescript": "^5.1.6"
   }

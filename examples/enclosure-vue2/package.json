@@ -1,0 +1,28 @@
+{
+  "name": "example-enclosure-vue2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite . --force --port 5173",
+    "typecheck": "vue-tsc --noEmit --composite false"
+  },
+  "devDependencies": {
+    "@passerelle/enclosure-vue": "*",
+    "@passerelle/fallback-vue-router-composables": "*",
+    "@vue/composition-api": "^1.7.2",
+    "@vue/tsconfig": "^0.4.0",
+    "fixtures-enclosure": "*",
+    "typescript": "^5.2.2",
+    "vite": "^4.3.0",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue": "~2.6.0",
+    "vue-router": "~3.5.0",
+    "vue-template-compiler": "~2.6.0",
+    "vue-tsc": "^1.6.5"
+  },
+  "resolutions": {
+    "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
+    "@passerelle/fallback-vue-router-composables": "file:../../packages/fallback-vue-router-composables",
+    "fixtures-enclosure": "portal:../../fixtures/enclosure"
+  }
+}
