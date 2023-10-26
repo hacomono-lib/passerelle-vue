@@ -960,9 +960,9 @@ __metadata:
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.20"
   peerDependencies:
-    "@vue/composition-api": ^1.0.0
-    vue: ^2.5.0 || ^3.0.0
-    vue-router: ^3.0.0 || ^4.0.0
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
@@ -988,10 +988,12 @@ __metadata:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     vue-demi: "npm:^0.13.11"
   peerDependencies:
-    "@vue/composition-api": ^1.0.0
-    vue: ^3.0.0 || ^2.6.0
-    vue-router: ^4.0.0 || ^3.0.0
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
   peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
     vue-router:
       optional: true
   languageName: unknown
