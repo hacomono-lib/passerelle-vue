@@ -1043,7 +1043,7 @@ __metadata:
   resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    "@passerelle/enclosure-vue": "npm:^0.1.0"
+    "@passerelle/enclosure-vue": "npm:*"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
     vue-demi: "npm:^0.13.11"
