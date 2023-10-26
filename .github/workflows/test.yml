@@ -73,6 +73,17 @@ jobs:
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue2.7
 
+  test__typecheck__example_enclosure_vue_2:
+    name: 'Test: [example/enclosure-vue2] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - init__node
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/init-node
+      - run: yarn typecheck
+        working-directory: ./examples/enclosure-vue2
+
   test__typecheck__example_insider_vue_3:
     name: 'Test: [example/insider-vue3] TypeCheck'
     runs-on: ubuntu-latest
@@ -94,3 +105,14 @@ jobs:
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue2.7
+
+  test__typecheck__example_insider_vue_2:
+    name: 'Test: [example/insider-vue2] TypeCheck'
+    runs-on: ubuntu-latest
+    needs:
+      - init__node
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/init-node
+      - run: yarn typecheck
+        working-directory: ./examples/insider-vue2

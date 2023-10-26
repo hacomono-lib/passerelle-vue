@@ -317,12 +317,13 @@ __metadata:
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/enclosure": "npm:^1.0.0"
+    "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
     type-assurer: "npm:^0.1.1"
-    vue-demi: "npm:^0.13.5"
+    vue-demi: "npm:^0.13.11"
   peerDependencies:
-    "@vue/composition-api": ^1.0.0
-    vue: ^2.7.0 || ^3.0.0
-    vue-router: ^3.6.0 || ^4.0.0
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
@@ -338,6 +339,25 @@ __metadata:
     "@passerelle/core": "npm:1.0.1"
     type-assurer: "npm:0.1.1"
   checksum: b483e4df88a320d44dfce900a4d6acc716fe6149a94e6da07298306e6a20f78cc1e6b3bea7d6b50eb7e813b87a3087985939f42bd691ea4fc49e66cc28ebb4b2
+  languageName: node
+  linkType: hard
+
+"@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables::locator=example-enclosure-vue3%40workspace%3A.":
+  version: 0.0.1
+  resolution: "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables#../../packages/fallback-vue-router-composables::hash=a1572d&locator=example-enclosure-vue3%40workspace%3A."
+  dependencies:
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    vue-demi: "npm:^0.13.11"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 16b0aaa12a4653dbf59fd3931c0b546104e04831331ead983bd64432788dd2621c37c6683bba268835ba8b783384dc9681a93659aed11e0179536cb69c4ea12e
   languageName: node
   linkType: hard
 
@@ -992,9 +1012,11 @@ __metadata:
   resolution: "example-enclosure-vue3@workspace:."
   dependencies:
     "@passerelle/enclosure-vue": "npm:*"
+    "@passerelle/fallback-vue-router-composables": "npm:*"
     "@vitejs/plugin-vue": "npm:^4.4.0"
     "@vue/tsconfig": "npm:^0.4.0"
     fixtures-enclosure: "npm:*"
+    typescript: "npm:^5.2.2"
     vite: "npm:^4.3.0"
     vue: "npm:^3.3.4"
     vue-router: "npm:^4.2.5"
@@ -1020,8 +1042,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@passerelle/enclosure-vue": "npm:*"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
+    vue-demi: "npm:^0.13.11"
   languageName: node
   linkType: soft
 
@@ -1924,6 +1949,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "typescript@npm:5.2.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: d65e50eb849bd21ff8677e5b9447f9c6e74777e346afd67754934264dcbf4bd59e7d2473f6062d9a015d66bd573311166357e3eb07fea0b52859cf9bb2b58555
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
+  version: 5.2.2
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: f79cc2ba802c94c2b78dbb00d767a10adb67368ae764709737dc277273ec148aa4558033a03ce901406b35fddf4eac46dabc94a1e1d12d2587e2b9cfe5707b4a
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^3.0.0":
   version: 3.0.0
   resolution: "unique-filename@npm:3.0.0"
@@ -2010,7 +2055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:^0.13.5":
+"vue-demi@npm:^0.13.11, vue-demi@npm:^0.13.5":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
   peerDependencies:

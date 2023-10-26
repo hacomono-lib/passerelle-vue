@@ -940,12 +940,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/enclosure-vue@npm:^0.1.0, @passerelle/enclosure-vue@workspace:packages/enclosure-vue":
+"@passerelle/enclosure-vue@npm:*, @passerelle/enclosure-vue@workspace:packages/enclosure-vue":
   version: 0.0.0-use.local
   resolution: "@passerelle/enclosure-vue@workspace:packages/enclosure-vue"
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/enclosure": "npm:^1.0.0"
+    "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
     "@types/node": "npm:^18.18.6"
     "@vitejs/plugin-vue": "npm:^4.4.0"
     "@vue/tsconfig": "npm:^0.4.0"
@@ -955,13 +956,13 @@ __metadata:
     vite-plugin-dts: "npm:^3.6.0"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.6"
-    vue-demi: "npm:^0.13.5"
+    vue-demi: "npm:^0.13.11"
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.20"
   peerDependencies:
-    "@vue/composition-api": ^1.0.0
-    vue: ^2.7.0 || ^3.0.0
-    vue-router: ^3.6.0 || ^4.0.0
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
@@ -979,6 +980,24 @@ __metadata:
   checksum: b483e4df88a320d44dfce900a4d6acc716fe6149a94e6da07298306e6a20f78cc1e6b3bea7d6b50eb7e813b87a3087985939f42bd691ea4fc49e66cc28ebb4b2
   languageName: node
   linkType: hard
+
+"@passerelle/fallback-vue-router-composables@npm:0.0.1, @passerelle/fallback-vue-router-composables@workspace:packages/fallback-vue-router-composables":
+  version: 0.0.0-use.local
+  resolution: "@passerelle/fallback-vue-router-composables@workspace:packages/fallback-vue-router-composables"
+  dependencies:
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    vue-demi: "npm:^0.13.11"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+    vue-router:
+      optional: true
+  languageName: unknown
+  linkType: soft
 
 "@passerelle/insider-vue@npm:*, @passerelle/insider-vue@workspace:packages/insider-vue":
   version: 0.0.0-use.local
@@ -3174,12 +3193,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fixture-enclosure@workspace:fixtures/enclosure":
+"fixture-insider@workspace:fixtures/insider":
   version: 0.0.0-use.local
-  resolution: "fixture-enclosure@workspace:fixtures/enclosure"
+  resolution: "fixture-insider@workspace:fixtures/insider"
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    "@passerelle/enclosure-vue": "npm:^0.1.0"
+    "@passerelle/insider-vue": "npm:*"
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
@@ -3188,11 +3207,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"fixture-insider@workspace:fixtures/insider":
+"fixtures-enclosuree@workspace:fixtures/enclosure":
   version: 0.0.0-use.local
-  resolution: "fixture-insider@workspace:fixtures/insider"
+  resolution: "fixtures-enclosuree@workspace:fixtures/enclosure"
   dependencies:
-    "@passerelle/insider-vue": "npm:*"
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@passerelle/enclosure-vue": "npm:*"
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"

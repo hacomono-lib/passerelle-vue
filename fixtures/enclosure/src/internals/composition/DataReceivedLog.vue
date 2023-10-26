@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed } from 'vue-demi'
 import { useCommunicator, onReceivedData} from '@passerelle/enclosure-vue';
 
 export default defineComponent({

@@ -10,8 +10,10 @@ It facilitates the exchange of information between the parent and child componen
 
 ## Support
 
-- Vue.js 2.7+ or 3.0+
-- Vue-Router 3.6+ or 4.0+
+- `vue` 2.6+ or 3.0+
+- `vue-router` 3.0+ or 4.0+
+
+NOTE: If you are using `vue` 2.6 or `vue-router` <3.6 , you must use the [Composition API](https://github.com/vuejs/composition-api)
 
 ## Usage
 

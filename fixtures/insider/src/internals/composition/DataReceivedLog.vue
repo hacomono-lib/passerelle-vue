@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue-demi'
 import { onReceivedData } from '@passerelle/insider-vue'
 
 export default defineComponent({

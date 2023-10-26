@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue-demi'
 import { sendData, type Json } from '@passerelle/enclosure-vue'
 import JsonEditor from 'json-editor-vue'
 
