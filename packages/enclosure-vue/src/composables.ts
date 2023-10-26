@@ -39,6 +39,10 @@ function createCommunicator(
   return communicator
 }
 
+/**
+ * enclosure コンポーネントのルートの DOM を取得する.
+ * ※ コンポーネントが iframe しかないことに依存する. この関数は他のコンポーネントを対象に使うことを想定しない.
+ */
 export function getIframeDom(): HTMLIFrameElement {
   const current = getCurrentInstance()
   if (!current) throw new Error('current instance is not found.')
