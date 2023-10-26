@@ -344,7 +344,7 @@ __metadata:
 
 "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables::locator=example-enclosure-vue3%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables#../../packages/fallback-vue-router-composables::hash=c93406&locator=example-enclosure-vue3%40workspace%3A."
+  resolution: "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables#../../packages/fallback-vue-router-composables::hash=a1572d&locator=example-enclosure-vue3%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     vue-demi: "npm:^0.13.11"
@@ -357,7 +357,7 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: 0d2c96de6e37be46983e0f8a9b4a7d40ea8a0768dcae0547f6a72220229d9e094bee86df88fdd6f585ad50798ea7e4943891d9aefaa44ac264834fefd5a61fa4
+  checksum: 16b0aaa12a4653dbf59fd3931c0b546104e04831331ead983bd64432788dd2621c37c6683bba268835ba8b783384dc9681a93659aed11e0179536cb69c4ea12e
   languageName: node
   linkType: hard
 
