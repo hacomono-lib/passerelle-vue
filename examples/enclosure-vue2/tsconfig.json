@@ -8,5 +8,5 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["./src/main.ts", "./src/**/*"]
+  "include": ["./src/vue-shim.d.ts", "./src/main.ts", "./src/**/*"]
 }

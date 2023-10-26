@@ -2,12 +2,13 @@
 import { defineComponent } from '@vue/composition-api'
 import Header from './components/Header.vue'
 import { Playground } from 'fixtures-insider'
+import type { Component } from 'vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    Header,
-    Playground
+    Header: Header as Component,
+    Playground: Playground as Component
   }
 })
 </script>

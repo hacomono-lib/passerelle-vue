@@ -1,4 +1,5 @@
 import './assets/css/main.css'
+import 'vue-demi'
 
 import Vue from 'vue'
 import VueRouter from 'vue-router'

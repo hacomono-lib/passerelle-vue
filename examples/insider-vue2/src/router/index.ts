@@ -9,7 +9,7 @@ const router = new VueRouter({
     {
       path: '/about',
       name: 'about',
-      component: AboutView,
+      component: AboutView as any,
     },
     {
       path: '/contact',

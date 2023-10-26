@@ -1,4 +1,5 @@
 <script lang="ts">
+import type { Component } from 'vue'
 import { defineComponent } from '@vue/composition-api'
 import { useRoute } from '@intlify/vue-router-bridge'
 
@@ -10,7 +11,7 @@ import {
 
 export default defineComponent({
   components: {
-    PasserelleFrame
+    PasserelleFrame: PasserelleFrame as Component
   },
   setup(_props, ctx) {
     const route = useRoute()

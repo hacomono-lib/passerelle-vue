@@ -1,4 +1,5 @@
 <script lang="ts">
+import { type Component } from 'vue'
 import { defineComponent } from '@vue/composition-api'
 import Header from './components/Header.vue'
 import { Playground } from 'fixtures-enclosure'
@@ -6,8 +7,8 @@ import { Playground } from 'fixtures-enclosure'
 export default defineComponent({
   name: 'App',
   components: {
-    Header,
-    Playground
+    Header: Header as Component,
+    Playground: Playground as Component
   }
 })
 </script>
@@ -38,3 +39,4 @@ div {
   padding: 0 2rem;
 }
 </style>
+

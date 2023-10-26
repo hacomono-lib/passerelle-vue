@@ -8,7 +8,7 @@ const router = new VueRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView
+      component: HomeView as any
     },
     {
       path: '/bridge/:pathMatch(.*)*',
