@@ -798,12 +798,13 @@ __metadata:
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/enclosure": "npm:^1.0.0"
+    "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
     type-assurer: "npm:^0.1.1"
     vue-demi: "npm:^0.13.11"
   peerDependencies:
-    "@vue/composition-api": ^1.0.0
-    vue: ^2.5.0 || ^3.0.0
-    vue-router: ^3.5.0 || ^4.0.0
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
   peerDependenciesMeta:
     "@vue/composition-api":
       optional: true
@@ -819,6 +820,25 @@ __metadata:
     "@passerelle/core": "npm:1.0.1"
     type-assurer: "npm:0.1.1"
   checksum: b483e4df88a320d44dfce900a4d6acc716fe6149a94e6da07298306e6a20f78cc1e6b3bea7d6b50eb7e813b87a3087985939f42bd691ea4fc49e66cc28ebb4b2
+  languageName: node
+  linkType: hard
+
+"@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables::locator=example-enclosure-vue2%40workspace%3A.":
+  version: 0.0.1
+  resolution: "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables#../../packages/fallback-vue-router-composables::hash=c93406&locator=example-enclosure-vue2%40workspace%3A."
+  dependencies:
+    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    vue-demi: "npm:^0.13.11"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+    vue-router: ^4.0.0-0 || ^3.0.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+    vue-router:
+      optional: true
+  checksum: 0d2c96de6e37be46983e0f8a9b4a7d40ea8a0768dcae0547f6a72220229d9e094bee86df88fdd6f585ad50798ea7e4943891d9aefaa44ac264834fefd5a61fa4
   languageName: node
   linkType: hard
 
@@ -1674,6 +1694,7 @@ __metadata:
   resolution: "example-enclosure-vue2@workspace:."
   dependencies:
     "@passerelle/enclosure-vue": "npm:*"
+    "@passerelle/fallback-vue-router-composables": "npm:*"
     "@vue/tsconfig": "npm:^0.4.0"
     fixtures-enclosure: "npm:*"
     typescript: "npm:^5.2.2"

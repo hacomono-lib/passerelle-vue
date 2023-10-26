@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@passerelle/enclosure-vue": "*",
+    "@passerelle/fallback-vue-router-composables": "*",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/tsconfig": "^0.4.0",
     "fixtures-enclosure": "*",
@@ -19,6 +20,7 @@
   },
   "resolutions": {
     "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
+    "@passerelle/fallback-vue-router-composables": "file:../../packages/fallback-vue-router-composables",
     "fixtures-enclosure": "portal:../../fixtures/enclosure"
   }
 }

@@ -12,7 +12,7 @@ import {
   type MessageKey
 } from '@passerelle/enclosure'
 
-import { onBeforeRouteUpdate } from './fallback'
+import { onBeforeRouteUpdate } from '@passerelle/fallback-vue-router-composables'
 
 import type { Iframe, PasserelleFrameConfig } from './types'
 import { name } from '../package.json'
@@ -39,12 +39,9 @@ function createCommunicator(
   return communicator
 }
 
-
 export function getIframeDom(): HTMLIFrameElement {
   const current = getCurrentInstance()
   if (!current) throw new Error('current instance is not found.')
-
-  if (!current.isMounted) throw new Error('current instance is not mounted.')
 
   // vue2 は elm, vue3 は el
   const iframe = current.proxy?.$el

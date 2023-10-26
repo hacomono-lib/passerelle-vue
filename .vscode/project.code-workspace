@@ -17,6 +17,10 @@
       "name": "@passerelle/insider-vue"
     },
     {
+      "path": "../packages/fallback-vue-router-composables",
+      "name": "@passerelle/fallback-vue-router-composables"
+    },
+    {
       "path": "./_e",
       "name": "___EXAMPLES___"
     },
