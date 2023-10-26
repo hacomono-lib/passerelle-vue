@@ -64,7 +64,5 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxt/typescript-build'],
-
-  modules: []
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api']
 } satisfies NuxtConfig
