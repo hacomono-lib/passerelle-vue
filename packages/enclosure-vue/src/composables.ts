@@ -43,7 +43,6 @@ export function getIframeDom(): HTMLIFrameElement {
   const current = getCurrentInstance()
   if (!current) throw new Error('current instance is not found.')
 
-  // vue2 は elm, vue3 は el
   const iframe = current.proxy?.$el
   if (!iframe) throw new Error('iframe element is not found.')
 

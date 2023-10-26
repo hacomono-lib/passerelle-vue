@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@intlify/vue-router-bridge": "^1.0.1",
-    "@passerelle/enclosure-vue": "^0.1.0",
+    "@passerelle/enclosure-vue": "*",
     "json-editor-vue": "^0.10.19",
     "vanilla-jsoneditor": "^0.18.8",
     "vue-demi": "^0.13.11"
