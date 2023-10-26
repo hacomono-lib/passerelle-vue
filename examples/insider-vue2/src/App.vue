@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import Header from './components/Header.vue'
-import { Playground } from 'fixtures-enclosure'
+import { Playground } from 'fixtures-insider'
 
 export default defineComponent({
   name: 'App',
@@ -13,28 +13,17 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
-    <section>
-      <Header />
-      <Playground name="passerelle-bridge" />
-    </section>
-
-    <section>
+  <section>
+    <Header>
       <router-view />
-    </section>
-  </div>
+    </Header>
+    <Playground />
+  </section>
 </template>
 
 <style scoped>
 section {
   line-height: 1.5;
-}
-
-div {
   height: 95vh;
-  width: inherit;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 0 2rem;
 }
 </style>

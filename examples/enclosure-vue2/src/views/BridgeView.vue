@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue-demi'
+import { defineComponent } from '@vue/composition-api'
 import { useRoute } from '@intlify/vue-router-bridge'
 
 import {
@@ -13,7 +13,6 @@ export default defineComponent({
     PasserelleFrame
   },
   setup(_props, ctx) {
-    console.dir(ctx)
     const route = useRoute()
 
     const defaultPath = `http://localhost:5174${extractChildPath(route.path)}`
