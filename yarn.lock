@@ -940,7 +940,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/enclosure-vue@npm:^0.1.0, @passerelle/enclosure-vue@workspace:packages/enclosure-vue":
+"@passerelle/enclosure-vue@npm:*, @passerelle/enclosure-vue@workspace:packages/enclosure-vue":
   version: 0.0.0-use.local
   resolution: "@passerelle/enclosure-vue@workspace:packages/enclosure-vue"
   dependencies:
@@ -3212,7 +3212,7 @@ __metadata:
   resolution: "fixtures-enclosuree@workspace:fixtures/enclosure"
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    "@passerelle/enclosure-vue": "npm:^0.1.0"
+    "@passerelle/enclosure-vue": "npm:*"
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
