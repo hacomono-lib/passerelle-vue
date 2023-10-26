@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue-demi'
 import Header from './components/Header.vue'
 import { Playground } from 'fixtures-enclosure'
 

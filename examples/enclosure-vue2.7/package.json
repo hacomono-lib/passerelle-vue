@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite . --port 5173",
+    "dev": "vite . --force --port 5173",
     "typecheck": "vue-tsc --noEmit --composite false"
   },
   "devDependencies": {

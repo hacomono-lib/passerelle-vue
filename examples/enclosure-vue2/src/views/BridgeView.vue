@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue-demi'
 import { useRoute } from '@intlify/vue-router-bridge'
 
 import {

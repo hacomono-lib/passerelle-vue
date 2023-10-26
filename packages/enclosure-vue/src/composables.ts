@@ -1,4 +1,4 @@
-import { onBeforeUnmount, onMounted, unref, shallowRef, computed, toRaw, type Ref } from 'vue-demi'
+import { onBeforeUnmount, onMounted, unref, shallowRef, computed, toRaw, type Ref, getCurrentInstance } from 'vue-demi'
 import {
   useRouter,
   type RouteLocationNormalized,
@@ -14,7 +14,7 @@ import {
 
 import { onBeforeRouteUpdate } from './fallback'
 
-import type { Iframe, IframeRef, PasserelleFrameConfig } from './types'
+import type { Iframe, PasserelleFrameConfig } from './types'
 import { name } from '../package.json'
 
 export const isSSR = typeof window === 'undefined'
@@ -39,6 +39,20 @@ function createCommunicator(
   return communicator
 }
 
+
+export function getIframeDom(): HTMLIFrameElement {
+  const current = getCurrentInstance()
+  if (!current) throw new Error('current instance is not found.')
+
+  if (!current.isMounted) throw new Error('current instance is not mounted.')
+
+  // vue2 は elm, vue3 は el
+  const iframe = current.proxy?.$el
+  if (!iframe) throw new Error('iframe element is not found.')
+
+  return iframe
+}
+
 /**
  * 引数に iframe タグを設定することで、以下の機能を提供する
  * - iframe の src を書き換えてしまうと、ページがリロードされてしまうため、 src を書き換えずにページを遷移する
@@ -48,7 +62,6 @@ function createCommunicator(
  * @return
  */
 export function usePasserelle(
-  iframeRef: IframeRef,
   config: PasserelleFrameConfig
 ): Ref<Communicator | undefined> {
   if (isSSR) {
@@ -59,21 +72,15 @@ export function usePasserelle(
 
   const router = useRouter()
 
-  const iframe = unref(iframeRef)
-
-  const cached = iframe ? cachedCommunicator.get(iframe) : undefined
-
-  const communicator = shallowRef<Communicator | undefined>(cached)
-  if (communicator.value) {
-    return communicator
-  }
+  const communicator = shallowRef<Communicator | undefined>()
 
   onMounted(() => {
-    const iframe = ensureNotNil(unref(iframeRef))
+    const iframe = getIframeDom()
     const c = createCommunicator(iframe, config)
+    cachedCommunicator.set(iframe, c)
+
     communicator.value = c
 
-    cachedCommunicator.set(iframe, c)
     c.hooks.on('navigate', (value) => {
       const parentPath = toEnclosurePath(value)
 
@@ -92,7 +99,6 @@ export function usePasserelle(
 
   onBeforeUnmount(() => {
     unref(communicator)?.destroy()
-    cachedCommunicator.delete(ensureNotNil(unref(iframeRef)))
   })
 
   return communicator

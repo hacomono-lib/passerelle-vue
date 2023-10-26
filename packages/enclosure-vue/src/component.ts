@@ -10,7 +10,8 @@ import type {
 } from '@passerelle/enclosure'
 
 import type { ConvertInsiderPathToEnclosurePath, ConvertEnclosurePathToInsiderPath, OverloadParameters } from './types'
-import { usePasserelle, isSSR } from './composables'
+import { usePasserelle, isSSR, getIframeDom } from './composables'
+import { isNil } from 'type-assurer'
 
 export interface SendData<T extends Json> {
   key: MessageKey<T>
@@ -122,17 +123,14 @@ export default defineComponent({
   expose: ['sendData', 'href', 'navigate'],
 
   setup(props, { emit, expose, attrs }) {
-    const frame = ref<HTMLIFrameElement>()
-
     // vue 2.7 だと、src や name などの iframe 用の props がなぜか反映されない現象があるため、mounted で強制的に設定する
     onMounted(() => {
-      if (!frame.value || frame.value.src === props.initialSrc) return
-
-      frame.value.src = props.initialSrc!
-      frame.value.name = props.name!
+      const frame = getIframeDom()
+      frame.src = props.initialSrc!
+      frame.name = props.name!
     })
 
-    const communicator = usePasserelle(frame, {
+    const communicator = usePasserelle({
       toInsiderPath: (location: RouteLocationNormalized) => props.toInsiderPath?.(location) ?? location.path,
       toEnclosurePath: (url: NavigateMessage) => props.toEnclosurePath?.(url) ?? url.path,
       origin: props.origin,
@@ -192,12 +190,15 @@ export default defineComponent({
       ...Object.entries(attrs).filter(([k]) => !omitKeys.includes(k)).reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {}),
     }
 
-    expose({
-      sendData,
-      href,
-      navigate
-    })
+    // @vue/composition-api では expose は undefined になる
+    if (!isNil(expose)) {
+      expose({
+        sendData,
+        href,
+        navigate
+      })
+    }
 
-    return () => h('iframe', { ref: frame, ...iframeAttrs })
+    return () => h('iframe', iframeAttrs)
   }
 })
