@@ -15,9 +15,6 @@
   },
   "devDependencies": {
     "@vue/tsconfig": "^0.4.0",
-    "vue-tsc": "^1.8.19"
-  },
-  "resolutions": {
-    "@passerelle/insider-vue": "portal:../../packages/insider-vue"
+    "vue-tsc": "^1.8.20"
   }
 }
