@@ -37,6 +37,10 @@
       "name": "#example/enclosure-vue3"
     },
     {
+      "path": "../examples/insider-vue2",
+      "name": "#example/insider-vue2"
+    },
+    {
       "path": "../examples/insider-vue2.7",
       "name": "#example/insider-vue2.7"
     },
