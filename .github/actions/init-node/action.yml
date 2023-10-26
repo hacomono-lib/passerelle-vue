@@ -56,6 +56,11 @@ runs:
       run: yarn --immutable
       shell: bash
 
+    - name: install [examples/enclosure-vue2] dependencies
+      working-directory: ./examples/enclosure-vue2
+      run: yarn --immutable
+      shell: bash
+
     - name: install [examples/insider-vue3] dependencies
       working-directory: ./examples/insider-vue3
       run: yarn --immutable
@@ -66,3 +71,7 @@ runs:
       run: yarn --immutable
       shell: bash
 
+    - name: install [examples/insider-vue2] dependencies
+      working-directory: ./examples/insider-vue2
+      run: yarn --immutable
+      shell: bash
