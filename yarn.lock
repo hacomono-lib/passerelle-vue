@@ -953,7 +953,7 @@ __metadata:
     type-assurer: "npm:^0.1.1"
     typescript: "npm:^5.2.2"
     vite: "npm:^4.5.0"
-    vite-plugin-dts: "npm:^3.6.2"
+    vite-plugin-dts: "npm:^3.6.3"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.7"
     vue-demi: "npm:^0.13.11"
@@ -1010,7 +1010,7 @@ __metadata:
     "@vue/tsconfig": "npm:^0.4.0"
     typescript: "npm:^5.2.2"
     vite: "npm:^4.5.0"
-    vite-plugin-dts: "npm:^3.6.2"
+    vite-plugin-dts: "npm:^3.6.3"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.7"
     vue-demi: "npm:^0.13.11"
@@ -6323,9 +6323,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-dts@npm:^3.6.2":
-  version: 3.6.2
-  resolution: "vite-plugin-dts@npm:3.6.2"
+"vite-plugin-dts@npm:^3.6.3":
+  version: 3.6.3
+  resolution: "vite-plugin-dts@npm:3.6.3"
   dependencies:
     "@microsoft/api-extractor": "npm:^7.38.0"
     "@rollup/pluginutils": "npm:^5.0.5"
@@ -6339,7 +6339,7 @@ __metadata:
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 51fa62ba3199b1a028832333ff6565d38387683c43fdbaf8bbed8f3a4b359ac2070b308e7c3a49d32b466a556e5474abee62637c20432b1228c05ef9e051aac9
+  checksum: eb03afaf31afa4e41de63696a36eed8173fb9772b2163216374101b84a1c2c202cc1a9e1c33394300e7e9e7f6c065c274d6966af87444330f4f92d16d6b19892
   languageName: node
   linkType: hard
 
