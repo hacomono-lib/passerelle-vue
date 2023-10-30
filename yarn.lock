@@ -947,7 +947,7 @@ __metadata:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/enclosure": "npm:^1.0.0"
     "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
-    "@types/node": "npm:^18.18.6"
+    "@types/node": "npm:^18.18.7"
     "@vitejs/plugin-vue": "npm:^4.4.0"
     "@vue/tsconfig": "npm:^0.4.0"
     type-assurer: "npm:^0.1.1"
@@ -1005,7 +1005,7 @@ __metadata:
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/insider": "npm:^1.0.0"
-    "@types/node": "npm:^18.18.6"
+    "@types/node": "npm:^18.18.7"
     "@vitejs/plugin-vue": "npm:^4.4.0"
     "@vue/tsconfig": "npm:^0.4.0"
     typescript: "npm:^5.2.2"
@@ -1272,10 +1272,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.18.6":
-  version: 18.18.6
-  resolution: "@types/node@npm:18.18.6"
-  checksum: ba8b71c724c4c9b1908faf09be1aa062790ef4194f956f6c7ae9791f8d2c1d123635695e41c3c8326223d2262bae2b3b5c8774c7a6c5885a98437b6fb04a2f0c
+"@types/node@npm:^18.18.7":
+  version: 18.18.7
+  resolution: "@types/node@npm:18.18.7"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 4dee54745a6ef13e2904bd1b251687e47d5079996e2e00ae14a0f86d9f236e3966b5cbbbf96ff34317907230be24cf54cb353f2887e6783eab33b9b53c9d23e2
   languageName: node
   linkType: hard
 
@@ -6225,6 +6227,13 @@ __metadata:
     has-symbols: "npm:^1.0.3"
     which-boxed-primitive: "npm:^1.0.2"
   checksum: 06e1ee41c1095e37281cb71a975cb3350f7cb470a0665d2576f02cc9564f623bd90cfc0183693b8a7fdf2d242963dcc3010b509fa3ac683f540c765c0f3e7e43
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~5.26.4":
+  version: 5.26.5
+  resolution: "undici-types@npm:5.26.5"
+  checksum: 0097779d94bc0fd26f0418b3a05472410408877279141ded2bd449167be1aed7ea5b76f756562cb3586a07f251b90799bab22d9019ceba49c037c76445f7cddd
   languageName: node
   linkType: hard
 
