@@ -24,10 +24,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import {
-  useCommunicator,
-  type NavigateMessage
-} from '@passerelle/enclosure-vue'
+import { useCommunicator } from '@passerelle/enclosure-vue'
+import type { NavigateMessage } from '@passerelle/enclosure-vue'
 
 interface Log {
   timestamp: string

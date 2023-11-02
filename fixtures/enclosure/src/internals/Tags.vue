@@ -28,7 +28,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue-demi'
+import { defineComponent } from 'vue-demi'
+import type { PropType } from 'vue-demi'
 import type { TagName, ApiType } from './type'
 import Tag from './Tag.vue'
 

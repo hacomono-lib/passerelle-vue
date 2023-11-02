@@ -1,11 +1,11 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { useRoute } from 'vue-router/composables'
+import { defineComponent } from '@nuxtjs/composition-api'
+// import { useRoute } from 'vue-router/composables'
 
-import {
-  PasserelleFrame,
-  type ConvertEnclosurePathToInsiderPath,
-  type ConvertInsiderPathToEnclosurePath,
+import { PasserelleFrame } from '@passerelle/enclosure-vue'
+import type {
+  ConvertEnclosurePathToInsiderPath,
+  ConvertInsiderPathToEnclosurePath
 } from '@passerelle/enclosure-vue'
 
 export default defineComponent({
@@ -29,7 +29,10 @@ export default defineComponent({
       return extractChildPath(location.path)
     }
 
-    const toEnclosure: ConvertInsiderPathToEnclosurePath = ({ path, params }) => {
+    const toEnclosure: ConvertInsiderPathToEnclosurePath = ({
+      path,
+      params
+    }) => {
       if (path === '/') {
         return { path: '/' }
       }
@@ -38,7 +41,7 @@ export default defineComponent({
     return {
       defaultPath,
       toInsider,
-      toEnclosure,
+      toEnclosure
     }
   }
 })

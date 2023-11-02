@@ -12,9 +12,10 @@ The Enclosure ensures accurate transmission of SPA transition information, paren
 ## Support
 
 - `vue` 2.6+ or 3.0+
+  - If you are using `vue` 2.6, you must use the [`@vue/composition-api`](https://github.com/vuejs/composition-api)
+- `nuxt` 2.14+ or 3.0+
+  - If you are using `nuxt` 2.14+, you must use the [`@nuxtjs/composition-api`](https://github.com/nuxt-community/composition-api)
 - `vue-router` 3.0+ or 4.0+
-
-NOTE: If you are using `vue` 2.6 or `vue-router` <3.6 , you must use the [Composition API](https://github.com/vuejs/composition-api)
 
 ## Usage
 

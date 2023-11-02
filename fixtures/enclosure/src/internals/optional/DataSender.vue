@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import { sendData, type Json } from '@passerelle/enclosure-vue'
+import { sendData } from '@passerelle/enclosure-vue'
 
 export default defineComponent({
   props: {

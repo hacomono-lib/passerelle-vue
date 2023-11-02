@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import { useCommunicator, onReceivedData} from '@passerelle/enclosure-vue';
+import { useCommunicator, onReceivedData } from '@passerelle/enclosure-vue';
 
 export default defineComponent({
   props: {

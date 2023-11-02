@@ -1,6 +1,6 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Playground } from '../../node_modules/fixtures-enclosure'
+import { defineComponent } from '@nuxtjs/composition-api'
+import { Playground } from 'fixtures-enclosure'
 
 export default defineComponent({
   name: 'App',

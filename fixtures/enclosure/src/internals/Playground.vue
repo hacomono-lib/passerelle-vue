@@ -27,7 +27,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import { tags, type TagName, type ApiType } from './type'
+import { tags } from './type'
+import type { TagName, ApiType } from './type'
 import Tags from './Tags.vue'
 import CompositionTransitionLog from './composition/TransitionLog.vue'
 import CompositionDataSender from './composition/DataSender.vue'

@@ -1,8 +1,9 @@
-import { resolve } from 'path'
-import type { NuxtConfig } from '@nuxt/types'
-import type { Configuration as WebpackConfig } from 'webpack'
+const { resolve } = require('path')
 
-export default {
+/**
+ * @type {import('@nuxt/types').NuxtConfig}
+ */
+module.exports = {
   head: {
     title: 'example-enclosure-nuxt2',
     htmlAttrs: {
@@ -22,8 +23,12 @@ export default {
   rootDir: './',
 
   build: {
-    extend(config: WebpackConfig) {
-      config.module?.rules.push({
+    /**
+     *
+     * @param {import('@types/webpack').WebpackConfig} config
+     */
+    extend(config) {
+      config.module.rules.push({
         test: /\.m?jsx?$/i,
         include: [/node_modules/],
         type: 'javascript/auto',
@@ -34,13 +39,13 @@ export default {
         ]
       })
 
-      config.resolve!.modules = [
+      config.resolve.modules = [
         // root の node_modules を参照させない
         resolve(__dirname, 'node_modules')
       ]
 
-      config.resolve!.alias = {
-        ...config.resolve!.alias,
+      config.resolve.alias = {
+        ...config.resolve.alias,
 
         // node_modules 配下が symlink であるため、相対パス指定にしないと webpack が解決できない
         '@passerelle/enclosure-vue': resolve(
@@ -51,12 +56,9 @@ export default {
     },
 
     babel: {
-      plugins: [
-        // FOR json-editor-vue
-        ['@babel/plugin-proposal-nullish-coalescing-operator', { loose: true }],
-        // FOR @intlify/vue-router-bridge
-        ['@babel/plugin-proposal-class-static-block', { loose: true }]
-      ]
+      presets(_env, [_preset, options]) {
+        options.loose = true
+      }
     }
   },
 
@@ -64,5 +66,7 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api']
-} satisfies NuxtConfig
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api'],
+
+  telemetry: false
+}
