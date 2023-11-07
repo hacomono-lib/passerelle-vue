@@ -2202,9 +2202,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt2%40workspace%3A.":
+"@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt2.14%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt2%40workspace%3A."
+  resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-nuxt2.14%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure": ^1.0.2
@@ -2232,9 +2232,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables::locator=example-enclosure-nuxt2%40workspace%3A.":
+"@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables::locator=example-enclosure-nuxt2.14%40workspace%3A.":
   version: 0.0.1
-  resolution: "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables#../../packages/fallback-vue-router-composables::hash=e1b6ff&locator=example-enclosure-nuxt2%40workspace%3A."
+  resolution: "@passerelle/fallback-vue-router-composables@file:../../packages/fallback-vue-router-composables#../../packages/fallback-vue-router-composables::hash=c14b61&locator=example-enclosure-nuxt2.14%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     vue-demi: ^0.13.11
@@ -2247,7 +2247,7 @@ __metadata:
       optional: true
     vue-router:
       optional: true
-  checksum: 29560980765aa7c05c2bb1afb3fdf0584714afd3bca6d7096fef71805957b77f3c114e91610bc1b97427857316eb06e4af9741e3aed6cb7f73c0428e2063b4af
+  checksum: b56a52209b9f1403fd1631d0d664419ff7b7e4605bdf2f6662d6d5b451b65ed86b80f873178d8dfc1358e1795d4e40c9e97659e9b74432a9085595710b884d28
   languageName: node
   linkType: hard
 
@@ -5752,9 +5752,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"example-enclosure-nuxt2@workspace:.":
+"example-enclosure-nuxt2.14@workspace:.":
   version: 0.0.0-use.local
-  resolution: "example-enclosure-nuxt2@workspace:."
+  resolution: "example-enclosure-nuxt2.14@workspace:."
   dependencies:
     "@babel/preset-env": ~7.12.16
     "@nuxt/types": ~2.14.0
@@ -6084,9 +6084,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt2%40workspace%3A.":
+"fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt2.14%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt2%40workspace%3A."
+  resolution: "fixtures-enclosure@portal:../../fixtures/enclosure::locator=example-enclosure-nuxt2.14%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": ^1.0.1
     "@passerelle/enclosure-vue": "*"

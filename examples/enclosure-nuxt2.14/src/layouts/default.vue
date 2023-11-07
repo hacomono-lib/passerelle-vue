@@ -1,11 +1,12 @@
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import { Playground } from 'fixtures-enclosure'
+import Playground from 'fixtures-enclosure/src/internals/Playground.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    Playground,
+    // FIXME: typesafe にしたい
+    Playground: Playground as any,
   }
 })
 </script>

@@ -1,4 +1,5 @@
 const { resolve } = require('path')
+// import { resolve } from 'path'
 
 /**
  * @type {import('@nuxt/types').NuxtConfig}
@@ -32,12 +33,10 @@ module.exports = {
         test: /\.m?jsx?$/i,
         include: [/node_modules/],
         type: 'javascript/auto',
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ]
+        use: ['babel-loader']
       })
+
+      config.resolve.symlinks = true
 
       config.resolve.modules = [
         // root の node_modules を参照させない
@@ -46,6 +45,14 @@ module.exports = {
 
       config.resolve.alias = {
         ...config.resolve.alias,
+
+        // vue-demi のバグ
+        '@vue/composition-api/dist/vue-composition-api.mjs': resolve(
+          __dirname,
+          './node_modules/@vue/composition-api/dist/vue-composition-api.esm.js'
+        ),
+
+        'fixtures-enclosure/*': resolve(__dirname, './node_modules/fixtures-enclosure/*'),
 
         // node_modules 配下が symlink であるため、相対パス指定にしないと webpack が解決できない
         '@passerelle/enclosure-vue': resolve(

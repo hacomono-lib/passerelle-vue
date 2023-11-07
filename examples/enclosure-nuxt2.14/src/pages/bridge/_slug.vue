@@ -1,6 +1,7 @@
 <script lang="ts">
+import type Vue from 'vue'
 import { defineComponent } from '@nuxtjs/composition-api'
-// import { useRoute } from 'vue-router/composables'
+import { useRoute } from '@intlify/vue-router-bridge'
 
 import { PasserelleFrame } from '@passerelle/enclosure-vue'
 import type {
@@ -10,7 +11,8 @@ import type {
 
 export default defineComponent({
   components: {
-    PasserelleFrame
+    // FIXME: typesafe にしたい
+    PasserelleFrame: PasserelleFrame as any
   },
   setup() {
     const route = useRoute()

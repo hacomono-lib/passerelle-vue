@@ -10,15 +10,26 @@ export function onBeforeRouteUpdate(callback) {
   }
 
   let target = instance.proxy
-  while(target?.$vnode?.data?.routerViewDepth == null) {
+
+  while (
+    target &&
+    target.$vnode &&
+    target.$vnode.data &&
+    target.$vnode.data.routerViewDepth == null
+  ) {
     target = target.$parent
   }
 
-  const depth = target?.$vnode?.data?.routerViewDepth ?? null
+  const depth =
+    target && target.$vnode && target.$vnode.data
+      ? target.$vnode.data.routerViewDepth
+      : null
 
   if (depth !== null) {
     const removeGuard = router.beforeEach((to, from, next) => {
-      return isUpdateNavigation(to, from, depth) ? callback(to, from, next) : next()
+      return isUpdateNavigation(to, from, depth)
+        ? callback(to, from, next)
+        : next()
     })
 
     onUnmounted(removeGuard)
@@ -28,5 +39,8 @@ export function onBeforeRouteUpdate(callback) {
 function isUpdateNavigation(to, from, depth) {
   const toMatched = to.matched
   const fromMatched = from.matched
-  return toMatched.length >= depth && toMatched.slice(0, depth + 1).every((r, i) => r === fromMatched[i])
+  return (
+    toMatched.length >= depth &&
+    toMatched.slice(0, depth + 1).every((r, i) => r === fromMatched[i])
+  )
 }
