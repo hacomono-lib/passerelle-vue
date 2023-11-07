@@ -22,5 +22,9 @@
   "resolutions": {
     "@passerelle/insider-vue": "portal:../../packages/insider-vue",
     "fixtures-insider": "portal:../../fixtures/insider"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "4.0.1"
   }
 }
