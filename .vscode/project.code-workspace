@@ -17,6 +17,10 @@
       "name": "@passerelle/insider-vue"
     },
     {
+      "path": "../packages/insider-nuxt",
+      "name": "@passerelle/insider-nuxt"
+    },
+    {
       "path": "../packages/fallback-vue-router-composables",
       "name": "@passerelle/fallback-vue-router-composables"
     },

@@ -1,0 +1,52 @@
+{
+  "name": "@passerelle/insider-nuxt",
+  "version": "0.1.0",
+  "description": "passerelle insider module for nuxt2.14+ or nuxt3",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hacomono-lib/passerelle-vue.git",
+    "directory": "packages/insider-nuxt"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "src",
+    "v2",
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "dev": "nuxi dev playground",
+    "build": "nuxt-module-build build"
+  },
+  "devDependencies": {
+    "@nuxt/kit": "^3.8.1",
+    "@nuxt/module-builder": "^0.5.3",
+    "@nuxt/schema": "^3.8.1",
+    "@nuxt/test-utils": "^3.8.1",
+    "nuxt": "^3.8.1",
+    "vitest": "^0.33.0"
+  },
+  "peerDependencies": {
+    "@nuxt/kit": "^3.0.0",
+    "nuxt": "^2.14.0 || ^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nuxt/kit": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
