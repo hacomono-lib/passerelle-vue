@@ -1,5 +1,4 @@
 <script lang="ts">
-import type Vue from 'vue'
 import { defineComponent } from '@nuxtjs/composition-api'
 import { useRoute } from '@intlify/vue-router-bridge'
 
@@ -50,15 +49,17 @@ export default defineComponent({
 </script>
 
 <template>
-  <PasserelleFrame
-    class="frame"
-    name="passerelle-bridge"
-    origin="*"
-    communicate-key="passerelle-playground"
-    :initial-src="defaultPath"
-    :to-insider-path="toInsider"
-    :to-enclosure-path="toEnclosure"
-    required-collab />
+  <client-only>
+    <PasserelleFrame
+      class="frame"
+      name="passerelle-bridge"
+      origin="*"
+      communicate-key="passerelle-playground"
+      :initial-src="defaultPath"
+      :to-insider-path="toInsider"
+      :to-enclosure-path="toEnclosure"
+      required-collab />
+  </client-only>
 </template>
 
 <style scoped>
