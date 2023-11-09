@@ -11,9 +11,7 @@
   "type": "module",
   "private": true,
   "workspaces": [
-    "./packages/*",
-    "./fixtures/*",
-    "./tests/*"
+    "./packages/*"
   ],
   "scripts": {
     "prepare": "turbo run prepare --parallel",

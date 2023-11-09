@@ -1,4 +1,4 @@
-Object.defineProperties(exports, '__esModule', { value: true })
+Object.defineProperty(exports, '__esModule', { value: true })
 
 const { getCurrentInstance, onUnmounted } = require('vue-demi')
 const { useRouter } = require('@intlify/vue-router-bridge')
@@ -12,11 +12,19 @@ function onBeforeRouteUpdate(callback) {
   }
 
   let target = instance.proxy
-  while(target?.$vnode?.data?.routerViewDepth == null) {
+  while (
+    target &&
+    target.$vnode &&
+    target.$vnode.data &&
+    target.$vnode.data.routerViewDepth == null
+  ) {
     target = target.$parent
   }
 
-  const depth = target?.$vnode?.data?.routerViewDepth ?? null
+  const depth =
+    target && target.$vnode && target.$vnode.data
+      ? target.$vnode.data.routerViewDepth
+      : null
 
   if (depth !== null) {
     const removeGuard = router.beforeEach((to, from, next) => {
@@ -34,4 +42,3 @@ function isUpdateNavigation(to, from, depth) {
 }
 
 exports.default = { onBeforeRouteUpdate }
-module.exports = exports.default

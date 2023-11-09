@@ -1,12 +1,8 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue-demi'
-import { sendData, type Json } from '@passerelle/enclosure-vue'
-import JsonEditor from 'json-editor-vue'
+import { sendData } from '@passerelle/enclosure-vue'
 
 export default defineComponent({
-  components: {
-    JsonEditor
-  },
   props: {
     name: {
       type: String,
@@ -14,11 +10,12 @@ export default defineComponent({
     }
   },
   setup({ name }) {
-    const data = ref({} satisfies Json)
+    const data = ref('')
 
     function send() {
-      sendData(name, 'data-sender', data.value)
-      data.value = {}
+      const json = JSON.parse(data.value)
+      sendData(name, 'data-sender', json)
+      data.value = ''
     }
 
     return {
@@ -31,7 +28,7 @@ export default defineComponent({
 
 <template>
   <form @submit.prevent="send">
-    <JsonEditor
+    <textarea
       v-model="data"
       class="editor" />
     <button type="submit">Send</button>

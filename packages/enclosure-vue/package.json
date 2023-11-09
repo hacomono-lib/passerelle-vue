@@ -27,13 +27,13 @@
   ],
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "vite build && vite --config vite-es2015.config.ts build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json --composite false",
     "clean": "rm -rf dist"
   },
   "dependencies": {
     "@intlify/vue-router-bridge": "^1.0.1",
-    "@passerelle/enclosure": "^1.0.0",
+    "@passerelle/enclosure": "^1.0.2",
     "@passerelle/fallback-vue-router-composables": "0.0.1",
     "type-assurer": "^0.1.1",
     "vue-demi": "^0.13.11"
@@ -42,6 +42,7 @@
     "@types/node": "^18.18.8",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/tsconfig": "^0.4.0",
+    "defu": "^6.1.2",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vite-plugin-dts": "^3.6.3",

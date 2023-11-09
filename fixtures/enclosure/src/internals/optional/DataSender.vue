@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="send">
-    <JsonEditor
+    <textarea
       v-model="data"
       class="editor" />
     <button type="submit">Send</button>
@@ -9,29 +9,26 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import { sendData, type Json } from '@passerelle/enclosure-vue'
-import JsonEditor from 'json-editor-vue'
+import { sendData } from '@passerelle/enclosure-vue'
 
 export default defineComponent({
-  components: {
-    JsonEditor
-  },
   props: {
     name: {
       type: String,
       required: true
     }
   },
-
-  data(): { data: Json } {
+  data() {
     return {
-      data: {}
+      data: ''
     }
   },
   methods: {
     send() {
-      sendData(this.name, 'data-sender', this.data)
-      this.data = {}
+      const json = JSON.parse(this.data)
+
+      sendData(this.name, 'data-sender', json)
+      this.data = ''
     }
   }
 })

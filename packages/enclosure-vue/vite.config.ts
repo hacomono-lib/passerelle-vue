@@ -24,7 +24,9 @@ export default defineConfig({
       fileName: 'index'
     },
     rollupOptions: {
-      external: [...Object.keys(packages.dependencies), ...Object.keys(packages.peerDependencies)]
+      external: Array.from(
+        new Set([...Object.keys(packages.dependencies), ...Object.keys(packages.peerDependencies)])
+      )
     }
   },
   esbuild: {

@@ -1,0 +1,28 @@
+{
+  "name": "example-insider-nuxt3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "nuxt prepare",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "typecheck": "nuxt typecheck"
+  },
+  "devDependencies": {
+    "@passerelle/enclosure-vue": "*",
+    "fixtures-enclosure": "*",
+    "nuxt": "^3.8.0",
+    "typescript": "^5.2.2",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "resolutions": {
+    "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
+    "@passerelle/fallback-vue-router-composables": "file:../../packages/fallback-vue-router-composables",
+    "fixtures-enclosure": "portal:../../fixtures/enclosure"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "4.0.1"
+  }
+}

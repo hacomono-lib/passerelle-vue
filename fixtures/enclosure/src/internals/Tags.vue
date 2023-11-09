@@ -28,15 +28,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue-demi'
+import { defineComponent } from 'vue-demi'
+import type { PropType } from 'vue-demi'
 import type { TagName, ApiType } from './type'
 import Tag from './Tag.vue'
 
-const labelSet = {
+const labelSet: Record<TagName, string> = {
   'transition-log': 'Transition Log',
   'data-sender': 'Data Sender',
   'data-received-log': 'Data Received Log'
-} satisfies Record<TagName, string>
+}
 
 const tags  = Object.keys(labelSet) as TagName[]
 

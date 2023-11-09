@@ -795,10 +795,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@passerelle/core@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@passerelle/core@npm:1.0.1"
-  checksum: 25c35c5a0225e9c1494f528f81ef2de106bc058172dc344d2e1153bc72d2c86dd472f49013a2fc03febcd65834208a010151a044d2a42823d8a300965b2582fe
+"@passerelle/core@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@passerelle/core@npm:1.0.3"
+  checksum: d9da8f22357e64b4d39951e36cfc1ba4768dd5832d1ffb3df49d882e3174339c28fbbf7fd5b29cf2062c405b364c98edfb4cf2c6a5316a28ad8f7c0c6e8456b5
   languageName: node
   linkType: hard
 
@@ -807,7 +807,7 @@ __metadata:
   resolution: "@passerelle/insider-vue@portal:../../packages/insider-vue::locator=example-insider-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    "@passerelle/insider": "npm:^1.0.0"
+    "@passerelle/insider": "npm:^1.0.2"
     vue-demi: "npm:^0.13.11"
   peerDependencies:
     "@vue/composition-api": ^1.0.0
@@ -818,13 +818,13 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@passerelle/insider@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "@passerelle/insider@npm:1.0.1"
+"@passerelle/insider@npm:^1.0.2":
+  version: 1.0.3
+  resolution: "@passerelle/insider@npm:1.0.3"
   dependencies:
-    "@passerelle/core": "npm:1.0.1"
-    type-assurer: "npm:0.1.1"
-  checksum: 0f8ec24dd2aaa1c4be0ef9dfb5d989a80057e9759f0ef027425815454f3e1e779a0b4b6eaa5c0ef8b75db12e2cb17b1e0c921d98f82faf015cdcd5ea5233c7f1
+    "@passerelle/core": "npm:1.0.3"
+    type-assurer: "npm:0.1.2"
+  checksum: 0a62b3a1b4494a7e9c141c2b3b9cd66b9ad905c5f54104a82a4ca91ee6f5bd017c9d3fad15ef570c038a4511df85c9a49bfa6c5e2c3fc59c235effd36e10d7e7
   languageName: node
   linkType: hard
 
@@ -2851,15 +2851,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-assurer@npm:0.1.1":
-  version: 0.1.1
-  resolution: "type-assurer@npm:0.1.1"
+"type-assurer@npm:0.1.2":
+  version: 0.1.2
+  resolution: "type-assurer@npm:0.1.2"
   peerDependencies:
     typescript: ">= 4.0.0"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 2db98a4980c590969c61c34c290ca393eefac4b1006fc78d5294ed5767a9f55b7fc720d96d716c07b47c3d6dc1a133d0237b465a08a8d5dd7e24cafdc25f959c
+  checksum: 4177fcd94fd909225fcaf3957487ff8f886e4d2d29b432a15c83a246b314930387da418014e82ae30c7c02a59775b8b76eed569376259f24436fc6c6a53e0cd1
   languageName: node
   linkType: hard
 

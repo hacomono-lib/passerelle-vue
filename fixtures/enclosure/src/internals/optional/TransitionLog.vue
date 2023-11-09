@@ -24,16 +24,16 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import {
-  useCommunicator,
-  type NavigateMessage
-} from '@passerelle/enclosure-vue'
+import { useCommunicator } from '@passerelle/enclosure-vue'
+import type { NavigateMessage } from '@passerelle/enclosure-vue'
 
 interface Log {
   timestamp: string
   path: string
   params: Record<string, string | string[]>
 }
+
+const isSSR = typeof window === 'undefined'
 
 export default defineComponent({
   props: {
@@ -52,7 +52,7 @@ export default defineComponent({
 
   computed: {
     communicator() {
-      if (location.pathname.startsWith('/bridge')) {
+      if (!isSSR && location.pathname.startsWith('/bridge')) {
         return useCommunicator(this.name)
       }
 
@@ -64,7 +64,7 @@ export default defineComponent({
     },
 
     path() {
-      return location.pathname
+      return isSSR ? '' : location.pathname
     }
   },
 

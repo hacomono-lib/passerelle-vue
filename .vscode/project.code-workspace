@@ -25,6 +25,14 @@
       "name": "___EXAMPLES___"
     },
     {
+      "path": "../examples/enclosure-nuxt2.14",
+      "name": "#example/enclosure-nuxt2.14"
+    },
+    {
+      "path": "../examples/enclosure-nuxt3",
+      "name": "#example/enclosure-nuxt3"
+    },
+    {
       "path": "../examples/enclosure-vue2",
       "name": "#example/enclosure-vue2"
     },
@@ -35,6 +43,10 @@
     {
       "path": "../examples/enclosure-vue3",
       "name": "#example/enclosure-vue3"
+    },
+    {
+      "path": "../examples/insider-nuxt3",
+      "name": "#example/insider-nuxt3"
     },
     {
       "path": "../examples/insider-vue2",

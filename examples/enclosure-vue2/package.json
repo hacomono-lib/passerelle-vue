@@ -24,5 +24,9 @@
     "@passerelle/enclosure-vue": "portal:../../packages/enclosure-vue",
     "@passerelle/fallback-vue-router-composables": "file:../../packages/fallback-vue-router-composables",
     "fixtures-enclosure": "portal:../../fixtures/enclosure"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "4.0.1"
   }
 }

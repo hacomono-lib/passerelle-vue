@@ -797,7 +797,7 @@ __metadata:
   resolution: "@passerelle/enclosure-vue@portal:../../packages/enclosure-vue::locator=example-enclosure-vue2%40workspace%3A."
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    "@passerelle/enclosure": "npm:^1.0.0"
+    "@passerelle/enclosure": "npm:^1.0.2"
     "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
     type-assurer: "npm:^0.1.1"
     vue-demi: "npm:^0.13.11"
@@ -813,7 +813,7 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@passerelle/enclosure@npm:^1.0.0":
+"@passerelle/enclosure@npm:^1.0.2":
   version: 1.0.3
   resolution: "@passerelle/enclosure@npm:1.0.3"
   dependencies:
