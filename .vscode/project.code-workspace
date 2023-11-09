@@ -45,6 +45,10 @@
       "name": "#example/enclosure-vue3"
     },
     {
+      "path": "../examples/insider-nuxt3",
+      "name": "#example/insider-nuxt3"
+    },
+    {
       "path": "../examples/insider-vue2",
       "name": "#example/insider-vue2"
     },
