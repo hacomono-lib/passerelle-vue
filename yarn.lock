@@ -961,7 +961,7 @@ __metadata:
     "@vue/tsconfig": "npm:^0.4.0"
     type-assurer: "npm:^0.1.1"
     typescript: "npm:^5.2.2"
-    vite: "npm:^4.5.1"
+    vite: "npm:^4.5.2"
     vite-plugin-dts: "npm:^3.6.4"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.13"
@@ -1018,7 +1018,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vue/tsconfig": "npm:^0.4.0"
     typescript: "npm:^5.2.2"
-    vite: "npm:^4.5.1"
+    vite: "npm:^4.5.2"
     vite-plugin-dts: "npm:^3.6.4"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.13"
@@ -6470,7 +6470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^4.5.1":
+"vite@npm:^4.5.2":
   version: 4.5.2
   resolution: "vite@npm:4.5.2"
   dependencies:
