@@ -956,7 +956,7 @@ __metadata:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/enclosure": "npm:^1.0.0"
     "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
-    "@types/node": "npm:^18.19.21"
+    "@types/node": "npm:^18.19.22"
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vue/tsconfig": "npm:^0.4.0"
     type-assurer: "npm:^0.1.1"
@@ -1014,7 +1014,7 @@ __metadata:
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
     "@passerelle/insider": "npm:^1.0.0"
-    "@types/node": "npm:^18.19.21"
+    "@types/node": "npm:^18.19.22"
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vue/tsconfig": "npm:^0.4.0"
     typescript: "npm:^5.2.2"
@@ -1295,12 +1295,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.19.21":
-  version: 18.19.21
-  resolution: "@types/node@npm:18.19.21"
+"@types/node@npm:^18.19.22":
+  version: 18.19.22
+  resolution: "@types/node@npm:18.19.22"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 3a5c5841f294bc35b5b416a32764b5c0c2f22f4cef48cb7d2e3b4e068a52d5857e50da8e6e0685e743127c70344301c833849a3904ce3bd3f67448da5e85487a
+  checksum: 4da0bd3e6cb8d85d2194d6ce241fc7fadd6fd1983914283cbc264e12c8a5ee8b646af9f6bf3f3b35d825890cfc908ff9e8ae5535597ac93aa02b826b6bbb24f7
   languageName: node
   linkType: hard
 
