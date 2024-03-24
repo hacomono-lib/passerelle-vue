@@ -43,7 +43,7 @@
     "@vitejs/plugin-vue": "^4.4.1",
     "@vue/tsconfig": "^0.4.0",
     "typescript": "^5.2.2",
-    "vite": "^4.5.2",
+    "vite": "^4.5.3",
     "vite-plugin-dts": "^3.6.4",
     "vitest": "^0.34.6",
     "vue": "^3.3.13",
