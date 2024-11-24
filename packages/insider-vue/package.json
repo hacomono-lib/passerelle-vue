@@ -36,7 +36,7 @@
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
-    "@types/node": "^18.19.64",
+    "@types/node": "^18.19.65",
     "@vitejs/plugin-vue": "^4.4.1",
     "@vue/tsconfig": "^0.4.0",
     "typescript": "^5.2.2",
