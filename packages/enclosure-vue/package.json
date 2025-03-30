@@ -35,7 +35,7 @@
     "@intlify/vue-router-bridge": "^1.0.1",
     "@passerelle/enclosure": "^1.0.0",
     "@passerelle/fallback-vue-router-composables": "0.0.1",
-    "type-assurer": "^0.1.1",
+    "type-assurer": "^0.1.2",
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
