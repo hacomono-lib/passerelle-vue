@@ -960,7 +960,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vue/tsconfig": "npm:^0.4.0"
     type-assurer: "npm:^0.1.1"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.9.2"
     vite: "npm:^4.5.3"
     vite-plugin-dts: "npm:^3.6.4"
     vitest: "npm:^0.34.6"
@@ -1017,7 +1017,7 @@ __metadata:
     "@types/node": "npm:^18.19.121"
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vue/tsconfig": "npm:^0.4.0"
-    typescript: "npm:^5.2.2"
+    typescript: "npm:^5.9.2"
     vite: "npm:^4.5.3"
     vite-plugin-dts: "npm:^3.6.4"
     vitest: "npm:^0.34.6"
@@ -6258,13 +6258,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "typescript@npm:5.2.2"
+"typescript@npm:^5.9.2":
+  version: 5.9.2
+  resolution: "typescript@npm:5.9.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: d65e50eb849bd21ff8677e5b9447f9c6e74777e346afd67754934264dcbf4bd59e7d2473f6062d9a015d66bd573311166357e3eb07fea0b52859cf9bb2b58555
+  checksum: cc2fe6c822819de5d453fa25aa9f32096bf70dde215d481faa1ad84a283dfb264e33988ed8f6d36bc803dd0b16dbe943efa311a798ef76d5b3892a05dfbfd628
   languageName: node
   linkType: hard
 
@@ -6278,13 +6278,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
-  version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+"typescript@patch:typescript@npm%3A^5.9.2#optional!builtin<compat/typescript>":
+  version: 5.9.2
+  resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=29ae49"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f79cc2ba802c94c2b78dbb00d767a10adb67368ae764709737dc277273ec148aa4558033a03ce901406b35fddf4eac46dabc94a1e1d12d2587e2b9cfe5707b4a
+  checksum: a8606016982f2f46ed085e9b4b84d8a5251b42ff0560c995c20f3c3ab9543e37c1015d92ab2f1cc7b2af2b499d12bac57e11789da271fb3225af8ec0b24e5b64
   languageName: node
   linkType: hard
 
