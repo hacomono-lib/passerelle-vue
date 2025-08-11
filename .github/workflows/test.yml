@@ -16,7 +16,7 @@ jobs:
     name: 'Initialize: node'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
 
   test__code_spec:
@@ -25,7 +25,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn test
 
@@ -35,7 +35,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: packages/enclosure-vue
@@ -46,7 +46,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: packages/insider-vue
@@ -57,7 +57,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue3
@@ -68,7 +68,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue2.7
@@ -79,7 +79,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue2
@@ -90,7 +90,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue3
@@ -101,7 +101,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue2.7
@@ -112,7 +112,7 @@ jobs:
     needs:
       - init__node
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue2
