@@ -39,7 +39,7 @@
     "turbo": "^1.10.16"
   },
   "volta": {
-    "node": "18.18.2",
+    "node": "22.21.0",
     "yarn": "4.0.0"
   },
   "packageManager": "yarn@4.0.0"
