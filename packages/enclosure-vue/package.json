@@ -42,7 +42,7 @@
     "@types/node": "^18.19.130",
     "@vitejs/plugin-vue": "^4.4.1",
     "@vue/tsconfig": "^0.4.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.9.3",
     "vite": "^4.5.3",
     "vite-plugin-dts": "^3.6.4",
     "vitest": "^0.34.6",
