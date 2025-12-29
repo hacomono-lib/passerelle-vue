@@ -10,7 +10,7 @@
     "@intlify/vue-router-bridge": "^1.0.1",
     "@passerelle/insider-vue": "*",
     "json-editor-vue": "^0.10.19",
-    "vanilla-jsoneditor": "^0.18.8",
+    "vanilla-jsoneditor": "^3.11.0",
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
