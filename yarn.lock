@@ -743,11 +743,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@intlify/vue-router-bridge@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@intlify/vue-router-bridge@npm:1.0.1"
+"@intlify/vue-router-bridge@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@intlify/vue-router-bridge@npm:1.1.0"
   dependencies:
-    vue-demi: "npm:^0.13.5"
+    vue-demi: "npm:>=0.13.5 < 1.0.0"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue-router: ^4.0.0-0 || ^3.0.0
@@ -759,7 +759,7 @@ __metadata:
   bin:
     vue-router-fix: bin/fix.js
     vue-router-switch: bin/switch.js
-  checksum: 1fcbc7d81e82300e27fb9e91be48e50af4f68491768f659bf30d6dbd322997e2da3316715dcc63303fe4382bab14295057c37e9f0cb88338d8c61f7885943ce7
+  checksum: 2ecf30b13fdcdd01da916090bb31aa61be526db749ae22d47dbc99fab7a6b443f0a8ec462b6a68349ee35ea920c6851a1640d61606492ee6b6fda4906f3640eb
   languageName: node
   linkType: hard
 
@@ -953,7 +953,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@passerelle/enclosure-vue@workspace:packages/enclosure-vue"
   dependencies:
-    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@intlify/vue-router-bridge": "npm:^1.1.0"
     "@passerelle/enclosure": "npm:^1.0.0"
     "@passerelle/fallback-vue-router-composables": "npm:0.0.1"
     "@types/node": "npm:^18.19.130"
@@ -994,7 +994,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@passerelle/fallback-vue-router-composables@workspace:packages/fallback-vue-router-composables"
   dependencies:
-    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@intlify/vue-router-bridge": "npm:^1.1.0"
     vue-demi: "npm:^0.13.11"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
@@ -1012,7 +1012,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@passerelle/insider-vue@workspace:packages/insider-vue"
   dependencies:
-    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@intlify/vue-router-bridge": "npm:^1.1.0"
     "@passerelle/insider": "npm:^1.0.0"
     "@types/node": "npm:^18.19.130"
     "@vitejs/plugin-vue": "npm:^4.4.1"
@@ -3309,7 +3309,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fixture-insider@workspace:fixtures/insider"
   dependencies:
-    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@intlify/vue-router-bridge": "npm:^1.1.0"
     "@passerelle/insider-vue": "npm:*"
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
@@ -3323,7 +3323,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fixtures-enclosuree@workspace:fixtures/enclosure"
   dependencies:
-    "@intlify/vue-router-bridge": "npm:^1.0.1"
+    "@intlify/vue-router-bridge": "npm:^1.1.0"
     "@passerelle/enclosure-vue": "npm:*"
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
@@ -6570,7 +6570,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:^0.13.11, vue-demi@npm:^0.13.5":
+"vue-demi@npm:>=0.13.5 < 1.0.0":
+  version: 0.14.10
+  resolution: "vue-demi@npm:0.14.10"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 3028239c0c25a84361a13ab936fcc9a199f54e0320c2ec1d2f4fdf7da8bae663382b7c1e5b1f5a1a43f6aebc73b955892cd4b6c7b3eaf2b766e18cc2a6f7ebea
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:^0.13.11":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
   peerDependencies:
