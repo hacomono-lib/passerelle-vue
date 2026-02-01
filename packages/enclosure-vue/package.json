@@ -36,7 +36,7 @@
     "@passerelle/enclosure": "^1.0.0",
     "@passerelle/fallback-vue-router-composables": "0.0.1",
     "type-assurer": "^0.1.1",
-    "vue-demi": "^0.13.11"
+    "vue-demi": "^0.14.10"
   },
   "devDependencies": {
     "@types/node": "^18.19.130",
