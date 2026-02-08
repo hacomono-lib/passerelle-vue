@@ -38,12 +38,12 @@
   "devDependencies": {
     "@types/node": "^18.19.130",
     "@vitejs/plugin-vue": "^4.4.1",
-    "@vue/tsconfig": "^0.4.0",
+    "@vue/tsconfig": "^0.8.1",
     "typescript": "^5.2.2",
     "vite": "^4.5.3",
     "vite-plugin-dts": "^3.6.4",
     "vitest": "^0.34.6",
-    "vue": "^3.3.13",
+    "vue": "^3.5.27",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.27"
   },
