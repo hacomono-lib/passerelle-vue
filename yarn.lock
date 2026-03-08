@@ -139,14 +139,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/changelog-github@npm:^0.4.8":
-  version: 0.4.8
-  resolution: "@changesets/changelog-github@npm:0.4.8"
+"@changesets/changelog-github@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@changesets/changelog-github@npm:0.6.0"
   dependencies:
-    "@changesets/get-github-info": "npm:^0.5.2"
-    "@changesets/types": "npm:^5.2.1"
+    "@changesets/get-github-info": "npm:^0.8.0"
+    "@changesets/types": "npm:^6.1.0"
     dotenv: "npm:^8.1.0"
-  checksum: a15619c8a30cf07d0f61fbfd76fb52a508172da422238a8d599e4540a6ea9922238d447159675161722a4515877a680fd4f3f4ac65e033f989db8e0786fa5e08
+  checksum: a9d105e5b260461c1803a14ed74b5a54ace83bea23284e7ad680ff8e755146336190e840eb797b2bd6d5bc1a4c78a3bed2046604028b1790c4e7e5162a0a9e4d
   languageName: node
   linkType: hard
 
@@ -230,13 +230,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/get-github-info@npm:^0.5.2":
-  version: 0.5.2
-  resolution: "@changesets/get-github-info@npm:0.5.2"
+"@changesets/get-github-info@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@changesets/get-github-info@npm:0.8.0"
   dependencies:
     dataloader: "npm:^1.4.0"
     node-fetch: "npm:^2.5.0"
-  checksum: d1fb63ff7d9aa6aef91a4d2f3649b984e59687340e49350f8d1870a2fc150eaa1530bd3e5a07992a0cfe2fb57fedd91dd42eae0e4b845c83f5d98abbfc14f155
+  checksum: 2bbb3d8e47ba7195327751db7bd5358d12ae4c03bc4270d1ab7286f973110cec73608f6a556af8657bebd676dce0256550a946b0ad2c4f4631934763f5b7a05b
   languageName: node
   linkType: hard
 
@@ -336,6 +336,13 @@ __metadata:
   version: 5.2.1
   resolution: "@changesets/types@npm:5.2.1"
   checksum: 0783de5c1544c56c926efdbc1e9f04500e09395156e971e60e8de07a43627328a61d432bade108f15a12cd07776d866cc88fa5c61705dcae8640701327449674
+  languageName: node
+  linkType: hard
+
+"@changesets/types@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@changesets/types@npm:6.1.0"
+  checksum: 2dcd00712cb85d0c53afdd8d0e856b4bf9c0ce8dc36c838c918d44799aacd9ba8659b9ff610ff92b94fc03c8fd2b52c5b05418fcf8a1bd138cd9182414ede373
   languageName: node
   linkType: hard
 
@@ -4979,7 +4986,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "passerelle@workspace:."
   dependencies:
-    "@changesets/changelog-github": "npm:^0.4.8"
+    "@changesets/changelog-github": "npm:^0.6.0"
     "@changesets/cli": "npm:^2.26.2"
     "@typescript-eslint/eslint-plugin": "npm:^6.9.1"
     "@typescript-eslint/parser": "npm:^6.9.1"
