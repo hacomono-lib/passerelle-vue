@@ -949,6 +949,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@passerelle/core@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@passerelle/core@npm:1.0.3"
+  checksum: d9da8f22357e64b4d39951e36cfc1ba4768dd5832d1ffb3df49d882e3174339c28fbbf7fd5b29cf2062c405b364c98edfb4cf2c6a5316a28ad8f7c0c6e8456b5
+  languageName: node
+  linkType: hard
+
 "@passerelle/enclosure-vue@npm:*, @passerelle/enclosure-vue@workspace:packages/enclosure-vue":
   version: 0.0.0-use.local
   resolution: "@passerelle/enclosure-vue@workspace:packages/enclosure-vue"
@@ -1013,7 +1020,7 @@ __metadata:
   resolution: "@passerelle/insider-vue@workspace:packages/insider-vue"
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    "@passerelle/insider": "npm:^1.0.0"
+    "@passerelle/insider": "npm:^1.0.3"
     "@types/node": "npm:^18.19.130"
     "@vitejs/plugin-vue": "npm:^4.4.1"
     "@vue/tsconfig": "npm:^0.4.0"
@@ -1034,13 +1041,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@passerelle/insider@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "@passerelle/insider@npm:1.0.1"
+"@passerelle/insider@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@passerelle/insider@npm:1.0.3"
   dependencies:
-    "@passerelle/core": "npm:1.0.1"
-    type-assurer: "npm:0.1.1"
-  checksum: 0f8ec24dd2aaa1c4be0ef9dfb5d989a80057e9759f0ef027425815454f3e1e779a0b4b6eaa5c0ef8b75db12e2cb17b1e0c921d98f82faf015cdcd5ea5233c7f1
+    "@passerelle/core": "npm:1.0.3"
+    type-assurer: "npm:0.1.2"
+  checksum: 0a62b3a1b4494a7e9c141c2b3b9cd66b9ad905c5f54104a82a4ca91ee6f5bd017c9d3fad15ef570c038a4511df85c9a49bfa6c5e2c3fc59c235effd36e10d7e7
   languageName: node
   linkType: hard
 
@@ -6155,7 +6162,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-assurer@npm:^0.1.1":
+"type-assurer@npm:0.1.2, type-assurer@npm:^0.1.1":
   version: 0.1.2
   resolution: "type-assurer@npm:0.1.2"
   peerDependencies:
