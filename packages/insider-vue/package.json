@@ -33,7 +33,7 @@
   "dependencies": {
     "@intlify/vue-router-bridge": "^1.0.1",
     "@passerelle/insider": "^1.0.0",
-    "vue-demi": "^0.13.11"
+    "vue-demi": "^0.14.10"
   },
   "devDependencies": {
     "@types/node": "^18.19.130",
