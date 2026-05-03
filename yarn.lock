@@ -965,7 +965,7 @@ __metadata:
     vite-plugin-dts: "npm:^3.6.4"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.13"
-    vue-demi: "npm:^0.13.11"
+    vue-demi: "npm:^0.14.10"
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.27"
   peerDependencies:
@@ -995,7 +995,7 @@ __metadata:
   resolution: "@passerelle/fallback-vue-router-composables@workspace:packages/fallback-vue-router-composables"
   dependencies:
     "@intlify/vue-router-bridge": "npm:^1.0.1"
-    vue-demi: "npm:^0.13.11"
+    vue-demi: "npm:^0.14.10"
   peerDependencies:
     "@vue/composition-api": ^1.0.0-rc.1
     vue: ^3.0.0-0 || ^2.6.0
@@ -1022,7 +1022,7 @@ __metadata:
     vite-plugin-dts: "npm:^3.6.4"
     vitest: "npm:^0.34.6"
     vue: "npm:^3.3.13"
-    vue-demi: "npm:^0.13.11"
+    vue-demi: "npm:^0.14.10"
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.27"
   peerDependencies:
@@ -3314,7 +3314,7 @@ __metadata:
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
-    vue-demi: "npm:^0.13.11"
+    vue-demi: "npm:^0.14.10"
     vue-tsc: "npm:^1.8.27"
   languageName: unknown
   linkType: soft
@@ -3328,7 +3328,7 @@ __metadata:
     "@vue/tsconfig": "npm:^0.4.0"
     json-editor-vue: "npm:^0.10.19"
     vanilla-jsoneditor: "npm:^0.18.8"
-    vue-demi: "npm:^0.13.11"
+    vue-demi: "npm:^0.14.10"
     vue-tsc: "npm:^1.8.27"
   languageName: unknown
   linkType: soft
@@ -6570,7 +6570,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-demi@npm:^0.13.11, vue-demi@npm:^0.13.5":
+"vue-demi@npm:^0.13.5":
   version: 0.13.11
   resolution: "vue-demi@npm:0.13.11"
   peerDependencies:
@@ -6583,6 +6583,22 @@ __metadata:
     vue-demi-fix: bin/vue-demi-fix.js
     vue-demi-switch: bin/vue-demi-switch.js
   checksum: 6c02d1248cfc405478f21f2d3eca3bfba537ad0ff5116f5efc4e0bf296b35cd5d3e2beff4807365018894da18901110c4d5cb8c205273872c4c902fe7522de4f
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:^0.14.10":
+  version: 0.14.10
+  resolution: "vue-demi@npm:0.14.10"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 3028239c0c25a84361a13ab936fcc9a199f54e0320c2ec1d2f4fdf7da8bae663382b7c1e5b1f5a1a43f6aebc73b955892cd4b6c7b3eaf2b766e18cc2a6f7ebea
   languageName: node
   linkType: hard
 
