@@ -27,7 +27,7 @@
     "postinstall": "node ./scripts/postinstall.js"
   },
   "dependencies": {
-    "@intlify/vue-router-bridge": "^1.0.1",
+    "@intlify/vue-router-bridge": "^1.1.0",
     "vue-demi": "^0.13.11"
   },
   "peerDependencies": {
