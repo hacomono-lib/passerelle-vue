@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@intlify/vue-router-bridge": "^1.0.1",
-    "@passerelle/insider": "^1.0.0",
+    "@passerelle/insider": "^1.0.3",
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
