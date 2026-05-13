@@ -38,6 +38,8 @@ runs:
         key: cache-build-results-${{ runner.os }}-${{ github.sha }}
 
     - name: install [root] dependencies
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
 
@@ -48,30 +50,42 @@ runs:
     # The directories under the example directory do not consider the strictness of yarn.lock
     - name: install [examples/enclosure-vue3] dependencies
       working-directory: ./examples/enclosure-vue3
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
 
     - name: install [examples/enclosure-vue2.7] dependencies
       working-directory: ./examples/enclosure-vue2.7
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
 
     - name: install [examples/enclosure-vue2] dependencies
       working-directory: ./examples/enclosure-vue2
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
 
     - name: install [examples/insider-vue3] dependencies
       working-directory: ./examples/insider-vue3
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
 
     - name: install [examples/insider-vue2.7] dependencies
       working-directory: ./examples/insider-vue2.7
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
 
     - name: install [examples/insider-vue2] dependencies
       working-directory: ./examples/insider-vue2
+      env:
+        YARN_ENABLE_SCRIPTS: 'false'
       run: yarn --immutable
       shell: bash
