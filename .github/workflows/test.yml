@@ -15,27 +15,39 @@ jobs:
   init__node:
     name: 'Initialize: node'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
 
   test__code_spec:
     name: 'Test: Code Specifigation'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn test
 
   test__typecheck__enclosure_vue:
     name: 'Test: [package/enclosure-vue] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: packages/enclosure-vue
@@ -43,10 +55,14 @@ jobs:
   test__typecheck__insider_vue:
     name: 'Test: [package/insider-vue] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: packages/insider-vue
@@ -54,10 +70,14 @@ jobs:
   test__typecheck__example_enclosure_vue_3:
     name: 'Test: [example/enclosure-vue3] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue3
@@ -65,10 +85,14 @@ jobs:
   test__typecheck__example_enclosure_vue_2_7:
     name: 'Test: [example/enclosure-vue2.7] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue2.7
@@ -76,10 +100,14 @@ jobs:
   test__typecheck__example_enclosure_vue_2:
     name: 'Test: [example/enclosure-vue2] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/enclosure-vue2
@@ -87,10 +115,14 @@ jobs:
   test__typecheck__example_insider_vue_3:
     name: 'Test: [example/insider-vue3] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue3
@@ -98,10 +130,14 @@ jobs:
   test__typecheck__example_insider_vue_2_7:
     name: 'Test: [example/insider-vue2.7] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue2.7
@@ -109,10 +145,14 @@ jobs:
   test__typecheck__example_insider_vue_2:
     name: 'Test: [example/insider-vue2] TypeCheck'
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs:
       - init__node
     steps:
       - uses: actions/checkout@v6
+      - uses: ./.github/actions/takumi-guard-setup
       - uses: ./.github/actions/init-node
       - run: yarn typecheck
         working-directory: ./examples/insider-vue2
